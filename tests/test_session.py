@@ -22,7 +22,7 @@ class SessionTests(unittest.TestCase):
             download.assert_not_called();device.assert_not_called()
 
     def test_corrupt_asset_rejected_before_usb(self):
-        with tempfile.TemporaryDirectory() as folder,patch('flasher.fel.Fel') as device,patch('flash.ctypes') as native:
+        with tempfile.TemporaryDirectory() as folder,patch('flasher.fel.Fel') as device,patch('flash.ctypes') as native,patch('flash.os.geteuid',return_value=0,create=True):
             native.windll.shell32.IsUserAnAdmin.return_value=True
             manifest=self.manifest();asset=manifest['files']['image'];(Path(folder)/asset['name']).write_bytes(b'corrupt')
             with self.assertRaises(ValueError):flash.install(Path(folder),manifest,confirmed=True)
