@@ -10,7 +10,7 @@ The image and Windows flasher at `v0.1.0-20261114` / `flasher-v0.2.0` remain unc
 
 | API | Qualified implementation / boundary |
 |---|---|
-| EGL / OpenGL | EGL 1.5, OpenGL 3.1 / GLSL 1.40 on Mesa 25.0.7-2+deb13u1, Panfrost |
+| EGL / OpenGL | EGL 1.5, OpenGL 3.1 / GLSL 1.40 on Mesa 25.0.7-2+deb13u1, Panfrost; 64 complete framebuffer readbacks (528,320 pixels) |
 | OpenGL ES | GLES 3.1 / ESSL 3.10; shader, framebuffer readback and compute SSBO/fence tests |
 | WebGL 1 / 2 | Firefox ESR native Mali-G57; 120 shader/pixel checks per API, graceful browser exit |
 | OpenCL | Rusticl device reports OpenCL 3.0, GPU type; default OpenCL C query is 1.2; explicit `-cl-std=CL3.0` builds and selected optional features pass |
@@ -22,6 +22,8 @@ Mesa's [Panfrost hardware table](https://docs.mesa3d.org/drivers/panfrost.html) 
 OpenCL tests cover non-multiple work sizes, integer/float32 buffers, local-memory barriers and reduction, event profiling, RGBA image transfers, int64 arithmetic, global uint32 atomics, read/write images and dependencies between in-order and out-of-order queues. This is selected functional qualification, **not a full Khronos CTS run or a new conformance certification**. FP16, FP64, SVM and CL/GL object sharing are not advertised as available by this installed OpenCL device. Other optional features remain unqualified.
 
 Firefox may expose a privacy-sanitized string such as “Mali-G51, or similar” to web pages. The WebGL test checks Firefox's internal Mali-G57 renderer separately and leaves browser privacy defaults enabled.
+
+Additional reproducible checks in the extracted archive: `python3 gpu/desktop_gl_check.py` checks desktop GL independently of GLES, and `python3 gpu/repeat_extended.py --cycles 100 --output new-result.json` repeatedly validates OpenCL C 3.0 and SPIR-V with fresh contexts. The latter is an API test, not a replacement for the guarded mixed soak.
 
 ## Install on the tablet
 

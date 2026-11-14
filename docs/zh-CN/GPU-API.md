@@ -10,7 +10,7 @@
 
 | API | 实际状态 |
 |---|---|
-| EGL / OpenGL | EGL 1.5；OpenGL 3.1 / GLSL 1.40；Mesa 25.0.7-2+deb13u1、原生 Panfrost |
+| EGL / OpenGL | EGL 1.5；OpenGL 3.1 / GLSL 1.40；原生 Panfrost；64 帧全量回读，校验 528,320 个像素 |
 | OpenGL ES | GLES 3.1 / ESSL 3.10；着色器、像素回读、计算着色器及同步校验 |
 | WebGL 1 / 2 | Firefox ESR 使用 Mali-G57；每种 API 校验 120 帧，浏览器正常退出 |
 | OpenCL | Rusticl 识别真实 GPU，设备版本 3.0；默认 OpenCL C 查询为 1.2；显式 CL3.0 编译与选定可选功能通过 |
@@ -22,6 +22,8 @@
 OpenCL 已实测整数、浮点、非整工作组长度、局部内存同步与归约、事件计时、二维图像、64 位整数、32 位原子操作、读写图像及跨队列事件依赖。**这些是选定功能测试，不等同于完整 Khronos CTS 或新的认证。** 当前设备不公布 FP16、FP64、SVM 和 CL/GL 对象共享能力，其他可选功能未据此承诺。
 
 Firefox 向网页返回的 GPU 型号可能被隐私机制简化为“Mali-G51, or similar”；测试同时核对 Firefox 内部的真实 Mali-G57 渲染器，保留浏览器隐私默认值。
+
+解压后还可运行 `python3 gpu/desktop_gl_check.py`，独立验证桌面 OpenGL；或运行 `python3 gpu/repeat_extended.py --cycles 100 --output new-result.json`，反复验证 OpenCL C 3.0 与 SPIR-V。后者不替代带故障与温度检查的混合持续测试。
 
 ## 安装
 
