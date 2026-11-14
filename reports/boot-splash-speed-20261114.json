@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "date": "2026-11-14",
+  "scope": "Original adapted tablet; published image and flasher assets unchanged",
+  "profile": "TZX P30A523_20T5G; LPDDR3 4 GiB; JD9365; UEM 128 GB",
+  "timer": "24 MHz boot counter after image submission and scan verification; not power-button stopwatch or desktop time",
+  "baseline_image_counter_s": 7.88720425,
+  "signed_original_unit_toc0_sha256": "3031c2e408edb41dab4ab0f35171bf9ea3398842bfd2c653c8017149b13791ba",
+  "image_payload_sha256": "3f743e7b748fe628cc6485e85c8e3cddc2b3bebf0473ae3b3e80923de9718ea0",
+  "pixel_sha256": "a822be34158dbeadccddebc6252cb1560d9e92de7fee720113f20db33f29b9b5",
+  "minimum_panel_supply_settle_us": 1000000,
+  "CPUA_training_khz": 1416000,
+  "CPUA_training_mv": 1150,
+  "original_voltage_clock_restored_before_TFA": true,
+  "geometry_discovery_and_fresh_DRAM_training_preserved": true,
+  "CPU_ARM_emulation_cases": 17,
+  "panel_ARM_emulation_cases": 19,
+  "physical_power_button_test": false,
+  "final_visual_confirmation": "pending",
+  "intermediate_CPU_only_candidate_Bluetooth_failure": "One HCI initialization timeout; manual service restart recovered; cause not isolated; not repeated on the two final boots",
+  "repeated_boots": [
+    {
+      "boot_id": "cd4613e2-8970-47d3-be9b-6c0a31825aa2",
+      "image_counter_s": 5.888910083333333,
+      "panel_ready_counter_s": 4.966479583333333,
+      "asset_read_seconds": 0.659195375,
+      "mixed_load_seconds": 42.31,
+      "memory_mib": 2560,
+      "memory_errors": 0,
+      "GPU_score": 834,
+      "GPU_compute_integer_checks": 2097152,
+      "VPU_hardware_frames": 600,
+      "CPU_peak_khz": [
+        1416000,
+        1800000
+      ],
+      "GPU_rates_hz": [
+        200000000,
+        400000000,
+        600000000
+      ],
+      "temperature_peak_mc": 73320,
+      "storage": [
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 71.08,
+          "read_MiB_s": 84.73
+        },
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 78.13,
+          "read_MiB_s": 83.44
+        }
+      ],
+      "emmc_timing": "HS200",
+      "emmc_hz": 100000000,
+      "IOMMU_faults": 0,
+      "MMC_errors": 0,
+      "display_errors": 0,
+      "failed_services": [],
+      "automatic_Bluetooth_and_right_landscape_touch_configuration": "PASS"
+    },
+    {
+      "boot_id": "eb28d483-982e-47c5-b87d-9a6a086af3a0",
+      "image_counter_s": 5.918479166666667,
+      "panel_ready_counter_s": 4.996003916666667,
+      "asset_read_seconds": 0.65716825,
+      "mixed_load_seconds": 43.47,
+      "memory_mib": 2560,
+      "memory_errors": 0,
+      "GPU_score": 788,
+      "GPU_compute_integer_checks": 2097152,
+      "VPU_hardware_frames": 600,
+      "CPU_peak_khz": [
+        1416000,
+        1800000
+      ],
+      "GPU_rates_hz": [
+        200000000,
+        400000000,
+        600000000
+      ],
+      "temperature_peak_mc": 72345,
+      "storage": [
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 66.24,
+          "read_MiB_s": 85.78
+        },
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 82.81,
+          "read_MiB_s": 87.6
+        }
+      ],
+      "emmc_timing": "HS200",
+      "emmc_hz": 100000000,
+      "IOMMU_faults": 0,
+      "MMC_errors": 0,
+      "display_errors": 0,
+      "failed_services": [],
+      "automatic_Bluetooth_and_right_landscape_touch_configuration": "PASS"
+    }
+  ],
+  "public_image_updated": false,
+  "public_flasher_updated": false,
+  "OpenCL_C_3_and_SPIRV_rechecks": "PASS on first final-loader boot",
+  "limitations": [
+    "Finite load checks do not establish long-term reliability",
+    "Original-unit signed loader and serial-bound runtime are not a public-image upgrade package"
+  ]
+}

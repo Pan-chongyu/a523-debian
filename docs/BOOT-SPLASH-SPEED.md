@@ -1,0 +1,15 @@
+# Boot image timing update
+
+[简体中文](zh-CN/BOOT-SPLASH-SPEED.md) · [日本語](ja/BOOT-SPLASH-SPEED.md) · [Español](es/BOOT-SPLASH-SPEED.md)
+
+The original tablet now outputs the star-cat image at **5.889 and 5.918 seconds**, compared with **7.887 seconds** for this session's original-loader baseline. These are retained 24 MHz boot-counter measurements after image submission and scan verification. They are not stopwatch measurements from the physical power button, and do not measure desktop readiness. Final-version visual confirmation and a physical power-off/button-on cycle remain pending. An earlier owner observation of nine seconds belongs to an intermediate candidate.
+
+The update starts the already qualified 1416 MHz / 1150 mV CPUA boost before DRAM training. It enables the panel supply early, overlaps its full minimum one-second settling interval with training, and finishes the established reset/DSI/wake sequence afterward. If training finishes sooner, the remaining supply delay is still enforced. Geometry discovery, fresh LPDDR3 PHY training, original training parameters, image pixels and decoder remain. CPU clocks and voltage are restored before TF-A and on training failure. No unverified DRAM tap cache is used.
+
+Two normal reboots independently passed 42.31/43.47-second mixed CPU, 2.5 GiB memory, GPU graphics/compute, 600-frame hardware video decode and direct-file storage tests. Peak temperatures were 73.320/72.345°C. Both boots automatically restored right-landscape 1280×800 desktop configuration, touch matrix and Bluetooth, with no failed units or observed memory/MMC/IOMMU/display errors. OpenCL C 3.0 and SPIR-V checks also passed. Thermal and fault protection remain active. These finite tests do not establish long-term reliability.
+
+The prior CPU-only timing candidate had one Bluetooth initialization timeout and recovered after a manual service restart. This was not reproduced in the two final overlap-loader boots; its cause has not been isolated.
+
+The [machine-readable report](../reports/boot-splash-speed-20261114.json) distinguishes the original-unit installation from the published image. **Image `v0.1.0-20261114` and flasher `v0.2.0` assets have not been replaced.** They still contain the original roughly 7.8-second image loader. This commit publishes research source and measured results, not a generic flashable boot update. Public image CID-prefix guards and all dependent runtime hashes require a separately built and qualified update.
+
+Implementation: `research/firmware/boot_panel_early.c` under `TZX_PANEL_OVERLAP`, `boot_logo_speed.c`, and `research/tools/build_boot_logo_overlap.sh`. The accompanying preparation and emulation scripts preserve exact-template checks and the failure/rollback tests. They expect the historical build layout described in [BUILD.md](BUILD.md); do not use the original-unit installers on another device. The signed original-unit loader hash in the report identifies the measured artifact and is not a substitute for public-image compatibility checks. No signing private key or device credentials are published.

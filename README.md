@@ -21,7 +21,7 @@ Initial local account: **debian / debian**. Root is locked; SSH is disabled. Cha
 | Component | Original-unit qualification / release behavior |
 |---|---|
 | Display | JD9365, 800×1280 DSI; default right landscape 1280×800; brightness and blank/resume tested |
-| Early splash | User-provided star-cat image, then desktop; current logo loader counter about 7.8 s; timing varies |
+| Early splash | User-provided star-cat image; released image about 7.8 s; [original-unit optimization measured 5.9 s](docs/BOOT-SPLASH-SPEED.md), not yet in the image assets |
 | Touch | GSL3670; rotation and multitouch tested by the owner |
 | CPU | All eight cores; performance policy, 1416 / 1800 MHz cluster limits |
 | GPU | Native Panfrost desktop acceleration; requested minimum 600 MHz; [OpenCL/WebGL API add-on](docs/GPU-API.md) available separately; no hardware Vulkan |

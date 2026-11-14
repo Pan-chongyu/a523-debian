@@ -12,6 +12,10 @@ Windows and Linux launchers are supplied. FEL driver setup, administrator privil
 
 Please report device marking, release tag, exact failing stage, host OS and redacted logs. Do not post passwords, private keys, Wi-Fi profiles or full eMMC serial numbers.
 
+## Boot image timing research
+
+The [boot image timing update](BOOT-SPLASH-SPEED.md) records two original-unit boots at 5.889/5.918 seconds and their mixed-load checks. These are boot-counter image-output times, not physical-button or desktop measurements. The image/flasher Release assets remain unchanged. Research source does not establish a qualified public-image upgrade.
+
 ## GPU API add-on
 
 The [v0.3.0 GPU API add-on](GPU-API.md) is a separate update for the running system. It supplies Rusticl OpenCL, functional checks and a persistent health recorder without modifying the original image assets. Its Release validation JSON records actual API tests, finite soak measurements, installation/rollback checks and reboot verification. Host CI tests package/transaction safeguards; it does not emulate a Mali GPU. No Vulkan hardware support or full API conformance certification is claimed.

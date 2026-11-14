@@ -198,6 +198,12 @@ static int display_parents(void)
 }
 static int panel_start(void)
 {
+#ifdef TZX_PANEL_OVERLAP
+    if (LOG->stage!=2 || (LOG->pmic_original!=0xd5 && LOG->pmic_original!=0xd7) ||
+        pmic_read(0x91)!=(int)(LOG->pmic_original|8)) return -1;
+    uint64_t elapsed=panel_ticks()-*(volatile uint64_t *)0x2d740U;
+    if (elapsed<24000000U) delay(1000001U-(unsigned)elapsed/24);
+#else
     LOG->stage=2;
     if (pmic_read(0x9b)!=0x0d || pmic_read(0x9e)!=0x1c) return -1;
     int original=pmic_read(0x91);
@@ -205,6 +211,7 @@ static int panel_start(void)
     LOG->pmic_original=original;
     if (pmic_rail(original|8)||pmic_read(0x91)!=(original|8)) return -1;
     delay(1000000); /* Preserve the qualified panel rail settling interval. */
+#endif
     LOG->stage=3;
     /* Display blocks must be reset and unused, as in the qualified driver. */
     if ((REG(CCU+0xb4c)&0x20002)||(REG(CCU+0xb7c)&0x20002)||
@@ -311,7 +318,12 @@ static int panel_start(void)
         REG(HOST+offsets[i])=header(0x19,sizes[i]);
         REG(HOST+offsets[i]+4)=zero_crc(sizes[i])<<16;
     }
-    REG(HOST+0x2f8)=0xff;REG(TCON+0x40)|=BIT(31);REG(TCON)=BIT(31);
+#ifdef TZX_PANEL_OVERLAP
+    REG(HOST+0x2f8)=BIT(28); /* Fixed black until the exact image commits. */
+#else
+    REG(HOST+0x2f8)=0xff;
+#endif
+    REG(TCON+0x40)|=BIT(31);REG(TCON)=BIT(31);
     REG(TCON+0x44)=0xf0000001;
     REG(HOST+0x48)=6|(3U<<24)|(7U<<12)|(6U<<28)|(15U<<20);
     REG(HOST+0x10)=(3<<16)|1;
@@ -340,10 +352,40 @@ int boot_panel_voltage_entry(unsigned millivolts)
     LOG->line_before=0;LOG->line_after=0;
     for (unsigned i=0;i<17;i++) LOG->diagnostics[i]=0;
     LOG->diagnostics[0]=REG(CCU+0x20);LOG->diagnostics[1]=REG(CCU+0x40);
+#ifdef TZX_PANEL_OVERLAP
+    LOG->stage=2;
+    if (pmic_read(0x9b)!=0x0d || pmic_read(0x9e)!=0x1c) goto failed;
+    int original=pmic_read(0x91);
+    if (original!=0xd5 && original!=0xd7) goto failed;
+    LOG->pmic_original=original;
+    if (pmic_rail(original|8)||pmic_read(0x91)!=(original|8)) goto failed;
+    *(volatile uint64_t *)0x2d740U=panel_ticks();
+    return result;
+failed:
+    LOG->stage|=0xe0000000;
+    cleanup();
+#else
+    if (panel_start()) {
+        LOG->stage|=0xe0000000;
+        cleanup();
+    } else LOG->stage=0x100;
+#endif
+    __asm__ volatile("dsb sy" ::: "memory");
+    return result; /* Display failure must not stop the known DRAM boot. */
+}
+
+#ifdef TZX_PANEL_OVERLAP
+void boot_panel_finish(void)
+{
+    if (LOG->magic!=MAGIC || LOG->version!=2 || LOG->stage!=2) return;
     if (panel_start()) {
         LOG->stage|=0xe0000000;
         cleanup();
     } else LOG->stage=0x100;
     __asm__ volatile("dsb sy" ::: "memory");
-    return result; /* Display failure must not stop the known DRAM boot. */
 }
+void boot_panel_cancel(void)
+{
+    if (LOG->magic==MAGIC && LOG->version==2 && LOG->stage==2) cleanup();
+}
+#endif
