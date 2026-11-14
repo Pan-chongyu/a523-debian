@@ -10,6 +10,10 @@ This is an **experimental prerelease**. The original tablet was qualified, but a
 
 ## Windows
 
+**Recommended standalone app:** download the [Windows x64 EXE](https://github.com/Pan-chongyu/a523-debian/releases/download/flasher-v0.2.0/A523-Debian-Flasher-v0.2.0-Windows-x64.exe), double-click it and accept administrator elevation. No Python installation is required. After FEL / WinUSB setup below, verify the board, check the erasure box, click **Start flashing** and confirm. **Download and check only** opens no USB device or disk. [App details](../WINDOWS-APP.md).
+
+The following steps describe the script ZIP alternative. EXE users can skip steps 1, 2 and 5 and use the graphical interface above:
+
 1. Download `a523-debian-flasher-v0.1.0-20261114.zip` from [Releases](https://github.com/Pan-chongyu/a523-debian/releases), then extract the entire archive.
 2. Install Python 3.10+ including Python Launcher (`py`). Internet access is required for dependencies and the roughly gigabyte-scale image; reserve at least 8 GB on the host.
 3. Enter **FEL** using the button procedure already verified for your tablet. Connect exactly one tablet. Confirm USB **1f3a:efe8** in Device Manager. This project does not assume a universal button combination.

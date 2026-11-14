@@ -12,6 +12,10 @@
 
 ## 2. Windows 一键安装
 
+**推荐独立程序：** 下载 [Windows x64 EXE](https://github.com/Pan-chongyu/a523-debian/releases/download/flasher-v0.2.0/A523-Debian-Flasher-v0.2.0-Windows-x64.exe)，双击并接受管理员权限提示；无需安装 Python。完成下述 FEL / WinUSB 设置后，勾选板型和清空确认，点击“开始刷机”并确认即可。提供下载进度、SHA256 校验和逐块读回验证；“只下载并检查”不接触 USB 或磁盘。[详细说明](../WINDOWS-APP.md)。
+
+以下步骤保留给脚本 ZIP 用户；独立 EXE 用户可跳过第 1、2、5 步，改用上述图形界面：
+
 1. 从 [Releases](https://github.com/Pan-chongyu/a523-debian/releases) 下载 `a523-debian-flasher-v0.1.0-20261114.zip`，完整解压到本地目录。保留子目录。
 2. 安装 Python 3.10 或更新版本，启用 Python Launcher（`py` 命令）。需要联网下载依赖和约 1 GB 量级镜像，并预留至少 8 GB 磁盘空间。
 3. 用本机已确认有效的按键方式进入 **FEL**，连接一台平板。设备管理器应能看到 USB VID:PID **1f3a:efe8**。进入方式随整机设计变化，本项目不假定统一按键组合。

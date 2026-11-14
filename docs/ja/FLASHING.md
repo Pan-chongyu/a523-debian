@@ -10,6 +10,8 @@
 
 ## Windows
 
+**推奨：** [Windows x64 EXE](https://github.com/Pan-chongyu/a523-debian/releases/download/flasher-v0.2.0/A523-Debian-Flasher-v0.2.0-Windows-x64.exe) をダウンロードしてダブルクリックし、管理者権限を許可します。Python は不要です。FEL / WinUSB を設定し、基板型番と全データ消去にチェックして「書き込み開始」を押します。「ダウンロードと検証のみ」は USB やディスクにアクセスしません。[詳細](../WINDOWS-APP.md)。以下は Python スクリプト版の代替手順です。
+
 1. [Releases](https://github.com/Pan-chongyu/a523-debian/releases) から `a523-debian-flasher-v0.1.0-20261114.zip` をダウンロードし、全ファイルを展開します。
 2. Python 3.10 以降と Python Launcher（`py`）をインストールします。依存関係と約 1 GB 規模のイメージのためにインターネット接続、8 GB 以上の空き容量が必要です。
 3. 自分の端末で確認済みのボタン操作で **FEL** に入り、1 台だけ接続します。デバイスマネージャーで USB **1f3a:efe8** を確認します。ボタンの組み合わせは機種により異なります。

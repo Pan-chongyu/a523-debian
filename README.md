@@ -8,9 +8,11 @@ Board support, a complete Debian ARM64/XFCE image, and a verified FEL-to-USB ins
 
 ## Download and flash
 
-Download `a523-debian-flasher-v0.1.0-20261114.zip` from [Releases](https://github.com/Pan-chongyu/a523-debian/releases). Extract it; on Windows, install Python 3.10+ and double-click **flash.cmd**. On Linux, install Python, venv, curl and libusb, then run `sudo ./flash.sh --lang en`. The tool downloads the matching complete image and verifies hashes.
+**Windows:** download the [standalone EXE](https://github.com/Pan-chongyu/a523-debian/releases/download/flasher-v0.2.0/A523-Debian-Flasher-v0.2.0-Windows-x64.exe), double-click it, verify the board and erasure confirmation, then click **Start flashing**. No Python installation is needed. The graphical app supports Chinese, English, Japanese and Spanish, with download progress and verified writes. [Standalone app details](docs/WINDOWS-APP.md).
 
-**Flashing replaces all existing tablet eMMC data.** Read the [full instructions](docs/en/FLASHING.md) before entering `FLASH`. FEL driver installation and entering FEL require user action; a tool cannot automate physical buttons on an unbootable tablet. No arbitrary disk number is accepted.
+**Linux:** download the script ZIP from the [image Release](https://github.com/Pan-chongyu/a523-debian/releases/tag/v0.1.0-20261114), install Python, venv, curl and libusb, then run `sudo ./flash.sh --lang en`. The original Windows Python/`flash.cmd` workflow remains available. Both tools download and verify the same image.
+
+**Flashing replaces all existing tablet eMMC data.** Read the [full instructions](docs/en/FLASHING.md) before confirming. FEL driver installation and entering FEL require user action; a tool cannot automate physical buttons on an unbootable tablet. No arbitrary disk number is accepted.
 
 Initial local account: **debian / debian**. Root is locked; SSH is disabled. Change the password before enabling remote access. The first boot expands the root partition filesystem to the eMMC capacity.
 

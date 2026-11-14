@@ -1,0 +1,40 @@
+{
+  "format": "a523-debian-release-v1",
+  "version": "v0.1.0-20261114",
+  "board_profile": "tzx-p30a523-20t5g-lpddr3-4g-uem128",
+  "emmc_sectors": 244318208,
+  "files": {
+    "image": {
+      "name": "a523-debian-13-xfce-20261114.img.gz",
+      "bytes": 770471990,
+      "sha256": "44f990b9b624bff0b0cc05df9c566cbebeb5b08d8b74a0f2583a4ea1db0e9a9b"
+    },
+    "toc0": {
+      "name": "toc0.bin",
+      "bytes": 49152,
+      "sha256": "09f4028fff214369e301e087c59d4c1dc359e0ee774e19556e73aa867845b0ca"
+    },
+    "helper": {
+      "name": "fel-emmc.bin",
+      "bytes": 5828,
+      "sha256": "a079a4a1b19556223759f6de1ddf730180e3391cb2dec03db39c52ec0cf3c5a0"
+    },
+    "installer": {
+      "name": "installer-bundle.bin",
+      "bytes": 15008256,
+      "sha256": "73c01d7c981d279b013337e957f4f1f6c93124f721e8881a50de9980897d8992"
+    },
+    "installer_header": {
+      "name": "installer-header.bin",
+      "bytes": 512,
+      "sha256": "cd598b9d9cf6a3e7122b15f4b2d366ff3d392c053ca3ac01a6ab44b06f59612c"
+    }
+  },
+  "image_uncompressed_bytes": 5368709120,
+  "image_uncompressed_sha256": "0f612348e508f01eb6405230e3dc0be27ddb2d0a3616249872a1e7d84a86cbce",
+  "status": "experimental-prerelease",
+  "public_image_full_hardware_reflash_tested": false,
+  "original_board_runtime_tested": true,
+  "default_credentials": "debian / debian",
+  "ssh_enabled": false
+}

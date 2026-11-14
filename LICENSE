@@ -3,8 +3,8 @@ License map for this distribution
 
 This is an aggregation, not a single-license operating system.
 
-1. New release tooling: flash.py, flash.cmd, flash.ps1, flash.sh,
-   flasher/, image/, tests/, tools/ and the new documentation are licensed
+1. New release tooling: flash.py, flash_gui.py, flash.cmd, flash.ps1, flash.sh,
+   flasher/, packaging/, image/, tests/, tools/ and the new documentation are licensed
    under the MIT license in LICENSES/MIT.txt, copyright (c) 2026
    Pan-chongyu and contributors. Third-party content is excluded.
 

@@ -10,6 +10,8 @@ Es una versión preliminar experimental. Se verificó la tableta original; todav
 
 ## Windows
 
+**Recomendado:** descarga el [EXE para Windows x64](https://github.com/Pan-chongyu/a523-debian/releases/download/flasher-v0.2.0/A523-Debian-Flasher-v0.2.0-Windows-x64.exe), haz doble clic y acepta los permisos de administrador. No requiere Python. Tras configurar FEL / WinUSB, confirma la placa y el reemplazo de datos, pulsa **Iniciar instalación** y confirma. **Solo descargar y verificar** no abre USB ni discos. [Detalles](../WINDOWS-APP.md). Los pasos siguientes describen la alternativa con scripts Python.
+
 1. Descarga `a523-debian-flasher-v0.1.0-20261114.zip` de [Releases](https://github.com/Pan-chongyu/a523-debian/releases) y extrae todo el archivo.
 2. Instala Python 3.10 o posterior con Python Launcher (`py`). Necesitas Internet para dependencias y una imagen del orden de 1 GB; reserva al menos 8 GB libres.
 3. Entra en **FEL** mediante el procedimiento de botones ya verificado para tu tableta y conecta una sola unidad. Confirma USB **1f3a:efe8** en el Administrador de dispositivos. No existe una combinación de botones universal en este proyecto.

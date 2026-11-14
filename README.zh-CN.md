@@ -6,7 +6,9 @@
 
 这是**实验性预发布**。原机的桌面、触摸、扬声器、实体按键、亮度、横屏和重启已有验证；公开镜像额外进行了账号脱敏、身份重置和 eMMC 产品前缀适配，尚未完成整包实机重刷验证。请保留 FEL 恢复方式。
 
-在 [Releases](https://github.com/Pan-chongyu/a523-debian/releases) 下载并解压 `a523-debian-flasher-v0.1.0-20261114.zip`。Windows 安装 Python 3.10+ 后双击 **flash.cmd**；Linux 使用 `sudo ./flash.sh --lang zh-CN`。工具会自动下载对应镜像并校验。首次进入 FEL 和安装 USB 驱动需要手动操作。开始前请阅读[完整教程](docs/zh-CN/FLASHING.md)。
+Windows 推荐直接下载 [独立刷机程序 EXE](https://github.com/Pan-chongyu/a523-debian/releases/download/flasher-v0.2.0/A523-Debian-Flasher-v0.2.0-Windows-x64.exe)：**双击打开，无需安装 Python**，勾选板型及清空确认后点击“开始刷机”。提供中文、英文、日文、西班牙文界面，自动下载、校验、写入并读回检查。[独立程序说明](docs/WINDOWS-APP.md)。
+
+Linux 使用 [镜像 Release](https://github.com/Pan-chongyu/a523-debian/releases/tag/v0.1.0-20261114) 的脚本 ZIP，运行 `sudo ./flash.sh --lang zh-CN`；Windows 也保留 Python 3.10+ 加 `flash.cmd` 的脚本方式。首次进入 FEL 和安装 USB 驱动需要手动操作。开始前请阅读[完整教程](docs/zh-CN/FLASHING.md)。
 
 **刷机会替换平板 eMMC 上的全部现有数据。** 初始本地账号为 **debian / debian**，root 已锁定，SSH 默认关闭；启用远程访问前请修改密码。
 

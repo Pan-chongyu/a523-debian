@@ -28,18 +28,42 @@ MESSAGES={
    done='Escritura y verificación completadas. El primer inicio amplía el sistema de archivos. Usuario/contraseña: debian / debian. Cambia la contraseña antes de activar SSH.',
    reboot='No se pudo reiniciar automáticamente. Desconecta USB de forma segura y reinicia con el botón de encendido.',dry='Simulación correcta: no se abrió ningún USB ni se escribió ningún disco.')}
 
-def download(url,path):
+class Cancelled(Exception):
+    """A download/check was cancelled before installation began."""
+
+
+def hidden_process():
+    return {'creationflags':subprocess.CREATE_NO_WINDOW} if os.name=='nt' else {}
+
+
+def check_cancel(cancel):
+    if cancel is not None and cancel.is_set():raise Cancelled('Cancelled before installation')
+
+
+def download(url,path,expected=None,progress=None,cancel=None):
     path=Path(path);path.parent.mkdir(parents=True,exist_ok=True)
     temporary=path.with_name(path.name+'.part')
     curl='curl.exe' if os.name=='nt' else 'curl'
-    subprocess.run([curl,'--fail','--location','--show-error','--retry','3','--connect-timeout','20',
-        '--continue-at','-','--output',str(temporary),url],check=True)
+    process=subprocess.Popen([curl,'--fail','--location','--silent','--show-error','--retry','3','--connect-timeout','20',
+        '--max-time','1800','--speed-limit','1024','--speed-time','90',
+        '--continue-at','-','--output',str(temporary),url],stdin=subprocess.DEVNULL,stdout=subprocess.DEVNULL,stderr=subprocess.PIPE,**hidden_process())
+    try:
+        while process.poll() is None:
+            check_cancel(cancel)
+            if progress:progress(min(temporary.stat().st_size,expected) if temporary.exists() and expected else 0,expected or 0)
+            time.sleep(.2)
+        error=process.stderr.read().decode(errors='replace')
+        if process.returncode:raise RuntimeError('Download failed: '+error.strip())
+        check_cancel(cancel)
+    finally:
+        if process.poll() is None:process.terminate();process.wait(timeout=10)
+        process.stderr.close()
     temporary.replace(path)
 
 def candidates():
     if os.name=='nt':
         command='@(Get-Disk | Where-Object BusType -eq USB | Select-Object Number,Size,IsBoot,IsSystem) | ConvertTo-Json -Compress'
-        result=subprocess.run(['powershell.exe','-NoProfile','-Command',command],capture_output=True,text=True,check=True)
+        result=subprocess.run(['powershell.exe','-NoProfile','-Command',command],capture_output=True,text=True,check=True,**hidden_process())
         values=json.loads(result.stdout or '[]');values=[values] if isinstance(values,dict) else values
         return [(r'\\.\PhysicalDrive'+str(int(x['Number'])),int(x['Size']),int(x['Number'])) for x in values if not x['IsBoot'] and not x['IsSystem']]
     result=[]
@@ -68,7 +92,7 @@ def find_target(nonce,sectors,seconds=180):
 def take_offline(number,target):
     if os.name=='nt':
         subprocess.run(['powershell.exe','-NoProfile','-Command',
-            'Set-Disk -Number %d -IsOffline $true -ErrorAction Stop'%number],check=True)
+            'Set-Disk -Number %d -IsOffline $true -ErrorAction Stop'%number],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE,**hidden_process())
     else:
         mounts=json.loads(subprocess.check_output(['lsblk','-J','-o','NAME,MOUNTPOINTS',target],text=True))
         def check(items):
@@ -87,6 +111,61 @@ def reboot_installer(cid):
         link.write(command.encode());time.sleep(.5)
     return True
 
+def prepare_assets(cache,manifest_path=None,notify=lambda *args:None,cancel=None):
+    """Download and verify every input without opening a USB device or disk."""
+    cache=Path(cache);cache.mkdir(parents=True,exist_ok=True)
+    base='https://github.com/'+REPOSITORY+'/releases/download/'+VERSION
+    bundled=Path(__file__).resolve().parent/'release-manifest.json'
+    if not bundled.exists():bundled=Path(__file__).resolve().parent/'board/release-manifest.json'
+    manifest_path=Path(manifest_path) if manifest_path else (bundled if bundled.exists() else cache/'release-manifest.json')
+    if not manifest_path.exists():download(base+'/release-manifest.json',manifest_path,cancel=cancel)
+    manifest=validate_manifest(json.loads(manifest_path.read_text(encoding='utf-8')))
+    if manifest.get('version')!=VERSION:raise ValueError('Manifest version does not match this flasher release')
+    total=len(manifest['files'])
+    for index,item in enumerate(manifest['files'].values(),1):
+        check_cancel(cancel);path=cache/item['name']
+        notify('asset',dict(name=item['name'],index=index,total=total))
+        if not path.exists():
+            download(base+'/'+item['name'],path,item['bytes'],lambda done,size:notify('download',dict(done=done,total=size)),cancel)
+        check_cancel(cancel);notify('verify',dict(name=item['name']))
+        verify_asset(path,item)
+    check_cancel(cancel)
+    return manifest
+
+
+def install(cache,manifest,*,confirmed=False,notify=lambda *args:None,cancel=None):
+    """One shared installer for CLI and GUI. Consent precedes all USB access."""
+    if not confirmed:raise PermissionError('Erasure and exact board profile must be confirmed')
+    if os.name=='nt' and not ctypes.windll.shell32.IsUserAnAdmin():raise PermissionError('Run as Administrator')
+    if os.name!='nt' and os.geteuid()!=0:raise PermissionError('Run as root')
+    validate_manifest(manifest);check_cancel(cancel)
+    cache=Path(cache)
+    from flasher.fel import Fel
+    # Recheck all inputs before touching the device, including caller-supplied manifests.
+    for item in manifest['files'].values():verify_asset(cache/item['name'],item)
+    check_cancel(cancel);notify('device',{})
+    fel=Fel(cache/manifest['files']['helper']['name'])
+    nonce=b'A523-DEBIAN-INSTALL-V1:'+secrets.token_bytes(32)
+    try:
+        fel.connect();identity=fel.identify();check_cancel(cancel)
+        notify('identity',dict(product_prefix=identity['cid'][:16],sectors=identity['sectors']))
+        # From this event until completion, cancellation/closing is disabled.
+        notify('install',{})
+        read=lambda key:(cache/manifest['files'][key]['name']).read_bytes()
+        fel.bootstrap(read('installer'),read('toc0'),read('installer_header'),nonce,
+            lambda done,total:notify('progress',dict(stage='installer',done=done,total=total)))
+        fel.reboot()
+    finally:fel.close()
+    notify('wait',{});target,number=find_target(nonce,identity['sectors'])
+    take_offline(number,target);notify('write',{})
+    flash_image(cache/manifest['files']['image']['name'],target,manifest,identity['sectors'],
+        lambda done,total:notify('progress',dict(stage='image',done=done,total=total)))
+    notify('reboot',{})
+    try:rebooted=reboot_installer(identity['cid'])
+    except Exception:rebooted=False
+    return rebooted
+
+
 def main():
     parser=argparse.ArgumentParser(description='TZX P30 A523 board-specific verified installer')
     parser.add_argument('--lang',choices=MESSAGES,default='zh-CN' if sys.platform=='win32' else 'en')
@@ -96,41 +175,24 @@ def main():
     args=parser.parse_args();m=MESSAGES[args.lang];print(m['title'],flush=True)
     if not args.dry_run and not (sys.platform=='win32' or sys.platform.startswith('linux')):
         raise RuntimeError('Disk installation supports Windows and Linux only')
-    base='https://github.com/'+REPOSITORY+'/releases/download/'+VERSION
-    bundled=Path(__file__).resolve().parent/'release-manifest.json'
-    manifest_path=args.manifest or (bundled if bundled.exists() else args.cache/'release-manifest.json')
-    if not manifest_path.exists():download(base+'/release-manifest.json',manifest_path)
-    manifest=validate_manifest(json.loads(manifest_path.read_text(encoding='utf-8')))
-    if manifest.get('version')!=VERSION:raise ValueError('Manifest version does not match this flasher release')
-    for item in manifest['files'].values():
-        path=args.cache/item['name']
-        if not path.exists():print(m['download'],item['name'],flush=True);download(base+'/'+item['name'],path)
-        verify_asset(path,item)
+    def notify(event,data):
+        if event=='asset':print(m['download'],data['name'],flush=True)
+        elif event=='install':print(m['installer'],flush=True)
+        elif event=='wait':print(m['wait'],flush=True)
+        elif event=='write':print(m['write'],flush=True)
+        elif event=='progress':show(data['done'],data['total'])
+    manifest=prepare_assets(args.cache,args.manifest,notify)
     if args.dry_run:
         print(m['dry']);print(json.dumps(dict(image_bytes=manifest['image_uncompressed_bytes'],profile=manifest['board_profile'])));return
     if os.name=='nt' and not ctypes.windll.shell32.IsUserAnAdmin():raise PermissionError('Run the launcher as Administrator')
     if os.name!='nt' and os.geteuid()!=0:raise PermissionError('Run sudo ./flash.sh')
     print(m['board']);print(m['fel'])
     if not args.yes and input(m['erase']).strip()!='FLASH':raise SystemExit('Cancelled')
-    from flasher.fel import Fel
-    fel=Fel(args.cache/manifest['files']['helper']['name'])
-    nonce=b'A523-DEBIAN-INSTALL-V1:'+secrets.token_bytes(32)
     def show(done,total):
         percent=done*100//total
         if percent!=getattr(show,'previous',None):print('%d%% (%d / %d)'%(percent,done,total),flush=True);show.previous=percent
-    try:
-        fel.connect();identity=fel.identify();print(json.dumps(identity),flush=True)
-        print(m['installer'],flush=True)
-        read=lambda key:(args.cache/manifest['files'][key]['name']).read_bytes()
-        fel.bootstrap(read('installer'),read('toc0'),read('installer_header'),nonce,show)
-        fel.reboot()
-    finally:fel.close()
-    print(m['wait'],flush=True);target,number=find_target(nonce,identity['sectors'])
-    take_offline(number,target);print(m['write'],target,flush=True);show.previous=None
-    flash_image(args.cache/manifest['files']['image']['name'],target,manifest,identity['sectors'],show)
+    rebooted=install(args.cache,manifest,confirmed=True,notify=notify)
     print(m['done'],flush=True)
-    try:rebooted=reboot_installer(identity['cid'])
-    except Exception:rebooted=False
     if not rebooted:print(m['reboot'],flush=True)
 
 if __name__=='__main__':
