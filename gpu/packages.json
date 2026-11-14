@@ -1,0 +1,104 @@
+{
+  "mesa": "25.0.7-2+deb13u1",
+  "files": [
+    {
+      "package": "mesa-opencl-icd",
+      "version": "25.0.7-2+deb13u1",
+      "architecture": "arm64",
+      "file": "mesa-opencl-icd_25.0.7-2+deb13u1_arm64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/m/mesa/mesa-opencl-icd_25.0.7-2+deb13u1_arm64.deb",
+      "sha256": "41acec92e8daeb18dab05755ba3f3ecfe77fd31d749fee6ae29ac883d77c02b2",
+      "bytes": 17861536
+    },
+    {
+      "package": "clinfo",
+      "version": "3.0.25.02.14-1",
+      "architecture": "arm64",
+      "file": "clinfo_3.0.25.02.14-1_arm64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/c/clinfo/clinfo_3.0.25.02.14-1_arm64.deb",
+      "sha256": "f32d6f936f6bf45573b3d839db6e212a5e47cab7f3f41c5526f1e1c6a88e87b8",
+      "bytes": 53664
+    },
+    {
+      "package": "libclang-common-19-dev",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "arm64",
+      "file": "libclang-common-19-dev_19.1.7-3+b1_arm64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/l/llvm-toolchain-19/libclang-common-19-dev_19.1.7-3+b1_arm64.deb",
+      "sha256": "fc0f2c5ffd2b2d7cd0119ed4fb1050c5757d0ed20a4f5c0964d8d737c73b0843",
+      "bytes": 740064
+    },
+    {
+      "package": "libclang-cpp19",
+      "version": "1:19.1.7-3+b1",
+      "architecture": "arm64",
+      "file": "libclang-cpp19_19.1.7-3+b1_arm64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/l/llvm-toolchain-19/libclang-cpp19_19.1.7-3+b1_arm64.deb",
+      "sha256": "9c0465b890bc962467043fa47dd0fc4dbb278422c3fdf7f7f0e1c3e6e8a13620",
+      "bytes": 11983120
+    },
+    {
+      "package": "libclc-19-dev",
+      "version": "1:19.1.7-3",
+      "architecture": "all",
+      "file": "libclc-19-dev_19.1.7-3_all.deb",
+      "url": "https://deb.debian.org/debian/pool/main/l/llvm-toolchain-19/libclc-19-dev_19.1.7-3_all.deb",
+      "sha256": "22cc63ba3de2901154b2e7804aab755b797480e673499bbd62f872db85081ce1",
+      "bytes": 65984
+    },
+    {
+      "package": "libclc-19",
+      "version": "1:19.1.7-3",
+      "architecture": "all",
+      "file": "libclc-19_19.1.7-3_all.deb",
+      "url": "https://deb.debian.org/debian/pool/main/l/llvm-toolchain-19/libclc-19_19.1.7-3_all.deb",
+      "sha256": "b3efdb8a04ed9e564e8ce496f30c3381631e3bb6534c959a99ddde5ae7ffbb8f",
+      "bytes": 12134184
+    },
+    {
+      "package": "libllvmspirvlib19.1",
+      "version": "19.1.6-1",
+      "architecture": "arm64",
+      "file": "libllvmspirvlib19.1_19.1.6-1_arm64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/s/spirv-llvm-translator-19/libllvmspirvlib19.1_19.1.6-1_arm64.deb",
+      "sha256": "62852e9c23335f0e498717e2e1a304ef1f30edcd4c77ef6ef81610c5ea6c8967",
+      "bytes": 792088
+    },
+    {
+      "package": "ocl-icd-opencl-dev",
+      "version": "2.3.3-1",
+      "architecture": "arm64",
+      "file": "ocl-icd-opencl-dev_2.3.3-1_arm64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/o/ocl-icd/ocl-icd-opencl-dev_2.3.3-1_arm64.deb",
+      "sha256": "705c207e7fe0df1165bca040730903c2cfb2024c7f91db0d9d19574ac24eb0e0",
+      "bytes": 8808
+    },
+    {
+      "package": "opencl-c-headers",
+      "version": "3.0~2024.10.24-2",
+      "architecture": "all",
+      "file": "opencl-c-headers_3.0~2024.10.24-2_all.deb",
+      "url": "https://deb.debian.org/debian/pool/main/k/khronos-opencl-headers/opencl-c-headers_3.0~2024.10.24-2_all.deb",
+      "sha256": "ccff8d4172284039730f510ef7bf928c0c1ef976848d98c30b1cffbd8c45e3c2",
+      "bytes": 46764
+    },
+    {
+      "package": "opencl-clhpp-headers",
+      "version": "3.0~2024.10.24-2",
+      "architecture": "all",
+      "file": "opencl-clhpp-headers_3.0~2024.10.24-2_all.deb",
+      "url": "https://deb.debian.org/debian/pool/main/k/khronos-opencl-clhpp/opencl-clhpp-headers_3.0~2024.10.24-2_all.deb",
+      "sha256": "59ccc309f033f1f23468515acac3ea87db20a2b8cf739bb2e596ff66bb9c43e7",
+      "bytes": 50728
+    },
+    {
+      "package": "vulkan-tools",
+      "version": "1.4.304.0+dfsg1-1",
+      "architecture": "arm64",
+      "file": "vulkan-tools_1.4.304.0+dfsg1-1_arm64.deb",
+      "url": "https://deb.debian.org/debian/pool/main/v/vulkan-tools/vulkan-tools_1.4.304.0+dfsg1-1_arm64.deb",
+      "sha256": "de3b21a2a8a2b2cf520cad433878589c70366050f52570a4fe37556b7c748647",
+      "bytes": 261792
+    }
+  ]
+}

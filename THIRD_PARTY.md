@@ -12,6 +12,7 @@
 | AIC8800D80 firmware | Binary files distributed by the same upstream repository/package; preserve original notices and source origin. Wireless firmware source is unavailable here |
 | GSL touch firmware | Upstream [onitake/gsl-firmware](https://github.com/onitake/gsl-firmware) / supplied Seeed firmware distribution; Apache-2.0 license copy in LICENSES. Firmware is controller data, not host driver source |
 | Debian packages | Exact installed binary/source versions in `board/packages.tsv`; package notices in `/usr/share/doc/*/copyright`; source acquisition tool in `tools/fetch_debian_sources.py` |
+| GPU API add-on packages | Eleven exact Debian binary dependencies in `gpu/packages.json`; eight corresponding source packages mapped by `board/gpu-api-debian-sources.json`. Five newly required source packages accompany the add-on Release; unchanged Mesa, LLVM 19 and ocl-icd sources remain in the image Release. Original package copyrights are retained |
 | Boot artwork | Supplied by the device owner. Separate artwork reuse rights are not asserted; see LICENSE |
 | Windows flasher runtime | CPython (PSF), Tcl/Tk (Tcl/Tk terms), PyUSB 1.3.1 (BSD-3-Clause), pySerial 3.5 (BSD), importlib_resources (Apache-2.0), libusb-package 1.0.26.4 (Apache-2.0) and its libusb 1.0.26 DLL (LGPL-2.1-or-later). Notices and matching dependency sources accompany the executable Release; DLL loading remains dynamic. PyInstaller 6.12.0 uses its bootloader distribution exception. Build recipe: `packaging/build_windows.py` |
 

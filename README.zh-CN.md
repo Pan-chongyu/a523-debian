@@ -14,6 +14,8 @@ Linux 使用 [镜像 Release](https://github.com/Pan-chongyu/a523-debian/release
 
 默认向右横屏 1280×800，使用星空猫开屏图；CPU 为性能模式，两个集群上限 1416/1800 MHz，GPU 原生 Panfrost 加速并请求最低 600 MHz，eMMC 为 HS200 100 MHz，zram 为 2 GiB。不预加载浏览器，保留温控和故障保护。当前图像引导器计时约 7.8 秒，不保证所有启动条件均为此前彩条阶段的约 2 秒。
 
-**尚未完整适配或验证：** HS400、摄像头、整机休眠、耳机与蓝牙音频端到端、Vulkan/OpenCL，以及其他内存、屏幕或 eMMC 的变体。
+[GPU API 补充更新](docs/zh-CN/GPU-API.md)增加 Rusticl OpenCL 3.0、选定 OpenCL C 3.0 功能、SPIR-V 输入测试和持久健康记录，已验证 WebGL 1/2 使用真实 GPU。原镜像与刷机工具内容未变，新刷机后需另装本补充包；实际持续测试结果见更新 Release。
+
+**尚未完整适配或验证：** HS400、摄像头、整机休眠、耳机与蓝牙音频端到端，以及其他内存、屏幕或 eMMC 的变体。当前开源驱动栈不提供这块 Mali-G57 的合格 Vulkan 硬件实现。
 
 源码构建见 [BUILD.md](docs/BUILD.md)，测试范围见 [VALIDATION.md](docs/VALIDATION.md)。开源及第三方许可见 [LICENSE](LICENSE) 和 [THIRD_PARTY.md](THIRD_PARTY.md)。发布包包含修改后的内核和模块源码、镜像构建工具及脱敏模板；DRAM 训练库与部分无线固件属于无源码的二进制组件，已单独说明。它不是 Debian 官方硬件镜像。

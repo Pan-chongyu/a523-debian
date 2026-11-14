@@ -24,7 +24,7 @@ Initial local account: **debian / debian**. Root is locked; SSH is disabled. Cha
 | Early splash | User-provided star-cat image, then desktop; current logo loader counter about 7.8 s; timing varies |
 | Touch | GSL3670; rotation and multitouch tested by the owner |
 | CPU | All eight cores; performance policy, 1416 / 1800 MHz cluster limits |
-| GPU | Native Panfrost desktop acceleration; requested minimum 600 MHz; no Vulkan/OpenCL qualification |
+| GPU | Native Panfrost desktop acceleration; requested minimum 600 MHz; [OpenCL/WebGL API add-on](docs/GPU-API.md) available separately; no hardware Vulkan |
 | Storage | HS200 at 100 MHz; **HS400 is not qualified or enabled** |
 | Memory | 4 GiB LPDDR3; 2 GiB zram |
 | Audio / buttons | Owner confirmed speaker sound, volume keys and power menu; microphone measurements exist |
@@ -33,6 +33,8 @@ Initial local account: **debian / debian**. Root is locked; SSH is disabled. Cha
 | Not complete | Cameras, system suspend, headphone and Bluetooth-audio end-to-end tests, other board variants |
 
 No browser preloading is enabled. Performance mode does not bypass thermal protections or certify higher clocks.
+
+The [GPU API update](docs/GPU-API.md) adds Rusticl OpenCL 3.0, selected OpenCL C 3.0 features, SPIR-V input tests and persistent health recording. Install it separately after the original image; the original image/flasher assets have not been replaced. See the update Release for measured stability results and the exact supported features.
 
 ## Sources and licensing
 

@@ -11,3 +11,7 @@ Automated checks cover GPT CRCs and boundaries; rejecting malformed manifests an
 Windows and Linux launchers are supplied. FEL driver setup, administrator privileges, entering FEL and occasional physical reboot remain prerequisites. End-to-end Windows WinUSB-to-storage transitions on a fresh installation have not been qualified as part of this release.
 
 Please report device marking, release tag, exact failing stage, host OS and redacted logs. Do not post passwords, private keys, Wi-Fi profiles or full eMMC serial numbers.
+
+## GPU API add-on
+
+The [v0.3.0 GPU API add-on](GPU-API.md) is a separate update for the running system. It supplies Rusticl OpenCL, functional checks and a persistent health recorder without modifying the original image assets. Its Release validation JSON records actual API tests, finite soak measurements, installation/rollback checks and reboot verification. Host CI tests package/transaction safeguards; it does not emulate a Mali GPU. No Vulkan hardware support or full API conformance certification is claimed.

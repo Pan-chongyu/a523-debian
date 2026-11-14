@@ -1,0 +1,300 @@
+{
+  "complete": true,
+  "source_packages": 8,
+  "new_source_packages": 5,
+  "packages": [
+    {
+      "package": "clinfo",
+      "version": "3.0.25.02.14-1",
+      "files": [
+        {
+          "name": "clinfo_3.0.25.02.14-1.dsc",
+          "bytes": 1996,
+          "sha256": "f1f61c0a7929416cd424ba7d687363bb73b4e1f0b42b9aea6294362ea88e63e6",
+          "url": "https://deb.debian.org/debian/pool/main/c/clinfo/clinfo_3.0.25.02.14-1.dsc",
+          "relative": "packages/clinfo/3.0.25.02.14-1/clinfo_3.0.25.02.14-1.dsc",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        },
+        {
+          "name": "clinfo_3.0.25.02.14.orig.tar.gz",
+          "bytes": 60699,
+          "sha256": "48b77dc33315e6f760791a2984f98ea4bff28504ff37d460d8291585f49fcd3a",
+          "url": "https://deb.debian.org/debian/pool/main/c/clinfo/clinfo_3.0.25.02.14.orig.tar.gz",
+          "relative": "packages/clinfo/3.0.25.02.14-1/clinfo_3.0.25.02.14.orig.tar.gz",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        },
+        {
+          "name": "clinfo_3.0.25.02.14-1.debian.tar.xz",
+          "bytes": 3396,
+          "sha256": "01dca81d9c8350b48a532605b6e7845398fde00444c140d34fbdd95c008f80aa",
+          "url": "https://deb.debian.org/debian/pool/main/c/clinfo/clinfo_3.0.25.02.14-1.debian.tar.xz",
+          "relative": "packages/clinfo/3.0.25.02.14-1/clinfo_3.0.25.02.14-1.debian.tar.xz",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        }
+      ]
+    },
+    {
+      "package": "khronos-opencl-clhpp",
+      "version": "3.0~2024.10.24-2",
+      "files": [
+        {
+          "name": "khronos-opencl-clhpp_3.0~2024.10.24-2.dsc",
+          "bytes": 2501,
+          "sha256": "aa15a0cf49b106a28006ab0f728f9290789248f953fa8ff841f1fe2b5323ee27",
+          "url": "https://deb.debian.org/debian/pool/main/k/khronos-opencl-clhpp/khronos-opencl-clhpp_3.0~2024.10.24-2.dsc",
+          "relative": "packages/khronos-opencl-clhpp/3.0~2024.10.24-2/khronos-opencl-clhpp_3.0~2024.10.24-2.dsc",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        },
+        {
+          "name": "khronos-opencl-clhpp_3.0~2024.10.24.orig.tar.gz",
+          "bytes": 132695,
+          "sha256": "51aebe848514b3bc74101036e111f8ee98703649eec7035944831dc6e05cec14",
+          "url": "https://deb.debian.org/debian/pool/main/k/khronos-opencl-clhpp/khronos-opencl-clhpp_3.0~2024.10.24.orig.tar.gz",
+          "relative": "packages/khronos-opencl-clhpp/3.0~2024.10.24-2/khronos-opencl-clhpp_3.0~2024.10.24.orig.tar.gz",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        },
+        {
+          "name": "khronos-opencl-clhpp_3.0~2024.10.24-2.debian.tar.xz",
+          "bytes": 4760,
+          "sha256": "ae73f2a07f08ebe0bb6fa3fd0ba704969a1cd17e3bce4eb1bb8a8ac1adfd121c",
+          "url": "https://deb.debian.org/debian/pool/main/k/khronos-opencl-clhpp/khronos-opencl-clhpp_3.0~2024.10.24-2.debian.tar.xz",
+          "relative": "packages/khronos-opencl-clhpp/3.0~2024.10.24-2/khronos-opencl-clhpp_3.0~2024.10.24-2.debian.tar.xz",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        }
+      ]
+    },
+    {
+      "package": "khronos-opencl-headers",
+      "version": "3.0~2024.10.24-2",
+      "files": [
+        {
+          "name": "khronos-opencl-headers_3.0~2024.10.24-2.dsc",
+          "bytes": 2347,
+          "sha256": "97f208cf0747a5883e6f814a12016f7f5f10aa54ccb291bc2f38a6a4e3d1a6a7",
+          "url": "https://deb.debian.org/debian/pool/main/k/khronos-opencl-headers/khronos-opencl-headers_3.0~2024.10.24-2.dsc",
+          "relative": "packages/khronos-opencl-headers/3.0~2024.10.24-2/khronos-opencl-headers_3.0~2024.10.24-2.dsc",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        },
+        {
+          "name": "khronos-opencl-headers_3.0~2024.10.24.orig.tar.gz",
+          "bytes": 85151,
+          "sha256": "159f2a550592bae49859fee83d372acd152328fdf95c0dcd8b9409f8fad5db93",
+          "url": "https://deb.debian.org/debian/pool/main/k/khronos-opencl-headers/khronos-opencl-headers_3.0~2024.10.24.orig.tar.gz",
+          "relative": "packages/khronos-opencl-headers/3.0~2024.10.24-2/khronos-opencl-headers_3.0~2024.10.24.orig.tar.gz",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        },
+        {
+          "name": "khronos-opencl-headers_3.0~2024.10.24-2.debian.tar.xz",
+          "bytes": 7228,
+          "sha256": "b39d552b0487990b9047d3ef24ca8ae36c1409233ae7e73742f6a840559b1cdc",
+          "url": "https://deb.debian.org/debian/pool/main/k/khronos-opencl-headers/khronos-opencl-headers_3.0~2024.10.24-2.debian.tar.xz",
+          "relative": "packages/khronos-opencl-headers/3.0~2024.10.24-2/khronos-opencl-headers_3.0~2024.10.24-2.debian.tar.xz",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        }
+      ]
+    },
+    {
+      "package": "llvm-toolchain-19",
+      "version": "1:19.1.7-3",
+      "files": [
+        {
+          "name": "llvm-toolchain-19_19.1.7-3.dsc",
+          "bytes": 8200,
+          "sha256": "1559a483908ca0c8d4124448a551da5f87ab644771352a5335b1b01d07fe732f",
+          "url": "https://deb.debian.org/debian/pool/main/l/llvm-toolchain-19/llvm-toolchain-19_19.1.7-3.dsc",
+          "package": "llvm-toolchain-19",
+          "version": "1:19.1.7-3",
+          "relative": "packages/llvm-toolchain-19/1_19.1.7-3/llvm-toolchain-19_19.1.7-3.dsc",
+          "asset": "a523-debian-package-sources-05.tar",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/v0.1.0-20261114/a523-debian-package-sources-05.tar"
+        },
+        {
+          "name": "llvm-toolchain-19_19.1.7.orig.tar.xz",
+          "bytes": 164407968,
+          "sha256": "ae498f3bc58ae2d9f64ef5f0c035c4240152bf015a5b7738b15c22e93bdc97ce",
+          "url": "https://deb.debian.org/debian/pool/main/l/llvm-toolchain-19/llvm-toolchain-19_19.1.7.orig.tar.xz",
+          "package": "llvm-toolchain-19",
+          "version": "1:19.1.7-3",
+          "relative": "packages/llvm-toolchain-19/1_19.1.7-3/llvm-toolchain-19_19.1.7.orig.tar.xz",
+          "asset": "a523-debian-package-sources-05.tar",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/v0.1.0-20261114/a523-debian-package-sources-05.tar"
+        },
+        {
+          "name": "llvm-toolchain-19_19.1.7-3.debian.tar.xz",
+          "bytes": 154980,
+          "sha256": "bcbccbc6ae715ac84bd21bb7e1175fba483abc0993a6066aa49236c473bce7df",
+          "url": "https://deb.debian.org/debian/pool/main/l/llvm-toolchain-19/llvm-toolchain-19_19.1.7-3.debian.tar.xz",
+          "package": "llvm-toolchain-19",
+          "version": "1:19.1.7-3",
+          "relative": "packages/llvm-toolchain-19/1_19.1.7-3/llvm-toolchain-19_19.1.7-3.debian.tar.xz",
+          "asset": "a523-debian-package-sources-05.tar",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/v0.1.0-20261114/a523-debian-package-sources-05.tar"
+        }
+      ]
+    },
+    {
+      "package": "mesa",
+      "version": "25.0.7-2+deb13u1",
+      "files": [
+        {
+          "name": "mesa_25.0.7-2+deb13u1.dsc",
+          "bytes": 6755,
+          "sha256": "c3605bc68cd140db19523c1b80ecd4aa1d77d5b528f15902995ef9ddbbc8f07e",
+          "url": "https://deb.debian.org/debian/pool/main/m/mesa/mesa_25.0.7-2+deb13u1.dsc",
+          "package": "mesa",
+          "version": "25.0.7-2+deb13u1",
+          "relative": "packages/mesa/25.0.7-2+deb13u1/mesa_25.0.7-2+deb13u1.dsc",
+          "asset": "a523-debian-package-sources-06.tar",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/v0.1.0-20261114/a523-debian-package-sources-06.tar"
+        },
+        {
+          "name": "mesa_25.0.7.orig.tar.xz",
+          "bytes": 46849080,
+          "sha256": "592272df3cf01e85e7db300c449df5061092574d099da275d19e97ef0510f8a6",
+          "url": "https://deb.debian.org/debian/pool/main/m/mesa/mesa_25.0.7.orig.tar.xz",
+          "package": "mesa",
+          "version": "25.0.7-2+deb13u1",
+          "relative": "packages/mesa/25.0.7-2+deb13u1/mesa_25.0.7.orig.tar.xz",
+          "asset": "a523-debian-package-sources-06.tar",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/v0.1.0-20261114/a523-debian-package-sources-06.tar"
+        },
+        {
+          "name": "mesa_25.0.7.orig.tar.xz.asc",
+          "bytes": 488,
+          "sha256": "e997b2207447a4a92167941696c1ff2818161a8ad9df373ec0f1e5407a308df0",
+          "url": "https://deb.debian.org/debian/pool/main/m/mesa/mesa_25.0.7.orig.tar.xz.asc",
+          "package": "mesa",
+          "version": "25.0.7-2+deb13u1",
+          "relative": "packages/mesa/25.0.7-2+deb13u1/mesa_25.0.7.orig.tar.xz.asc",
+          "asset": "a523-debian-package-sources-06.tar",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/v0.1.0-20261114/a523-debian-package-sources-06.tar"
+        },
+        {
+          "name": "mesa_25.0.7-2+deb13u1.debian.tar.xz",
+          "bytes": 112628,
+          "sha256": "7ea51db6f4c6a39d28269975b7f652e37333a283819557c5901cbd3eccee446a",
+          "url": "https://deb.debian.org/debian/pool/main/m/mesa/mesa_25.0.7-2+deb13u1.debian.tar.xz",
+          "package": "mesa",
+          "version": "25.0.7-2+deb13u1",
+          "relative": "packages/mesa/25.0.7-2+deb13u1/mesa_25.0.7-2+deb13u1.debian.tar.xz",
+          "asset": "a523-debian-package-sources-06.tar",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/v0.1.0-20261114/a523-debian-package-sources-06.tar"
+        }
+      ]
+    },
+    {
+      "package": "ocl-icd",
+      "version": "2.3.3-1",
+      "files": [
+        {
+          "name": "ocl-icd_2.3.3-1.dsc",
+          "bytes": 2196,
+          "sha256": "db19183087770ac58367d70c3427bf53fc3fbb61872d4ca82f3da47ecc1a46e3",
+          "url": "https://deb.debian.org/debian/pool/main/o/ocl-icd/ocl-icd_2.3.3-1.dsc",
+          "package": "ocl-icd",
+          "version": "2.3.3-1",
+          "relative": "packages/ocl-icd/2.3.3-1/ocl-icd_2.3.3-1.dsc",
+          "asset": "a523-debian-package-sources-06.tar",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/v0.1.0-20261114/a523-debian-package-sources-06.tar"
+        },
+        {
+          "name": "ocl-icd_2.3.3.orig.tar.gz",
+          "bytes": 109854,
+          "sha256": "8cd8e8e129db3081a64090fc1252bec39dc88cdb7b3f929315e014b75069bd9d",
+          "url": "https://deb.debian.org/debian/pool/main/o/ocl-icd/ocl-icd_2.3.3.orig.tar.gz",
+          "package": "ocl-icd",
+          "version": "2.3.3-1",
+          "relative": "packages/ocl-icd/2.3.3-1/ocl-icd_2.3.3.orig.tar.gz",
+          "asset": "a523-debian-package-sources-06.tar",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/v0.1.0-20261114/a523-debian-package-sources-06.tar"
+        },
+        {
+          "name": "ocl-icd_2.3.3-1.debian.tar.xz",
+          "bytes": 12456,
+          "sha256": "e74e0abbe754ac7cce79cd9c633c3bba322bf3ca69e7df16236b525ec5bce565",
+          "url": "https://deb.debian.org/debian/pool/main/o/ocl-icd/ocl-icd_2.3.3-1.debian.tar.xz",
+          "package": "ocl-icd",
+          "version": "2.3.3-1",
+          "relative": "packages/ocl-icd/2.3.3-1/ocl-icd_2.3.3-1.debian.tar.xz",
+          "asset": "a523-debian-package-sources-06.tar",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/v0.1.0-20261114/a523-debian-package-sources-06.tar"
+        }
+      ]
+    },
+    {
+      "package": "spirv-llvm-translator-19",
+      "version": "19.1.6-1",
+      "files": [
+        {
+          "name": "spirv-llvm-translator-19_19.1.6-1.dsc",
+          "bytes": 2601,
+          "sha256": "eb30c3087a5bb8565a1f78250fb2c82f1731e095d1f3f1527a43ad8e50f861ca",
+          "url": "https://deb.debian.org/debian/pool/main/s/spirv-llvm-translator-19/spirv-llvm-translator-19_19.1.6-1.dsc",
+          "relative": "packages/spirv-llvm-translator-19/19.1.6-1/spirv-llvm-translator-19_19.1.6-1.dsc",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        },
+        {
+          "name": "spirv-llvm-translator-19_19.1.6.orig.tar.gz",
+          "bytes": 1771001,
+          "sha256": "d7007c60cd1e2c125da8264a25e78516e0ebce6abea36f378c4b20f001019a4f",
+          "url": "https://deb.debian.org/debian/pool/main/s/spirv-llvm-translator-19/spirv-llvm-translator-19_19.1.6.orig.tar.gz",
+          "relative": "packages/spirv-llvm-translator-19/19.1.6-1/spirv-llvm-translator-19_19.1.6.orig.tar.gz",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        },
+        {
+          "name": "spirv-llvm-translator-19_19.1.6-1.debian.tar.xz",
+          "bytes": 12688,
+          "sha256": "e4d46dfc3d3bbd7c8c22823f8eb04cca215d300c7171ebd6576030d5bde276a3",
+          "url": "https://deb.debian.org/debian/pool/main/s/spirv-llvm-translator-19/spirv-llvm-translator-19_19.1.6-1.debian.tar.xz",
+          "relative": "packages/spirv-llvm-translator-19/19.1.6-1/spirv-llvm-translator-19_19.1.6-1.debian.tar.xz",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        }
+      ]
+    },
+    {
+      "package": "vulkan-tools",
+      "version": "1.4.304.0+dfsg1-1",
+      "files": [
+        {
+          "name": "vulkan-tools_1.4.304.0+dfsg1-1.dsc",
+          "bytes": 2189,
+          "sha256": "35d09791e4984d2ffd9f7c9dfa97a66098b0fe434076444dbb48b5962f2b4c68",
+          "url": "https://deb.debian.org/debian/pool/main/v/vulkan-tools/vulkan-tools_1.4.304.0+dfsg1-1.dsc",
+          "relative": "packages/vulkan-tools/1.4.304.0+dfsg1-1/vulkan-tools_1.4.304.0+dfsg1-1.dsc",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        },
+        {
+          "name": "vulkan-tools_1.4.304.0+dfsg1.orig.tar.xz",
+          "bytes": 367116,
+          "sha256": "9460cc49d15a57e13401d16807319c7d9bf0971e94fe81bba631fc69bb206c78",
+          "url": "https://deb.debian.org/debian/pool/main/v/vulkan-tools/vulkan-tools_1.4.304.0+dfsg1.orig.tar.xz",
+          "relative": "packages/vulkan-tools/1.4.304.0+dfsg1-1/vulkan-tools_1.4.304.0+dfsg1.orig.tar.xz",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        },
+        {
+          "name": "vulkan-tools_1.4.304.0+dfsg1-1.debian.tar.xz",
+          "bytes": 3788,
+          "sha256": "ff621ecf6679835877daa797fb651fad11b833e752392189205d9a51a64b4fc7",
+          "url": "https://deb.debian.org/debian/pool/main/v/vulkan-tools/vulkan-tools_1.4.304.0+dfsg1-1.debian.tar.xz",
+          "relative": "packages/vulkan-tools/1.4.304.0+dfsg1-1/vulkan-tools_1.4.304.0+dfsg1-1.debian.tar.xz",
+          "asset": "a523-gpu-api-new-debian-sources-v0.3.0.tar.gz",
+          "asset_url": "https://github.com/Pan-chongyu/a523-debian/releases/download/gpu-api-v0.3.0/a523-gpu-api-new-debian-sources-v0.3.0.tar.gz"
+        }
+      ]
+    }
+  ]
+}
