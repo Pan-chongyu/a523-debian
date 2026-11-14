@@ -36,6 +36,8 @@ No browser preloading is enabled. Performance mode does not bypass thermal prote
 
 The [startup scheduling update](docs/BOOT-STARTUP.md) reduced the original unit's last desktop process creation time from 25.48 to 21.73/21.64 seconds after Linux start, with two reboot and mixed-load passes. It enables HS200 earlier, overlaps the unchanged RAM check and removes redundant waits. The first image remains about 5.9 seconds on its hardware counter; Bluetooth initializes in the background. This research update does not replace the image or flasher Release assets.
 
+The [compact-kernel boot update](docs/BOOT-COMPACT.md) further reduces payload reads/CRC to 2.22 / 2.22 seconds and desktop process creation to 19.83 / 19.96 seconds after Linux start, with two full reboot/load passes. Source and measurements are published; Release assets remain unchanged.
+
 The [GPU API update](docs/GPU-API.md) adds Rusticl OpenCL 3.0, selected OpenCL C 3.0 features, SPIR-V input tests and persistent health recording. Install it separately after the original image; the original image/flasher assets have not been replaced. See the update Release for measured stability results and the exact supported features.
 
 ## Sources and licensing

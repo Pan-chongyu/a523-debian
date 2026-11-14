@@ -1,0 +1,414 @@
+{
+  "status": "PASS",
+  "date": "2026-11-14",
+  "profile": "TZX-A523-lossless-compact-boot-v2",
+  "scope": "Original tablet research; public image/flasher Release assets unchanged",
+  "public_image_updated": false,
+  "public_flasher_updated": false,
+  "baseline": {
+    "boot_id": "aa7dd8e1-52da-4593-9262-e14bc9f50337",
+    "loader_read_s": 4.179839791666667,
+    "loader_crc_s": 0.8249214166666666,
+    "loader_last_counter_s": 11.224428791666666,
+    "first_image_counter_s": 5.938700625,
+    "last_desktop_process_kernel_s": 21.64
+  },
+  "old_read_bytes": 15008256,
+  "new_read_bytes": 6682112,
+  "kernel_raw_bytes": 12742664,
+  "kernel_packed_bytes": 5599625,
+  "initramfs_old_bytes": 2206693,
+  "initramfs_new_bytes": 1017383,
+  "decoded_kernel_sha256": "470dd0c350c7ef7aad392eac3a35237672862f0fffdacea8da4e6adb6740e6e4",
+  "active_bundle_sha256": "83e527786de54ae7fd9acd0496005473550ea321fea9da1d04dc4d1d67c0b107",
+  "signed_SRAM_loader_changed": false,
+  "signed_SRAM_loader_sha256": "3031c2e408edb41dab4ab0f35171bf9ea3398842bfd2c653c8017149b13791ba",
+  "recovery_checkpoint_sha256": "12342234c71e5a1e0b135ce2c40c86888cebf93fb018453cc01ce303b747d5a6",
+  "physical_power_key_test": false,
+  "final_visual_confirmation": {
+    "boot_id": "e0cf2d87-7096-4043-bb8f-691c70986793",
+    "status": "PASS",
+    "source": "Direct human reply in this chat",
+    "star_cat_picture": "PASS",
+    "right_landscape_desktop": "PASS",
+    "touch": "PASS",
+    "physical_power_button_timing": false
+  },
+  "measurement_scope": "Loader counters, decoder counters and desktop process creation are separate clocks/stages; no physical-button-to-desktop total is claimed",
+  "changes": [
+    "Lossless LZ4 kernel block; original raw kernel and modules unchanged",
+    "Bounded identity-mapped Normal RAM and temporary data cache during relocation/decode/CRC",
+    "Clean output to PoC, disable MMU/data cache and restore original EL2 registers before Linux",
+    "One exact BusyBox copy and unchanged init; remove docs/manpages/packaging hooks from initramfs",
+    "Remove forced early UART console, ignore_loglevel and verbose serial output; preserve USB serial/network recovery"
+  ],
+  "retained": [
+    "Fresh 4 GiB LPDDR3 training and 16-boundary alias check",
+    "All rounded payload CRCs, decoded kernel CRC, hash ledgers and exact raw readback",
+    "Original fallback slot, signed SRAM loader, GPTs and original star-cat pixels",
+    "CPU performance 1416/1800 MHz, GPU minimum request 600 MHz, thermal/fault caps",
+    "HS200/100 MHz, 2 GiB LZ4 zram, hardware video decoder, right landscape and touch matrix"
+  ],
+  "rejected_uncached_trial": {
+    "boot_id": "65739c7c-b802-45a5-a8b1-9553aae78f43",
+    "decode_and_check_s": 5.135796291666667,
+    "kernel_branch_counter_s": 13.399197458333333,
+    "rollback_to_original_parent_verified": true,
+    "reason": "Uncached decode cost outweighed read savings; not the final installed entry"
+  },
+  "emulation": {
+    "status": "PASS",
+    "cases": [
+      {
+        "case": "production",
+        "status": "PASS",
+        "receipt": [
+          2770585345,
+          1,
+          4,
+          0,
+          12742664,
+          5599625,
+          0,
+          945245233
+        ],
+        "linux": [
+          1191182336,
+          0,
+          0,
+          0,
+          1207959552
+        ]
+      },
+      {
+        "case": "bad-header",
+        "status": "PASS",
+        "receipt": [
+          2770585345,
+          1,
+          1,
+          2,
+          0,
+          0,
+          0,
+          0
+        ],
+        "reset": 380239873
+      },
+      {
+        "case": "bad-output-CRC",
+        "status": "PASS",
+        "receipt": [
+          2770585345,
+          1,
+          3,
+          4,
+          12742664,
+          5599625,
+          0,
+          1330674855
+        ],
+        "reset": 380239873
+      }
+    ],
+    "entry_sha256": "8181fd4e6d1f3752363d049c2b206ddbf6e4e45935f216b5f1aaf89f13349b37",
+    "decoded_kernel_sha256": "470dd0c350c7ef7aad392eac3a35237672862f0fffdacea8da4e6adb6740e6e4",
+    "modeled": "EL2 registers, cache maintenance and counter; translations/cache effects require actual hardware qualification"
+  },
+  "repeated_boots": [
+    {
+      "boot_id": "01ed9826-b7c5-4abc-a668-d8a4665f0c49",
+      "first_image_counter_s": 5.911902875,
+      "loader_read_s": 1.85296175,
+      "loader_crc_s": 0.368698625,
+      "loader_last_counter_s": 8.258686,
+      "linux_entry_counter_s": 8.315557791666667,
+      "kernel_branch_counter_s": 8.580580916666667,
+      "compact_receipt": {
+        "magic": 2770585345,
+        "version": 1,
+        "phase": 4,
+        "error": 0,
+        "raw_bytes": 12742664,
+        "packed_bytes": 5599625,
+        "esr": 0,
+        "crc32": 945245233,
+        "entered_ticks": 199573387,
+        "relocated_ticks": 199870940,
+        "decoded_ticks": 205550177,
+        "checked_ticks": 205933942,
+        "counter_hz": 24000000,
+        "reserved": 3,
+        "exception_pc": 0,
+        "relocate_s": 0.012398041666666667,
+        "decode_s": 0.236634875,
+        "decoded_crc_s": 0.015990208333333332,
+        "total_s": 0.265023125
+      },
+      "last_desktop_process_kernel_s": 19.83,
+      "desktop_processes": {
+        "Xorg": {
+          "pid": 636,
+          "process_start_kernel_s": 15.45
+        },
+        "xfce4-session": {
+          "pid": 681,
+          "process_start_kernel_s": 17.03
+        },
+        "xfwm4": {
+          "pid": 798,
+          "process_start_kernel_s": 18.36
+        },
+        "xfce4-panel": {
+          "pid": 819,
+          "process_start_kernel_s": 19.49
+        },
+        "xfdesktop": {
+          "pid": 830,
+          "process_start_kernel_s": 19.83
+        }
+      },
+      "units": {
+        "tzx-cpub": {
+          "start_kernel_s": 4.665293,
+          "active_kernel_s": 4.746004
+        },
+        "tzx-early-performance-check": {
+          "start_kernel_s": 4.757099,
+          "active_kernel_s": 8.520664
+        },
+        "tzx-thermal": {
+          "start_kernel_s": 7.378255,
+          "active_kernel_s": 9.230701
+        },
+        "tzx-pmic-poweroff": {
+          "start_kernel_s": 7.670108,
+          "active_kernel_s": 9.455983
+        },
+        "tzx-cpu-dvfs": {
+          "start_kernel_s": 9.470912,
+          "active_kernel_s": 11.425605
+        },
+        "tzx-emmc-hs": {
+          "start_kernel_s": 11.428483,
+          "active_kernel_s": 12.702193
+        },
+        "tzx-gpu": {
+          "start_kernel_s": 12.706665,
+          "active_kernel_s": 15.08237
+        },
+        "tzx-display": {
+          "start_kernel_s": 7.993318,
+          "active_kernel_s": 12.193692
+        },
+        "tzx-touch-input-ready": {
+          "start_kernel_s": 7.402125,
+          "active_kernel_s": 13.363135
+        },
+        "tzx-cpu-performance-mode": {
+          "start_kernel_s": 17.769887,
+          "active_kernel_s": 18.602373
+        },
+        "tzx-gpu-performance": {
+          "start_kernel_s": 17.72135,
+          "active_kernel_s": 17.766236
+        },
+        "tzx-bluetooth": {
+          "start_kernel_s": 18.744498,
+          "active_kernel_s": 34.001826
+        },
+        "lightdm": {
+          "start_kernel_s": 15.085611,
+          "active_kernel_s": 15.453265
+        }
+      },
+      "systemd_time": "Startup finished in 1.822s (kernel) + 32.180s (userspace) = 34.002s \ngraphical.target reached after 18.135s in userspace.\n",
+      "mixed_load_seconds": 42.6,
+      "CPU_peak_khz": [
+        1416000,
+        1800000
+      ],
+      "GPU_rates_hz": [
+        200000000,
+        400000000,
+        600000000
+      ],
+      "GPU_score": 660,
+      "video_hardware_frames": 600,
+      "memory_MiB": 2560,
+      "memory_threads": 8,
+      "memory_patterns": 2,
+      "memory_errors": 0,
+      "MMC_errors": 0,
+      "IOMMU_faults": 0,
+      "display_errors": 0,
+      "failed_services": [],
+      "temperature_peak_mc": 77415,
+      "storage": [
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 67.44,
+          "read_MiB_s": 84.0
+        },
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 81.46,
+          "read_MiB_s": 87.68
+        }
+      ],
+      "emmc_hz": 100000000,
+      "emmc_timing": "HS200",
+      "right_landscape_and_touch_configuration": "PASS",
+      "Bluetooth_automatic": "PASS"
+    },
+    {
+      "boot_id": "e0cf2d87-7096-4043-bb8f-691c70986793",
+      "first_image_counter_s": 5.916290083333333,
+      "loader_read_s": 1.8524215,
+      "loader_crc_s": 0.36852675,
+      "loader_last_counter_s": 8.262361208333333,
+      "linux_entry_counter_s": 8.319233541666666,
+      "kernel_branch_counter_s": 8.584237666666667,
+      "compact_receipt": {
+        "magic": 2770585345,
+        "version": 1,
+        "phase": 4,
+        "error": 0,
+        "raw_bytes": 12742664,
+        "packed_bytes": 5599625,
+        "esr": 0,
+        "crc32": 945245233,
+        "entered_ticks": 199661605,
+        "relocated_ticks": 199959169,
+        "decoded_ticks": 205637904,
+        "checked_ticks": 206021704,
+        "counter_hz": 24000000,
+        "reserved": 3,
+        "exception_pc": 0,
+        "relocate_s": 0.0123985,
+        "decode_s": 0.23661395833333335,
+        "decoded_crc_s": 0.015991666666666668,
+        "total_s": 0.265004125
+      },
+      "last_desktop_process_kernel_s": 19.96,
+      "desktop_processes": {
+        "Xorg": {
+          "pid": 645,
+          "process_start_kernel_s": 15.77
+        },
+        "xfce4-session": {
+          "pid": 682,
+          "process_start_kernel_s": 17.23
+        },
+        "xfwm4": {
+          "pid": 799,
+          "process_start_kernel_s": 18.52
+        },
+        "xfce4-panel": {
+          "pid": 820,
+          "process_start_kernel_s": 19.63
+        },
+        "xfdesktop": {
+          "pid": 831,
+          "process_start_kernel_s": 19.96
+        }
+      },
+      "units": {
+        "tzx-cpub": {
+          "start_kernel_s": 4.80137,
+          "active_kernel_s": 4.879092
+        },
+        "tzx-early-performance-check": {
+          "start_kernel_s": 4.890521,
+          "active_kernel_s": 8.942648
+        },
+        "tzx-thermal": {
+          "start_kernel_s": 7.324953,
+          "active_kernel_s": 8.964751
+        },
+        "tzx-pmic-poweroff": {
+          "start_kernel_s": 7.460383,
+          "active_kernel_s": 9.606628
+        },
+        "tzx-cpu-dvfs": {
+          "start_kernel_s": 9.616476,
+          "active_kernel_s": 11.545105
+        },
+        "tzx-emmc-hs": {
+          "start_kernel_s": 11.54876,
+          "active_kernel_s": 12.825174
+        },
+        "tzx-gpu": {
+          "start_kernel_s": 12.829163,
+          "active_kernel_s": 15.315062
+        },
+        "tzx-display": {
+          "start_kernel_s": 7.72616,
+          "active_kernel_s": 11.887856
+        },
+        "tzx-touch-input-ready": {
+          "start_kernel_s": 7.345958,
+          "active_kernel_s": 13.852914
+        },
+        "tzx-cpu-performance-mode": {
+          "start_kernel_s": 17.977571,
+          "active_kernel_s": 18.823598
+        },
+        "tzx-gpu-performance": {
+          "start_kernel_s": 17.93144,
+          "active_kernel_s": 17.973977
+        },
+        "tzx-bluetooth": {
+          "start_kernel_s": 18.985487,
+          "active_kernel_s": 34.225698
+        },
+        "lightdm": {
+          "start_kernel_s": 15.326351,
+          "active_kernel_s": 15.78074
+        }
+      },
+      "systemd_time": "Startup finished in 1.809s (kernel) + 32.417s (userspace) = 34.226s \ngraphical.target reached after 18.269s in userspace.\n",
+      "mixed_load_seconds": 42.21,
+      "CPU_peak_khz": [
+        1416000,
+        1800000
+      ],
+      "GPU_rates_hz": [
+        200000000,
+        400000000,
+        600000000
+      ],
+      "GPU_score": 657,
+      "video_hardware_frames": 600,
+      "memory_MiB": 2560,
+      "memory_threads": 8,
+      "memory_patterns": 2,
+      "memory_errors": 0,
+      "MMC_errors": 0,
+      "IOMMU_faults": 0,
+      "display_errors": 0,
+      "failed_services": [],
+      "temperature_peak_mc": 75920,
+      "storage": [
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 62.89,
+          "read_MiB_s": 82.56
+        },
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 82.12,
+          "read_MiB_s": 87.74
+        }
+      ],
+      "emmc_hz": 100000000,
+      "emmc_timing": "HS200",
+      "right_landscape_and_touch_configuration": "PASS",
+      "Bluetooth_automatic": "PASS"
+    }
+  ]
+}

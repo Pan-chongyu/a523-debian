@@ -1,0 +1,19 @@
+# Compact kernel boot update
+
+[简体中文](zh-CN/BOOT-COMPACT.md) · [日本語](ja/BOOT-COMPACT.md) · [Español](es/BOOT-COMPACT.md)
+
+Two normal reboots of the original tablet passed. Payload reads and CRC checks fell from **5.00 s to 2.22 / 2.22 s**. The new decoder, relocation, CRC and cache cleanup add **0.265 / 0.265 s**. Required reads fell from **15,008,256 to 6,682,112 bytes** (about 55%). The kernel remains byte-identical after lossless decompression.
+
+The last of five desktop processes appeared at **19.83 / 19.96 s after Linux start**, compared with **21.64 s** immediately before this layer. These are process creation times, not visual readiness. The ARM64 branch into Linux measured **8.58 / 8.58 s** on the retained boot counter. The original star-cat first-image counter remains **5.912 / 5.916 s**; this layer does not make that first image earlier. No new physical power-button stopwatch test has been performed. Counter and kernel-relative stages are reported separately, without inventing a button-to-desktop total.
+
+The boot entry relocates the compressed input outside its output range and uses a bounded raw LZ4 decoder. A temporary identity map makes only its RAM region cacheable; low MMIO stays Device memory. The output is cleaned to PoC, MMU/data cache are disabled, and original EL2 translation/control registers are restored before Linux. All five original payload CRC checks and the decoded-kernel CRC remain. The unchanged 16-boundary alias test and fresh 4 GiB DRAM training remain.
+
+The initramfs retains the exact ARM64 BusyBox and `/init`, including USB serial and recovery/root identity checks. Its duplicate BusyBox, manuals, examples and packaging hooks are removed. Forced 115200-baud early UART output and `ignore_loglevel` are removed; USB serial/network recovery and kernel logs remain. The signed SRAM loader, star-cat pixels, GPTs and previous fallback slot are unchanged. Raw writes use fallback selection, exact readback and a layered restore.
+
+Both boots passed CPU, 2.5 GiB eight-thread RAM, GPU graphics/compute, 600 hardware-decoded frames and direct-file storage checks, with no failed units or observed memory/MMC/IOMMU/display errors. CPU performance limits remain 1416/1800 MHz; GPU requests 600 MHz subject to thermal/fault caps; HS200 stays at 100 MHz and zram at 2 GiB. Browser preloading stays disabled. Automated right-landscape/touch checks passed. After the second boot, the owner confirmed the star-cat image, right-landscape desktop and touch were normal. Finite tests do not establish long-term reliability.
+
+An uncached decoder trial cost 5.136 s and was withdrawn. Exact restoration of its original parent was tested before installing this final cached entry. The [report](../reports/boot-compact-20261114.json) records this trial, both final reboots, full mixed-load results, ARM64 production-kernel tests and malformed-input recovery emulation. Emulation models cache/register effects; actual hardware boots provide the cache/MMU qualification.
+
+This publishes research source and results. **Image `v0.1.0-20261114` and flasher `v0.2.0` Release assets are unchanged.** It is not a generic flashable upgrade. Builders expect the historical original-unit bundle, source layout and exact guards described in [BUILD.md](BUILD.md). This compact-boot installer, identity captures, credentials and signing keys are not published. A distributable update requires its own build and hardware qualification. See the preceding [startup scheduling](BOOT-STARTUP.md) and [first-image](BOOT-SPLASH-SPEED.md) layers.
+
+Implementation references: [Arm address translation](https://documentation-service.arm.com/static/5efa1d23dbdee951c1ccdec5), [TF-A cache maintenance](https://github.com/ARM-software/arm-trusted-firmware/blob/master/lib/aarch64/cache_helpers.S), and [U-Boot TCR configuration](https://github.com/u-boot/u-boot/blob/master/arch/arm/cpu/armv8/cache_v8.c).
