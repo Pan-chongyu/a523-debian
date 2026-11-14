@@ -1,0 +1,503 @@
+{
+  "status": "PASS",
+  "date": "2026-11-14",
+  "version": "0.3.0",
+  "hardware_profile": "TZX P30A523_20T5G; Mali-G57; LPDDR3 4 GiB; UEM 128 GB",
+  "tested_installation": "original adapted tablet; public image not freshly flashed",
+  "api": {
+    "opencl": {
+      "compiler_options": "-cl-std=CL1.2",
+      "cpu_fallback": false,
+      "device": "Mali-G57 (Panfrost)",
+      "device_type": 4,
+      "device_version": "OpenCL 3.0",
+      "driver_version": "25.0.7-2+deb13u1",
+      "elapsed_s": 3.566,
+      "float32_max_error": 0.0,
+      "float32_values": 65539,
+      "float_and_image_gpu_ns": 2854583,
+      "images": true,
+      "integer_cases": [
+        {
+          "gpu_ns": 2093416,
+          "reduction_groups": 1,
+          "words": 1
+        },
+        {
+          "gpu_ns": 1675334,
+          "reduction_groups": 1,
+          "words": 63
+        },
+        {
+          "gpu_ns": 1700833,
+          "reduction_groups": 1,
+          "words": 64
+        },
+        {
+          "gpu_ns": 1683584,
+          "reduction_groups": 2,
+          "words": 65
+        },
+        {
+          "gpu_ns": 1851708,
+          "reduction_groups": 16,
+          "words": 1023
+        },
+        {
+          "gpu_ns": 4937249,
+          "reduction_groups": 1025,
+          "words": 65537
+        }
+      ],
+      "integer_words": 66753,
+      "kernels": 14,
+      "max_work_group": 256,
+      "opencl_c_version": "OpenCL C 1.2",
+      "platform": "rusticl",
+      "rgba_image_pixels": 33153,
+      "seed": 1,
+      "status": "PASS"
+    },
+    "opencl3": {
+      "status": "PASS",
+      "platform": "rusticl",
+      "device": "Mali-G57 (Panfrost)",
+      "device_type": 4,
+      "device_version": "OpenCL 3.0",
+      "opencl_c_version": "OpenCL C 1.2",
+      "driver_version": "25.0.7-2+deb13u1",
+      "images": true,
+      "max_work_group": 256,
+      "cpu_fallback": false,
+      "compiler_options": "-cl-std=CL3.0",
+      "int64_values": 131071,
+      "global_atomics": 65537,
+      "read_write_image_pixels": 8509,
+      "out_of_order_queue": true,
+      "cross_queue_event_dependencies": true,
+      "elapsed_s": 0.707
+    },
+    "spirv": {
+      "status": "PASS",
+      "platform": "rusticl",
+      "device": "Mali-G57 (Panfrost)",
+      "device_type": 4,
+      "device_version": "OpenCL 3.0",
+      "opencl_c_version": "OpenCL C 1.2",
+      "driver_version": "25.0.7-2+deb13u1",
+      "images": true,
+      "max_work_group": 256,
+      "cpu_fallback": false,
+      "api": "OpenCL IL / SPIR-V 1.0",
+      "words_checked": 65536,
+      "gpu_ns": 1328750,
+      "module_sha256": "ac2bf48c495cadfdaa67d349ee3ef55d7fcd2db885e0c8dda68f177832761734",
+      "module_bytes": 396,
+      "vulkan_test": false,
+      "elapsed_s": 0.549
+    },
+    "webgl": {
+      "status": "PASS",
+      "driver_overrides": false,
+      "disposable_profile": true,
+      "protocol": {
+        "applicationType": "gecko",
+        "marionetteProtocol": 3
+      },
+      "firefox": {
+        "version": "153.6.0esr",
+        "graphics": {
+          "compositor": "WebRender",
+          "accelerated_windows": 1,
+          "webgl1": "Mesa -- Mali-G57 (Panfrost)",
+          "webgl2": "Mesa -- Mali-G57 (Panfrost)"
+        }
+      },
+      "webgl": {
+        "status": "PASS",
+        "apis": [
+          {
+            "api": "webgl",
+            "renderer": "Mali-G51, or similar",
+            "version": "WebGL 1.0",
+            "shading_language": "WebGL GLSL ES 1.0",
+            "frames_checked": 120,
+            "elapsed_ms": 4653,
+            "status": "PASS"
+          },
+          {
+            "api": "webgl2",
+            "renderer": "Mali-G51, or similar",
+            "version": "WebGL 2.0",
+            "shading_language": "WebGL GLSL ES 3.00",
+            "frames_checked": 120,
+            "elapsed_ms": 3066,
+            "status": "PASS"
+          }
+        ]
+      },
+      "clean_exit": true,
+      "elapsed_s": 53.854
+    },
+    "desktop_gl": {
+      "status": "PASS",
+      "renderer": "Mali-G57 (Panfrost)",
+      "version": "3.1 (Core Profile) Mesa 25.0.7-2+deb13u1",
+      "glsl": "1.40",
+      "egl_version": "1.5",
+      "requested_api": "desktop OpenGL 3.1",
+      "frames_checked": 64,
+      "pixels_checked": 528320,
+      "full_frame_readback": true,
+      "elapsed_s": 5.184,
+      "cpu_fallback": false
+    },
+    "extended_100_cycles": {
+      "status": "PASS",
+      "requested_cycles": 100,
+      "cycles": 100,
+      "started_utc": "2026-11-14T10:38:52.347320+00:00",
+      "totals": {
+        "int64_values": 13107100,
+        "global_atomics": 6553700,
+        "read_write_image_pixels": 850900,
+        "spirv_words": 6553600
+      },
+      "elapsed_s": 347.668,
+      "ended_utc": "2026-11-14T10:44:40.015435+00:00"
+    },
+    "graphics": {
+      "renderer": "Mali-G57 (Panfrost)",
+      "direct_rendering": true,
+      "opengl": "3.1",
+      "glsl": "1.40",
+      "opengl_es": "3.1",
+      "essl": "3.10"
+    },
+    "vulkan": {
+      "status": "UNSUPPORTED_IN_THIS_STACK",
+      "software_vulkan_installed": false,
+      "reference": "https://docs.mesa3d.org/drivers/panfrost.html"
+    },
+    "firefox_renderer_sanitization_reference": "https://github.com/mozilla-firefox/firefox/blob/main/dom/canvas/SanitizeRenderer.cpp"
+  },
+  "soak": {
+    "status": "PASS",
+    "started_utc": "2026-11-14T09:52:54.269415+00:00",
+    "requested_seconds": 3600,
+    "kernel": "7.3.3-tzx-a523-accel1",
+    "scope": "original adapted tablet; finite stress test, not lifetime certification",
+    "source_sha256": {
+      "soak.py": "80160c9d52fe2354302f827dd82373fc40690f1aa220ea8296ef59d0ae980976",
+      "ram_check.py": "f7386dfb10eae0536eda32e6437775fac99dcf7e561455101bc2724f4ad7e4f3",
+      "gles_compute.py": "02c924aa01d3e174a83aefd2c2691a802be2a423456491c82a8e11ec0877d79c",
+      "gles_pixels.py": "b848a20ba5316375a28aeff98ba7cfb4b9b42ed95b0d10e731a874eb2827bfe9",
+      "opencl_check.py": "0d36c74fce3140504fdd743f72a8d9aa1651f32e45b299634450b60f2fed72e4"
+    },
+    "elapsed_s": 3608.112,
+    "counts": {
+      "opencl": 1050,
+      "gles_compute": 570,
+      "gles_pixels": 3943,
+      "glmark": 243
+    },
+    "totals": {
+      "opencl_integer_words": 70090650,
+      "opencl_float32_values": 68815950,
+      "opencl_image_pixels": 34810650,
+      "opencl_kernels": 14700,
+      "gles_compute_dispatches": 18240
+    },
+    "temperature_peaks_mc": {
+      "gpu-thermal": 65845,
+      "cpu-big-thermal": 77025,
+      "tzx-board-thermal": 78520,
+      "npu-thermal": 66365,
+      "cpu-little-thermal": 73905,
+      "ddr-thermal": 78520
+    },
+    "gpu_frequency_samples": {
+      "600000000": 1,
+      "200000000": 562,
+      "400000000": 158
+    },
+    "ram": {
+      "status": "PASS",
+      "cycles": 2314,
+      "bytes_checked": 1242319290368,
+      "elapsed_s": 3605.422
+    },
+    "xorg_pid_unchanged": true,
+    "new_kernel_errors": 0,
+    "new_mmc_errors": 0,
+    "ended_utc": "2026-11-14T10:53:02.251249+00:00"
+  },
+  "watchdog_test": {
+    "status": "PASS",
+    "injected_condition": "SIGSTOP to health recorder only",
+    "recorder_restarted": true,
+    "restarts": 1,
+    "gpu_reset": false,
+    "desktop_restart": false,
+    "incomplete_session_recorded": true
+  },
+  "reboot": {
+    "status": "PASS",
+    "type": "normal software reboot",
+    "boot_changed": true,
+    "desktop_environment": {
+      "DISPLAY": ":0",
+      "RUSTICL_ENABLE": "panfrost"
+    },
+    "landscape_geometry": "1280x800",
+    "installed_hashes_match": true,
+    "services": {
+      "tzx-gpu-api-health": "active",
+      "tzx-gpu-performance": "active",
+      "tzx-cpu-dvfs": "active",
+      "tzx-emmc-hs": "active",
+      "tzx-display": "active",
+      "lightdm": "active"
+    },
+    "api": {
+      "opencl": {
+        "compiler_options": "-cl-std=CL1.2",
+        "cpu_fallback": false,
+        "device": "Mali-G57 (Panfrost)",
+        "device_type": 4,
+        "device_version": "OpenCL 3.0",
+        "driver_version": "25.0.7-2+deb13u1",
+        "elapsed_s": 1.731,
+        "float32_max_error": 0.0,
+        "float32_values": 65539,
+        "float_and_image_gpu_ns": 721416,
+        "images": true,
+        "integer_cases": [
+          {
+            "gpu_ns": 990499,
+            "reduction_groups": 1,
+            "words": 1
+          },
+          {
+            "gpu_ns": 772125,
+            "reduction_groups": 1,
+            "words": 63
+          },
+          {
+            "gpu_ns": 729209,
+            "reduction_groups": 1,
+            "words": 64
+          },
+          {
+            "gpu_ns": 745542,
+            "reduction_groups": 2,
+            "words": 65
+          },
+          {
+            "gpu_ns": 754959,
+            "reduction_groups": 16,
+            "words": 1023
+          },
+          {
+            "gpu_ns": 1685626,
+            "reduction_groups": 1025,
+            "words": 65537
+          }
+        ],
+        "integer_words": 66753,
+        "kernels": 14,
+        "max_work_group": 256,
+        "opencl_c_version": "OpenCL C 1.2",
+        "platform": "rusticl",
+        "rgba_image_pixels": 33153,
+        "seed": 1,
+        "status": "PASS"
+      },
+      "opencl3": {
+        "status": "PASS",
+        "platform": "rusticl",
+        "device": "Mali-G57 (Panfrost)",
+        "device_type": 4,
+        "device_version": "OpenCL 3.0",
+        "opencl_c_version": "OpenCL C 1.2",
+        "driver_version": "25.0.7-2+deb13u1",
+        "images": true,
+        "max_work_group": 256,
+        "cpu_fallback": false,
+        "compiler_options": "-cl-std=CL3.0",
+        "int64_values": 131071,
+        "global_atomics": 65537,
+        "read_write_image_pixels": 8509,
+        "out_of_order_queue": true,
+        "cross_queue_event_dependencies": true,
+        "elapsed_s": 0.61
+      },
+      "spirv": {
+        "status": "PASS",
+        "platform": "rusticl",
+        "device": "Mali-G57 (Panfrost)",
+        "device_type": 4,
+        "device_version": "OpenCL 3.0",
+        "opencl_c_version": "OpenCL C 1.2",
+        "driver_version": "25.0.7-2+deb13u1",
+        "images": true,
+        "max_work_group": 256,
+        "cpu_fallback": false,
+        "api": "OpenCL IL / SPIR-V 1.0",
+        "words_checked": 65536,
+        "gpu_ns": 533417,
+        "module_sha256": "ac2bf48c495cadfdaa67d349ee3ef55d7fcd2db885e0c8dda68f177832761734",
+        "module_bytes": 396,
+        "vulkan_test": false,
+        "elapsed_s": 0.239
+      }
+    },
+    "health": {
+      "current_issues": [],
+      "gpu_guard": "active",
+      "gpu_hz": 600000000,
+      "had_issue_this_session": false,
+      "previous_boot_differed": true,
+      "prior_monitor_ended_uncleanly": false,
+      "samples": 4,
+      "started_utc": "2026-11-14T10:55:05.533635+00:00",
+      "status": "ACTIVE",
+      "taint": 4096,
+      "temperature_peaks_mc": {
+        "cpu-big-thermal": 64675,
+        "cpu-little-thermal": 63570,
+        "ddr-thermal": 61360,
+        "gpu-thermal": 59085,
+        "npu-thermal": 59930,
+        "tzx-board-thermal": 64675
+      },
+      "temperatures_mc": {
+        "cpu-big-thermal": 61295,
+        "cpu-little-thermal": 60060,
+        "ddr-thermal": 61295,
+        "gpu-thermal": 57135,
+        "npu-thermal": 57525,
+        "tzx-board-thermal": 61295
+      },
+      "unclean_ending_is_not_a_reboot_cause": true,
+      "updated_utc": "2026-11-14T10:55:35.729975+00:00",
+      "uptime_s": 53.42
+    },
+    "post_reboot_mixed_smoke": {
+      "status": "PASS",
+      "started_utc": "2026-11-14T10:56:00.839539+00:00",
+      "requested_seconds": 120,
+      "kernel": "7.3.3-tzx-a523-accel1",
+      "scope": "original adapted tablet; finite stress test, not lifetime certification",
+      "source_sha256": {
+        "soak.py": "80160c9d52fe2354302f827dd82373fc40690f1aa220ea8296ef59d0ae980976",
+        "health.py": "f87ad2c3a50c54ed6a87736384943e14369bdb80c274cfbcf295be196afc148a",
+        "opencl_extended.py": "7470e0fd5bedc708f7f48521170e2e698b12c3120158f5d43b8dfa36ee4f09b9",
+        "ram_check.py": "f7386dfb10eae0536eda32e6437775fac99dcf7e561455101bc2724f4ad7e4f3",
+        "gles_compute.py": "02c924aa01d3e174a83aefd2c2691a802be2a423456491c82a8e11ec0877d79c",
+        "spirv_check.py": "33f56ccef116027e0b70da72a35cb6fdacb61712c8087a57e3f5ce7488b4af4e",
+        "gles_pixels.py": "b848a20ba5316375a28aeff98ba7cfb4b9b42ed95b0d10e731a874eb2827bfe9",
+        "opencl_check.py": "0d36c74fce3140504fdd743f72a8d9aa1651f32e45b299634450b60f2fed72e4",
+        "info.py": "5931094a377a2b394c87c55941e5ca40bba9a880eeee2a26dd29e7ff1035bb79",
+        "webgl_check.py": "45c9c86f321f3f9d1c73e621973cd0c9eeaac398e665ffae5d116e52fb0ade0c"
+      },
+      "elapsed_s": 134.465,
+      "counts": {
+        "opencl": 33,
+        "gles_compute": 19,
+        "gles_pixels": 128,
+        "glmark": 9
+      },
+      "totals": {
+        "opencl_integer_words": 2202849,
+        "opencl_float32_values": 2162787,
+        "opencl_image_pixels": 1094049,
+        "opencl_kernels": 462,
+        "gles_compute_dispatches": 608
+      },
+      "temperature_peaks_mc": {
+        "gpu-thermal": 64285,
+        "cpu-big-thermal": 74295,
+        "tzx-board-thermal": 74295,
+        "npu-thermal": 64545,
+        "cpu-little-thermal": 69420,
+        "ddr-thermal": 72865
+      },
+      "gpu_frequency_samples": {
+        "600000000": 1,
+        "400000000": 2,
+        "200000000": 22
+      },
+      "ram": {
+        "status": "PASS",
+        "cycles": 81,
+        "bytes_checked": 43486543872,
+        "elapsed_s": 131.474
+      },
+      "xorg_pid_unchanged": true,
+      "new_kernel_errors": 0,
+      "new_mmc_errors": 0,
+      "ended_utc": "2026-11-14T10:58:14.357912+00:00"
+    }
+  },
+  "installation": {
+    "payload_sha256": "01e94822188326bf59a032e18d2c28b35f41e663ea8a131cbecc7bcef531521f",
+    "install_rollback_reinstall": "PASS",
+    "unprivileged_diagnostics": "PASS",
+    "installed_files": 16,
+    "offline_dependency_simulation": {
+      "status": "PASS",
+      "test": "offline dependency simulation only",
+      "packages_planned": [
+        "clinfo",
+        "libclang-common-19-dev",
+        "libclang-cpp19",
+        "libclc-19",
+        "libclc-19-dev",
+        "libllvmspirvlib19.1",
+        "mesa-opencl-icd",
+        "ocl-icd-opencl-dev",
+        "opencl-c-headers",
+        "opencl-clhpp-headers",
+        "vulkan-tools"
+      ],
+      "packages_hidden_from_simulated_status": [
+        "clinfo",
+        "libclang-common-19-dev",
+        "libclang-cpp19",
+        "libclc-19",
+        "libclc-19-dev",
+        "libllvmspirvlib19.1",
+        "mesa-opencl-icd",
+        "ocl-icd-opencl-dev",
+        "opencl-c-headers",
+        "opencl-clhpp-headers",
+        "vulkan-tools"
+      ],
+      "upgrades": 0,
+      "removals": 0,
+      "live_dpkg_status_unchanged": true,
+      "physical_fresh_install_tested": false
+    },
+    "binary_packages": 11,
+    "new_debian_source_packages": 5,
+    "corresponding_source_packages": 8,
+    "package_upgrades": 0,
+    "package_removals": 0,
+    "boot_regions_written": false,
+    "payload_reproducible": true,
+    "source_files_equal_git": true
+  },
+  "development_test_corrections": [
+    "Initial harness expected exactly five thermal zones; fixed to require the five physical channels and allow the board aggregate.",
+    "Firefox sanitizes the webpage renderer string; native renderer is now checked with internal Troubleshoot data. The preliminary run interrupted by this harness failure is not counted as the hour soak.",
+    "Unprivileged info now handles the root-only guard record without changing its permissions."
+  ],
+  "limits": [
+    "One-hour qualification and a post-reboot smoke are finite tests, not lifetime reliability or a full Khronos CTS run.",
+    "Earlier development hangs/reboots and an unresolved prior browser-startup GPU fault remain part of the history.",
+    "No hardware Vulkan support, FP16/FP64 OpenCL, SVM or CL/GL sharing is claimed.",
+    "The existing image and flasher assets are unchanged; this is a separately installed add-on.",
+    "Fresh public-image hardware flash and cold power-button startup are not part of this update test."
+  ]
+}
