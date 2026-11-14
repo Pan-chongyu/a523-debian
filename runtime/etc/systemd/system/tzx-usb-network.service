@@ -1,0 +1,12 @@
+[Unit]
+Description=TZX A523 USB NCM network
+After=systemd-udev-trigger.service
+Before=serial-getty@ttyGS0.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/tzx-usb-network
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

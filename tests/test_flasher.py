@@ -23,6 +23,12 @@ class InstallerTests(unittest.TestCase):
         manifest=dict(format='a523-debian-release-v1',board_profile='tzx-p30a523-20t5g-lpddr3-4g-uem128',
             emmc_sectors=244318208,files={'image':dict(name='../bad',bytes=1,sha256='0'*64)})
         with self.assertRaises(ValueError):validate_manifest(manifest)
+    def test_windows_asset_path_escapes_rejected_on_every_host(self):
+        for name in ('C:\\outside.bin','sub\\outside.bin','\\\\server\\share\\file.bin'):
+            manifest=dict(format='a523-debian-release-v1',board_profile='tzx-p30a523-20t5g-lpddr3-4g-uem128',
+                emmc_sectors=244318208,files={'image':dict(name=name,bytes=1,sha256='0'*64)})
+            with self.subTest(name=name):
+                with self.assertRaises(ValueError):validate_manifest(manifest)
     def test_bad_compressed_hash_never_opens_target(self):
         with tempfile.TemporaryDirectory() as folder:
             image=Path(folder)/'image.gz';image.write_bytes(b'bad')

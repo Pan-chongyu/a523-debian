@@ -1,0 +1,9 @@
+[Unit]
+Description=Initialize unique public image identities
+Before=lightdm.service
+After=local-fs.target
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/tzx-public-firstboot
+[Install]
+WantedBy=multi-user.target

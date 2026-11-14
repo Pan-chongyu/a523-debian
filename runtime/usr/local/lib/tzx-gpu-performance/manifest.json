@@ -1,0 +1,9 @@
+{
+  "profile": "fixed-parent-900mV-200-600MHz",
+  "files": {
+    "/usr/local/lib/tzx-gpu-performance/tzx_gpu_performance.ko": "2f5b336419d723849a68dc0b86c00e04d13eb9bca5cffff19455d060c5989659",
+    "/usr/local/lib/tzx-gpu-performance/runtime.py": "68de27e32773719f0e012b5a88c4c60ba68d63577ab99b59f42c0347b30a9a36",
+    "/usr/local/lib/tzx-gpu-performance/cleanup.py": "8a43dc5211ef7153228d51dbff56f0f49d31a56c0b71d10f3dcf9fdfab78215e",
+    "/etc/systemd/system/tzx-gpu-performance.service": "c3ad80b491f61852d988277e721c56ffbc1cf90b2d3413f5db33eac0dabb5aee"
+  }
+}

@@ -1,0 +1,15 @@
+[Unit]
+Description=Manual repeat GPU trial including normal runtime autosuspend
+After=local-fs.target tzx-rtc-log.service
+Wants=tzx-display.service
+
+[Service]
+Type=simple
+Environment=TZX_GPU_TRACE_SCENES=1
+Environment=TZX_GPU_EXPECT_AWAKE=0
+ExecStartPre=/usr/bin/python3 -u /home/debian/verify_dram_boot_gpu_idle.py
+ExecStart=/usr/bin/python3 -u /home/debian/run_dram_boot_gpu_trial.py --after-reboot --allow-autosuspend --label dram-boot-1260-reboot-auto
+ExecStopPost=/usr/bin/python3 -u /home/debian/finish_dram_boot_gpu_trial.py
+RuntimeMaxSec=800s
+TimeoutStartSec=200s
+TimeoutStopSec=260s

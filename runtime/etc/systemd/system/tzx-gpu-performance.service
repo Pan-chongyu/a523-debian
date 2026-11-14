@@ -1,0 +1,17 @@
+[Unit]
+Description=TZX A523 qualified GPU performance with lease and thermal caps
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+ConditionPathExists=/var/lib/tzx/gpu-performance-qualified.json
+Requires=tzx-gpu.service tzx-thermal.service
+After=tzx-gpu.service tzx-thermal.service tzx-dram-gpu-health.service tzx-screen-health.service
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/python3 -u /usr/local/lib/tzx-gpu-performance/runtime.py
+ExecStopPost=/usr/bin/python3 -u /usr/local/lib/tzx-gpu-performance/cleanup.py
+TimeoutStartSec=60
+TimeoutStopSec=25
+Restart=no
+
+[Install]
+WantedBy=graphical.target

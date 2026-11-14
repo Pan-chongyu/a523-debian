@@ -1,0 +1,16 @@
+[Unit]
+Description=TZX user-selected persistent CPU performance mode
+BindsTo=tzx-cpu-dvfs.service tzx-gpu-performance.service
+After=tzx-cpu-dvfs.service tzx-gpu-performance.service
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-performance-mode/mode.py enable
+ExecStop=/usr/bin/python3 /usr/local/lib/tzx-performance-mode/mode.py restore
+TimeoutStartSec=50
+TimeoutStopSec=5
+
+[Install]
+WantedBy=graphical.target

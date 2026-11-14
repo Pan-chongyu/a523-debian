@@ -1,0 +1,16 @@
+{
+  "profile": "Panfrost-native-150-600MHz-fixed-900mV",
+  "files": {
+    "/usr/local/lib/tzx-gpu-devfreq/common.py": "531760c4a5aa9b380397d2de87f2e1b6f9785a81d23d9cab7ba05662d4e1c93e",
+    "/usr/local/lib/tzx-gpu-devfreq/startup.py": "e11f8a3831123270682f01e46862139bc93ce12c910403e14670c2ace47b855b",
+    "/usr/local/lib/tzx-gpu-devfreq/runtime.py": "6281e06daa55990976bda6a5c5c1b7ea1e4be50dc8f7ec7867665250d66391c7",
+    "/usr/local/lib/tzx-gpu-devfreq/cleanup.py": "be6c194e6be39866cf35fd718a2f5fb6dcd40dcb256e00f59aa058733418853a",
+    "/usr/local/lib/tzx-gpu-devfreq/fallback.py": "fc1af0580fc2e931e9cb38bd86012a0e9a1420a08def57496deef835a8576b9b",
+    "/usr/local/lib/tzx-gpu-devfreq/tzx_gpu_devfreq_opps.ko": "b57af6761d348d19277deabf78633b42aae435756bf951f2b223fe0e079b8c15",
+    "/usr/local/lib/tzx-gpu-devfreq/tzx_gpu_devfreq_guard.ko": "317fd2d59b88f361d057e6d0403d385f0746d0f5aa1e3c4a01dc7bc4a773df0e",
+    "/etc/systemd/system/tzx-gpu.service.d/97-native-devfreq.conf": "9217af8a28b8b0698d12785b28e602d32f57c8c9b6a7529bc71851170ee82e02",
+    "/etc/systemd/system/tzx-gpu-performance.service.d/97-native-devfreq.conf": "b51a8f646444cb5f8f1485716425619e1cb53ba373807c65b0d5b62303cc4f4e",
+    "/etc/systemd/system/tzx-dram-gpu-fallback.service.d/97-native-devfreq.conf": "64bf9c1564f547c2c12a964a195234f6104c0886912082ed5ee6c5fb70631bb0"
+  },
+  "kernel_image_sha256": "63af752cf04c9ebeb7636fdcd25729b1cd0189093be5798fbd02246eb09a1049"
+}

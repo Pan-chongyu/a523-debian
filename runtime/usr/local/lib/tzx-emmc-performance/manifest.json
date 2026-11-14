@@ -1,0 +1,9 @@
+{
+  "profile": "exact-CID-DDR52-50MHz-lease-25MHz-fallback",
+  "files": {
+    "/usr/local/lib/tzx-emmc-performance/tzx_emmc_performance.ko": "8db02845e4630a11b711145cf5c4403d334416244807e519c85755d5a7a5a878",
+    "/usr/local/lib/tzx-emmc-performance/runtime.py": "e38195fd658624f08ee9a0e432fc0469ca7bfbb57b37915480316300d8d4325c",
+    "/usr/local/lib/tzx-emmc-performance/cleanup.py": "b6856b2d8166d4aea3a0c8d47a6899dfa3aaedd707bb9ae357776889f0a504cb",
+    "/etc/systemd/system/tzx-emmc-performance.service": "e6b43c15222cc28965d663d916a2177967aa94085a0b5c3d727a598d36285db6"
+  }
+}

@@ -1,0 +1,17 @@
+[Unit]
+Description=TZX A523 DE350 and DSI display
+Requires=tzx-touch.service
+After=tzx-touch.service
+Before=display-manager.service
+ConditionKernelVersion=7.3.3-tzx-a523-periph1
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/local/lib/tzx-display/tzx-display-runtime start
+ExecStop=/bin/sh /usr/local/lib/tzx-display/tzx-display-runtime stop
+TimeoutStartSec=30
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target

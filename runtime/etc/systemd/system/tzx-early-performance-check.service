@@ -1,0 +1,11 @@
+[Unit]
+Description=TZX trained memory validation before early CPU performance
+Requires=tzx-thermal.service tzx-cpub.service
+After=tzx-thermal.service tzx-cpub.service
+Before=tzx-cpu-dvfs.service tzx-gpu.service lightdm.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-performance-mode/early-check.py
+TimeoutStartSec=50

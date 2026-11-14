@@ -9,7 +9,7 @@ sudo apt install build-essential gcc-aarch64-linux-gnu binutils-aarch64-linux-gn
   e2fsprogs dosfstools mtools rsync
 ```
 
-Download the corresponding-source archive and sanitized-system-template archive from the same Release, verify SHA256SUMS, and extract them into separate directories. The template contains the root filesystem before first boot, not a raw clone of the owner's disk. The archive `a523-corresponding-sources-*.tar.gz` contains the full modified kernel, external module trees, Arm Trusted Firmware, SyterKit, upstream AIC driver, DRAM parameters and exact boot templates used for this release. Vendor training/firmware blobs remain identified as binary components.
+Download the corresponding-source archive and sanitized-system-template archive from the same Release, verify SHA256SUMS, and extract them into separate directories. The template contains the root filesystem before first boot, not a raw clone of the owner's disk. The archive `a523-corresponding-sources-*.tar.gz` contains the full modified kernel, external module trees, Arm Trusted Firmware, SyterKit, upstream AIC driver, DRAM parameters and exact boot templates used for this release. Vendor training/firmware blobs remain identified as binary components. Fresh signing keys, password salts, filesystem identifiers and timestamps mean rebuilds are functional rather than byte-for-byte reproducible.
 
 ## Kernel and modules
 
@@ -42,7 +42,7 @@ For source-level loader rebuilds, start from the source archive's SyterKit and t
 
 ## Debian source packages
 
-`board/packages.tsv` records binary version, source package and source version. `tools/fetch_debian_sources.py` uses Debian's archive metadata to retrieve the exact `.dsc` and referenced source tarballs, checking their SHA256. Debian package source terms are retained separately from project licensing. Image releases include acquired source archives and a machine-readable acquisition report; report any missing source immediately via Issues. Original package copyright files remain in the image.
+`board/packages.tsv` records installed binary/source versions; `board/boot-packages.tsv` also records the initramfs BusyBox package. `tools/fetch_debian_sources.py` retrieves exact `.dsc` and source tarballs from archive metadata, checking SHA256. `board/debian-sources.json` lists the Release assets and every source file, including the Firefox version retained in the security archive but absent from its current index. Download all `a523-debian-package-sources-XX.tar` assets and extract them into the same directory; each is an independent tar archive, not a split stream. Together they provide complete corresponding Debian source files. Original package copyright files remain in the image.
 
 ## Checks
 

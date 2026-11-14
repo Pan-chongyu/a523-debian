@@ -1,0 +1,15 @@
+{
+  "profile": "qualified-early-CPU-GPU-max-performance-no-preload",
+  "files": {
+    "/usr/local/lib/tzx-performance-mode/mode.py": "8d1588e582efea16a790323b9e2a1d3e87a09fe9568674f037e87309612dc106",
+    "/usr/local/lib/tzx-performance-mode/early-check.py": "7ba9873d84339c95f162709c13b8102ce10429fa236f5df5a6f39383a8c3ca73",
+    "/etc/systemd/system/tzx-cpu-performance-mode.service": "a51acbe2443c7e893b917968f229f32fb50bcf0b9f116a18ac27a06aab32bf79",
+    "/etc/systemd/system/tzx-early-performance-check.service": "124837403ec4a58dd898b7eb2c5f4b10a9c6a3257119dff7c60a57a84210f226",
+    "/etc/systemd/system/tzx-cpu-dvfs.service": "68c288626eb566c027dde09e2f94612caed15ed3ef15ada7397dce3ae40b9382",
+    "/usr/local/lib/tzx-cpu-full/runtime.py": "01b5e7999e48772b459cbcac5cd78ddd943a4f133333e37756c9f347ea797b4c",
+    "/usr/local/lib/tzx-gpu-devfreq/runtime.py": "6281e06daa55990976bda6a5c5c1b7ea1e4be50dc8f7ec7867665250d66391c7",
+    "/usr/local/lib/tzx-gpu-devfreq/startup.py": "e11f8a3831123270682f01e46862139bc93ce12c910403e14670c2ace47b855b",
+    "/usr/local/lib/tzx-cpu-full/manifest.json": "3fc5d2c1a5966dce329e0d2ea810996c2d5016288e2b21af6de7f37851895a51",
+    "/usr/local/lib/tzx-gpu-devfreq/manifest.json": "566749b0c176223836debeb73e5f79a5bac495b76a3e3cc775da5b525d2a4805"
+  }
+}

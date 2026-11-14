@@ -1,0 +1,11 @@
+{
+  "profile": "HS200-100MHz-8bit-1.8V",
+  "files": {
+    "/usr/local/lib/tzx-emmc-hs/tzx_emmc_hs_lease.ko": "e2229c3e7a6753362ad434aee0f52a5d1cf81de82fedabd22ec9d3e8ce885cd6",
+    "/usr/local/lib/tzx-emmc-hs/transition-guard": "da2bbbc64e359b42dc83af0ef0b1163132436b01716f590f1c2b5dc5171d9a53",
+    "/usr/local/lib/tzx-emmc-hs/runtime.py": "44af432a243f749133275310239b1ec399fcf2b91b4469a97991d7ef037e48c9",
+    "/etc/systemd/system/tzx-emmc-hs.service": "fff603d6e94447d211952bd53600d3714fa19f45cbae03cd151c95b28055d1f0"
+  },
+  "kernel_image_sha256": "63af752cf04c9ebeb7636fdcd25729b1cd0189093be5798fbd02246eb09a1049",
+  "boot_header_sha256": "5140bdc3fa652af73193b23eefaee532c364b82b4c23fd1174dd7354356cdfd0"
+}

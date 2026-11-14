@@ -1,0 +1,13 @@
+[Unit]
+Description=Temporary TZX A523 SRAM crash recorder for the pinned boot chain
+After=local-fs.target tzx-cpufreq.service
+Before=lightdm.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-sram-log/runtime.py
+RemainAfterExit=yes
+TimeoutStartSec=30s
+
+[Install]
+WantedBy=multi-user.target

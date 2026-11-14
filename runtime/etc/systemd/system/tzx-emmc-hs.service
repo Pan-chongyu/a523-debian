@@ -1,0 +1,17 @@
+[Unit]
+Description=TZX qualified eMMC HS200 100MHz with leased DDR52 fallback
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+ConditionPathExists=/var/lib/tzx/emmc-hs-qualified.json
+Requires=tzx-thermal.service
+After=tzx-dram-gpu-health.service tzx-screen-health.service tzx-cpu-dvfs.service tzx-gpu-performance.service tzx-emmc-performance.service
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/python3 -u /usr/local/lib/tzx-emmc-hs/runtime.py run
+ExecStopPost=/usr/bin/python3 -u /usr/local/lib/tzx-emmc-hs/runtime.py restore
+TimeoutStartSec=160
+TimeoutStopSec=45
+Restart=no
+
+[Install]
+WantedBy=graphical.target

@@ -1,9 +1,9 @@
 #!/bin/sh
 set -eu
 test "$#" = 3
-template=$1
-source=$2
-out=$3
+template=$(realpath -- "$1")
+source=$(realpath -- "$2")
+out=$(realpath -m -- "$3")
 mkdir -p "$out/initramfs-root"
 cd "$out/initramfs-root"
 gzip -dc "$template" | cpio --quiet -idmu

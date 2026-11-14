@@ -1,0 +1,16 @@
+[Unit]
+Description=TZX P30 display power domain consumers
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+After=tzx-touch.service
+Before=tzx-display.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/local/lib/tzx-accel-hardware/tzx-acceleration-hardware power
+ExecStop=/bin/sh /usr/local/lib/tzx-accel-hardware/tzx-acceleration-hardware stop
+TimeoutStartSec=25
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

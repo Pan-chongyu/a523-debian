@@ -1,0 +1,16 @@
+[Unit]
+Description=TZX P30 measured volume and power keys
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+After=tzx-touch.service
+Before=lightdm.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/local/lib/tzx-tablet-keys/tzx-tablet-keys start
+ExecStop=/bin/sh /usr/local/lib/tzx-tablet-keys/tzx-tablet-keys stop
+TimeoutStartSec=15
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target

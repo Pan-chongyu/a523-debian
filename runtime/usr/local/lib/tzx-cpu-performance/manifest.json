@@ -1,0 +1,9 @@
+{
+  "profile": "fixed-900mV-little792-big1008",
+  "files": {
+    "/usr/local/lib/tzx-cpu-performance/tzx_cpufreq_safepll.ko": "3c649c8516001f6ea53ee9a86249127e8b2841b288e95dc8f109bff71e87d4ea",
+    "/usr/local/lib/tzx-cpu-performance/tzx_cpu_perf_cooling.ko": "26eca91311f4349fd97340429faaf225a8cfbf36cd6f5ac17fce6b777cbc5d0f",
+    "/usr/local/lib/tzx-cpu-performance/runtime.py": "5fc6b9adca3bd5a8868e12349e39e0fd6a76885cdc53a1d341a6f158810e64cf",
+    "/etc/systemd/system/tzx-cpu-performance.service": "c9deb9eee854c5e95fb853819fb2be8e0f1f9c71622f232f392373dbf1af067e"
+  }
+}

@@ -1,0 +1,20 @@
+#!/bin/sh
+set -eu
+test "$(cat /sys/class/block/mmcblk0/device/cid)" = $(cat /etc/tzx/device-cid)
+g=/sys/kernel/config/usb_gadget/tzx
+test -d "$g/functions/acm.usb0"
+udc=$(cat "$g/UDC")
+test -n "$udc"
+if [ ! -L "$g/configs/c.1/ncm.usb0" ]; then
+    echo '' > "$g/UDC"
+    mkdir -p "$g/functions/ncm.usb0"
+    echo 02:54:5a:52:00:01 > "$g/functions/ncm.usb0/host_addr"
+    echo 02:54:5a:52:00:02 > "$g/functions/ncm.usb0/dev_addr"
+    ln -s "$g/functions/ncm.usb0" "$g/configs/c.1/ncm.usb0"
+    echo "$udc" > "$g/UDC"
+fi
+udevadm settle
+netdev=$(cat "$g/functions/ncm.usb0/ifname")
+ip address replace 192.168.77.2/30 dev "$netdev"
+ip link set "$netdev" up
+echo "USB NCM ready: $netdev 192.168.77.2/30"

@@ -1,0 +1,13 @@
+[Unit]
+Description=TZX P30 guarded AXP717 normal soft power-off
+After=tzx-battery.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-pmic-poweroff/runtime.py start
+# Keep the module registered through kernel_power_off; never unload at shutdown.
+TimeoutStartSec=40
+
+[Install]
+WantedBy=multi-user.target

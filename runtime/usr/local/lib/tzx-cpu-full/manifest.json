@@ -1,0 +1,10 @@
+{
+  "profile": "vf0300-little1416-big1800-native-capacity",
+  "files": {
+    "/usr/local/lib/tzx-cpu-full/runtime.py": "01b5e7999e48772b459cbcac5cd78ddd943a4f133333e37756c9f347ea797b4c",
+    "/usr/local/lib/tzx-cpu-full/tzx_cpufreq_dvfs_v2.ko": "f6187ea38bfaf5f57edd758839f0149489976465810548034b98007bc3787f64",
+    "/usr/local/lib/tzx-cpu-full/tzx_cpu_dvfs_cooling_v2.ko": "6e26041ba4a0b28ef3824b04107e88746894cdfb01aa4aca1067e41da2c30daa",
+    "/etc/systemd/system/tzx-cpu-dvfs.service.d/97-vf0300-full.conf": "15b96e71e85786d2e397613f6d5e48ab19432d8f23bc1d48ec0ce1f3dcb44827"
+  },
+  "kernel_image_sha256": "63af752cf04c9ebeb7636fdcd25729b1cd0189093be5798fbd02246eb09a1049"
+}

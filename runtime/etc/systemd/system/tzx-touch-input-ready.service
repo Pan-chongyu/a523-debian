@@ -1,0 +1,10 @@
+[Unit]
+Description=Wait for complete GSL3670 input before the desktop
+BindsTo=tzx-touch.service
+After=tzx-touch.service
+Before=lightdm.service
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+TimeoutStartSec=28s
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-screen-fast/touch_ready.py wait

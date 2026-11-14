@@ -1,0 +1,10 @@
+{
+  "tzx-touch.service": "[Unit]\nConditionKernelVersion=\nConditionKernelVersion=7.3.3-tzx-a523-accel1\n[Service]\nExecStart=\nExecStart=/bin/sh /usr/local/lib/tzx-peripherals-accel1/tzx-touch-runtime-test.sh start\nExecStop=\nExecStop=/bin/sh /usr/local/lib/tzx-peripherals-accel1/tzx-touch-runtime-test.sh stop\n",
+  "tzx-wifi.service": "[Unit]\nConditionKernelVersion=\nConditionKernelVersion=7.3.3-tzx-a523-accel1\n[Service]\nExecStart=\nExecStart=/bin/sh /usr/local/lib/tzx-peripherals-accel1/tzx-wifi-runtime start\nExecStop=\nExecStop=/bin/sh /usr/local/lib/tzx-peripherals-accel1/tzx-wifi-runtime stop\n",
+  "tzx-display.service": "[Unit]\nConditionKernelVersion=\nConditionKernelVersion=7.3.3-tzx-a523-accel1\n[Service]\nExecStart=\nExecStart=/bin/sh /usr/local/lib/tzx-accel-display/tzx-display-runtime start\nExecStop=\nExecStop=/bin/sh /usr/local/lib/tzx-accel-display/tzx-display-runtime stop\n\n[Unit]\nRequires=tzx-accel-power.service\nAfter=tzx-accel-power.service\n",
+  "tzx-audio.service": "[Unit]\nConditionKernelVersion=\nConditionKernelVersion=7.3.3-tzx-a523-accel1\n[Service]\nExecStart=\nExecStart=/bin/sh /usr/local/lib/tzx-accel-audio/tzx-audio-runtime start\nExecStop=\nExecStop=/bin/sh /usr/local/lib/tzx-accel-audio/tzx-audio-runtime stop\n",
+  "tzx-battery.service": "[Unit]\nConditionKernelVersion=\nConditionKernelVersion=7.3.3-tzx-a523-accel1\n[Service]\nExecStart=\nExecStart=/sbin/modprobe tzx_battery\nExecStop=\nExecStop=/sbin/modprobe -r tzx_battery\n",
+  "tzx-bt-hardware.service": "[Unit]\nConditionKernelVersion=\nConditionKernelVersion=7.3.3-tzx-a523-accel1\n[Service]\nExecStart=\nExecStart=/usr/bin/python3 /usr/local/lib/tzx-accel-bluetooth/runtime.py hardware-start\n",
+  "tzx-bluetooth.service": "[Unit]\nConditionKernelVersion=\nConditionKernelVersion=7.3.3-tzx-a523-accel1\n[Service]\nExecStart=\nExecStart=/usr/bin/python3 /usr/local/lib/tzx-accel-bluetooth/runtime.py attach\n",
+  "lightdm.service": "[Unit]\nAfter=tzx-display.service tzx-thermal.service\n[Service]\nExecStart=\nExecStart=/usr/sbin/lightdm\n"
+}

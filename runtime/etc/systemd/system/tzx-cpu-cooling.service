@@ -1,0 +1,15 @@
+[Unit]
+Description=TZX P30 five-sensor thermal policy and CPU divider cooling
+BindsTo=tzx-thermal.service tzx-cpufreq.service
+After=tzx-thermal.service tzx-cpufreq.service tzx-dram-gpu-health.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-cpu-cooling/runtime.py start
+ExecStop=/usr/bin/python3 /usr/local/lib/tzx-cpu-cooling/runtime.py stop
+TimeoutStartSec=50
+TimeoutStopSec=25
+
+[Install]
+WantedBy=multi-user.target

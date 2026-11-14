@@ -1,0 +1,13 @@
+[Unit]
+Description=TZX P30 read-only battery telemetry
+After=tzx-touch.service
+ConditionKernelVersion=7.3.3-tzx-a523-periph1
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/sbin/modprobe tzx_battery
+ExecStop=/sbin/modprobe -r tzx_battery
+
+[Install]
+WantedBy=multi-user.target

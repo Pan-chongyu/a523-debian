@@ -1,0 +1,16 @@
+[Unit]
+Description=TZX A523 qualified conservative CPU divider control
+Wants=tzx-cpub.service
+After=local-fs.target tzx-cpub.service
+Before=lightdm.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-cpufreq/runtime.py start
+ExecStop=/usr/bin/python3 /usr/local/lib/tzx-cpufreq/runtime.py stop
+RemainAfterExit=yes
+TimeoutStartSec=45s
+TimeoutStopSec=30s
+
+[Install]
+WantedBy=multi-user.target

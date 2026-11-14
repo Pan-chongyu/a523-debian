@@ -30,6 +30,8 @@ def main():
     for line in (root/'etc/group').read_text().splitlines():
         fields=line.split(':');groups.append(':'.join((fields[0],'!', '',fields[3])))
     write('/etc/gshadow',('\n'.join(groups)+'\n').encode(),0o640)
+    shadow_gid=int(next(line.split(':')[2] for line in (root/'etc/group').read_text().splitlines() if line.startswith('shadow:')))
+    for name in ('shadow','gshadow'):os.chown(root/'etc'/name,0,shadow_gid)
     write('/etc/machine-id',b'',0o444)
     write('/etc/tzx-public-profile',b'tzx-p30a523-20t5g-lpddr3-4g-uem128\n',0o644)
     write('/etc/tzx-board-id',b'TZX P30A523_20T5G PUBLIC\n',0o644)

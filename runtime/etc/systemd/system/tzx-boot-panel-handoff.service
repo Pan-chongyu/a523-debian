@@ -1,0 +1,11 @@
+[Unit]
+Description=Release SRAM early panel before native drivers
+DefaultDependencies=no
+After=systemd-remount-fs.service tzx-cpub.service systemd-udev-trigger.service
+Before=tzx-touch.service shutdown.target
+Conflicts=shutdown.target
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+TimeoutStartSec=20s
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-boot-panel/handoff.py

@@ -4,7 +4,7 @@
 |---|---|
 | Linux 7.3.3 with TZX changes | GPL-2.0-only plus per-file SPDX terms; full modified tree and configuration in `a523-corresponding-sources-*.tar.gz` |
 | External TZX modules and Panfrost changes | Linux-derived GPL modules; full source directories in that archive under `modules/` |
-| FEL eMMC helper | [A523-root](https://github.com/chainsx/A523-root), MIT; exact helper source in `third_party/fel-emmc/` |
+| FEL eMMC helper | [A523-root](https://github.com/chrislennon/A523-root), MIT; exact helper source in `third_party/fel-emmc/` |
 | SRAM/DRAM loader foundations | [SyterKit](https://github.com/YuzukiHD/SyterKit), commit `7f539e17762639589897db835e58dd638b2bea80`, GPL-2.0; source and license in the source archive |
 | DRAM training | SyterKit `soc/sun55iw3/lib/libdram.a`, supplied upstream as a binary library; training source is unavailable here. Retain upstream distribution notices. This component is not represented as source-complete |
 | EL3 firmware / BL31 | Adapted Arm Trusted Firmware source in `trusted-firmware-a/`, BSD-3-Clause and included component licenses; retain `docs/license.rst` and per-file notices |

@@ -1,5 +1,5 @@
 """Verified streaming writes and GPT resizing; independent of USB discovery."""
-import gzip,hashlib,json,os,struct,uuid,zlib
+import gzip,hashlib,json,os,re,struct,uuid,zlib
 from pathlib import Path,PurePosixPath
 
 BLOCK=4*1024*1024
@@ -17,7 +17,7 @@ def validate_manifest(value):
     if value.get('emmc_sectors')!=244318208:raise ValueError('Wrong eMMC capacity profile')
     for item in value['files'].values():
         name=PurePosixPath(item['name'])
-        if name.name!=item['name'] or '..' in name.parts or name.is_absolute():raise ValueError('Unsafe asset path')
+        if name.name!=item['name'] or '..' in name.parts or name.is_absolute() or not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9._-]{0,127}',item['name']):raise ValueError('Unsafe asset path')
         if not isinstance(item['bytes'],int) or item['bytes']<=0:raise ValueError('Invalid size')
         if len(item['sha256'])!=64 or any(c not in '0123456789abcdef' for c in item['sha256']):raise ValueError('Invalid digest')
     return value

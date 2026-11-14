@@ -94,6 +94,8 @@ def main():
     parser.add_argument('--manifest',type=Path);parser.add_argument('--dry-run',action='store_true')
     parser.add_argument('--yes',action='store_true',help='Confirm erase AND the exact physical board profile')
     args=parser.parse_args();m=MESSAGES[args.lang];print(m['title'],flush=True)
+    if not args.dry_run and not (sys.platform=='win32' or sys.platform.startswith('linux')):
+        raise RuntimeError('Disk installation supports Windows and Linux only')
     base='https://github.com/'+REPOSITORY+'/releases/download/'+VERSION
     manifest_path=args.manifest or args.cache/'release-manifest.json'
     if not manifest_path.exists():download(base+'/release-manifest.json',manifest_path)

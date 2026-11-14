@@ -1,0 +1,17 @@
+[Unit]
+Description=TZX P30 Mali-G57 Panfrost GPU at fixed 200 MHz
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+Requires=tzx-display.service tzx-accel-power.service tzx-thermal.service
+After=tzx-display.service tzx-accel-power.service tzx-thermal.service
+Before=lightdm.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/local/lib/tzx-accel-hardware/tzx-acceleration-hardware gpu
+ExecStop=/bin/sh /usr/local/lib/tzx-accel-hardware/tzx-acceleration-hardware stop
+TimeoutStartSec=25
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target

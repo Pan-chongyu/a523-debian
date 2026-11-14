@@ -1,0 +1,13 @@
+#!/bin/sh
+set -eu
+case "$(uname -r)" in
+7.3.3-tzx-a523) runtime=/usr/local/lib/tzx-peripherals ;;
+7.3.3-tzx-a523-gfx1) runtime=/usr/local/lib/tzx-peripherals-gfx1 ;;
+7.3.3-tzx-a523-periph1) runtime=/usr/local/lib/tzx-peripherals-periph1 ;;
+*) echo 'No verified peripherals for this kernel' >&2; exit 2;;
+esac
+case "$1" in
+touch) shift; exec /bin/sh "$runtime/tzx-touch-runtime-test.sh" "$@" ;;
+wifi) shift; exec /bin/sh "$runtime/tzx-wifi-runtime" "$@" ;;
+*) exit 2;;
+esac

@@ -1,0 +1,9 @@
+{
+  "profile": "DCDC1-DVFS-little1416-big1488",
+  "files": {
+    "/usr/local/lib/tzx-cpu-dvfs/tzx_cpufreq_dvfs.ko": "68fc4bfbbdb82f1817767796185eb778b1b598b630b826bfb0a51f84198b9a97",
+    "/usr/local/lib/tzx-cpu-dvfs/tzx_cpu_dvfs_cooling.ko": "61fff534d611278395a398384f2d2a9ef2171ab7143fbfefc44dbc8f4e000ac2",
+    "/usr/local/lib/tzx-cpu-dvfs/runtime.py": "39d47b7238ca98dacde31ae8c67ff30be1f7907d573676574c895389960815a9",
+    "/etc/systemd/system/tzx-cpu-dvfs.service": "1270bf78dd94fd9afb1bd85560c38af13d483c0280b109587eec91802840612b"
+  }
+}

@@ -1,0 +1,7 @@
+[Unit]
+Description=Revoke failed GPU startup and restore software display
+After=tzx-gpu.service
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-dram-gpu/runtime.py fallback
+TimeoutStartSec=150

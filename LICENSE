@@ -8,7 +8,7 @@ This is an aggregation, not a single-license operating system.
    under the MIT license in LICENSES/MIT.txt, copyright (c) 2026
    Pan-chongyu and contributors. Third-party content is excluded.
 
-2. Adaptation code in research/ is licensed GPL-2.0-only unless a file
+2. Adaptation code in research/ and runtime/ is licensed GPL-2.0-only unless a file
    states a different upstream license. Preserve all embedded notices.
    The Linux-derived code and the corresponding Linux source archive are
    governed by their original GPL and SPDX declarations, not by MIT.

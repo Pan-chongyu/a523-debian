@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=TZX 屏幕方向
+Comment=同步触摸坐标与屏幕方向
+Exec=/usr/local/bin/tzx-screen --daemon
+OnlyShowIn=XFCE;
+X-GNOME-Autostart-Delay=4
+Terminal=false

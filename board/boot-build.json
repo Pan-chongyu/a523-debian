@@ -1,0 +1,105 @@
+{
+  "toc0_sha256": "09f4028fff214369e301e087c59d4c1dc359e0ee774e19556e73aa867845b0ca",
+  "toc0_bytes": 49152,
+  "toc0_patches": [
+    {
+      "address": "0x44c98",
+      "old": "0xe28dc010",
+      "new": "0xe28dc018"
+    },
+    {
+      "address": "0x44ca0",
+      "old": "0xe88c000f",
+      "new": "0xe88c000c"
+    },
+    {
+      "address": "0x44cac",
+      "old": "0xe1a0300d",
+      "new": "0xe28d3008"
+    },
+    {
+      "address": "0x44ce8",
+      "old": "0x2df00",
+      "new": "0x2df08"
+    }
+  ],
+  "boot_profile": "model-prefix-and-exact-capacity",
+  "active_bundle_sha256": "ac0a9966f83e7232d145d384a28c68250afb1e8fac608b0d97eb31c9a74c7d1a",
+  "header_sha256": "5140bdc3fa652af73193b23eefaee532c364b82b4c23fd1174dd7354356cdfd0",
+  "kernel_sha256": "63af752cf04c9ebeb7636fdcd25729b1cd0189093be5798fbd02246eb09a1049",
+  "items": [
+    {
+      "file": "Image",
+      "lba": 98305,
+      "bytes": 12742664,
+      "load_address": "0x48080000",
+      "sha256": "63af752cf04c9ebeb7636fdcd25729b1cd0189093be5798fbd02246eb09a1049"
+    },
+    {
+      "file": "board.dtb",
+      "lba": 123194,
+      "bytes": 20299,
+      "load_address": "0x47000000",
+      "sha256": "fcdb1feb86d68c5fcc22db9be56f99f48a206fe2eca5ac5ed450c7bb37b698c8"
+    },
+    {
+      "file": "initramfs.cpio.gz",
+      "lba": 123234,
+      "bytes": 2205718,
+      "load_address": "0x60000000",
+      "sha256": "454e1b8b377ae3d365601176d6991b5d9b0a57c87d179bcef4bf467f0407b58a"
+    },
+    {
+      "file": "linux-entry.bin",
+      "lba": 127543,
+      "bytes": 392,
+      "load_address": "0x4a000000",
+      "sha256": "1b3e0ff33ded9293cb9dc3a14ff533e2a6fa351247ea5f02bd745009c5244505"
+    },
+    {
+      "file": "bl31.bin",
+      "lba": 127544,
+      "bytes": 37028,
+      "load_address": "0x54000",
+      "sha256": "4f86a989584fe1e1312264ce549ecbb81bdc5656a2307cdef525371b81ad371a"
+    }
+  ],
+  "installer_items": [
+    {
+      "file": "Image",
+      "lba": 98305,
+      "bytes": 12742664,
+      "load_address": "0x48080000",
+      "sha256": "63af752cf04c9ebeb7636fdcd25729b1cd0189093be5798fbd02246eb09a1049"
+    },
+    {
+      "file": "board.dtb",
+      "lba": 123194,
+      "bytes": 20299,
+      "load_address": "0x47000000",
+      "sha256": "0ae14dc53aab7acdc20d2c183ec2da52c810c009fa86f0bf2b1b5136647b5c0b"
+    },
+    {
+      "file": "initramfs.cpio.gz",
+      "lba": 123234,
+      "bytes": 2205742,
+      "load_address": "0x60000000",
+      "sha256": "21e0a86b2a779be59a2e23de85c621cd073073bf140cac522cbd3e8c01638aed"
+    },
+    {
+      "file": "linux-entry.bin",
+      "lba": 127543,
+      "bytes": 392,
+      "load_address": "0x4a000000",
+      "sha256": "1b3e0ff33ded9293cb9dc3a14ff533e2a6fa351247ea5f02bd745009c5244505"
+    },
+    {
+      "file": "bl31.bin",
+      "lba": 127544,
+      "bytes": 37028,
+      "load_address": "0x54000",
+      "sha256": "4f86a989584fe1e1312264ce549ecbb81bdc5656a2307cdef525371b81ad371a"
+    }
+  ],
+  "hardware_boot_of_public_variant_verified": false
+}

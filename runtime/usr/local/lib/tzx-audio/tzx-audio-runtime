@@ -1,0 +1,27 @@
+#!/bin/sh
+set -eu
+test "$(uname -r)" = 7.3.3-tzx-a523-periph1
+test "$(cat /sys/class/block/mmcblk0/device/cid)" = $(cat /etc/tzx/device-cid)
+runtime=/usr/local/lib/tzx-audio
+sha256sum -c "$runtime/MODULES.sha256"
+case "${1:-}" in
+start)
+    sysctl -p /etc/sysctl.d/70-tzx-driver-test-recovery.conf
+    modprobe tzx_codec_driver
+    test -r /sys/bus/platform/devices/7110000.audio-codec/pcm_counters
+    amixer -q -c A523 cset name='ADDA Loop Mode' 0
+    amixer -q -c A523 cset name='ADC1 Capture Volume' 159
+    amixer -q -c A523 cset name='Mic1 Capture Gain' 20
+    amixer -q -c A523 cset name='Master Playback Volume' 127,127
+    amixer -q -c A523 cset name='Lineout Playback Volume' 31
+    amixer -q -c A523 cset name='Master Playback Switch' 1,1
+    echo TZX_AUDIO_READY
+    ;;
+stop)
+    if test -w /sys/bus/platform/devices/7110000.audio-codec/speaker_shutdown; then
+        amixer -q -c A523 cset name='Master Playback Switch' 0,0 || true
+        echo 1 > /sys/bus/platform/devices/7110000.audio-codec/speaker_shutdown
+    fi
+    ;;
+*) exit 2 ;;
+esac

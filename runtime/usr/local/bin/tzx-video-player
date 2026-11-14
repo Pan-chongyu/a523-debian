@@ -1,0 +1,8 @@
+#!/bin/sh
+export LD_LIBRARY_PATH=/opt/tzx-video/usr/lib/aarch64-linux-gnu
+export GST_PLUGIN_PATH=/opt/tzx-video/usr/lib/aarch64-linux-gnu/gstreamer-1.0
+export GST_OMX_CONFIG_DIR=/opt/tzx-video/etc/xdg
+export GST_REGISTRY="$HOME/.cache/tzx-video-registry.bin"
+export GST_GL_API=gles2
+export GST_GL_PLATFORM=egl
+exec /usr/bin/python3 /usr/local/lib/tzx-video/player.py "$@"

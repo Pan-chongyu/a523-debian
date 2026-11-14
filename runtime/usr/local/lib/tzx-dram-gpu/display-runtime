@@ -1,0 +1,53 @@
+#!/bin/sh
+set -eu
+test "$(cat /sys/class/block/mmcblk0/device/cid)" = '$(cat /etc/tzx/device-cid)'
+test "$(uname -r)" = '7.3.3-tzx-a523-accel1'
+test ! -L /sys/bus/i2c/devices/0-0034/driver
+state=/run/tzx-display-rail-mask
+exec 9>/run/tzx-display.lock
+flock -x 9
+case "${1:-}" in
+start)
+    test ! -d /sys/module/tzx_display
+    test ! -d /sys/module/tzx_dsi_probe
+    test ! -e "$state"
+    sha256sum -c /usr/local/lib/tzx-accel-display/MODULE.sha256
+    test "$(i2cget -y 0 0x34 0x9b)" = '0x0d'
+    test "$(i2cget -y 0 0x34 0x9e)" = '0x1c'
+    original=$(i2cget -y 0 0x34 0x91)
+    test "$original" = '0xd7'
+    printf '%s\n' "$original" > "$state"
+    cleanup() {
+        modprobe -r tzx_display 2>/dev/null || true
+        if test ! -d /sys/module/tzx_display; then
+            i2cset -y 0 0x34 0x91 "$original"
+            rm -f "$state"
+        fi
+    }
+    trap cleanup EXIT HUP INT TERM
+    i2cset -y 0 0x34 0x91 0xdf
+    sleep 1
+    for tzx_dep in $(modinfo -F depends /usr/local/lib/tzx-dram-gpu/tzx_display.ko | tr ',' ' '); do
+        modprobe "$tzx_dep"
+    done
+    insmod /usr/local/lib/tzx-dram-gpu/tzx_display.ko
+    test -e /dev/dri/card0
+    test -e /dev/fb0
+    test -e /sys/class/backlight/tzx-panel/brightness
+    cat /sys/module/tzx_display/parameters/de_report
+    trap - EXIT HUP INT TERM
+    echo TZX_DRM_DISPLAY_READY
+    ;;
+stop)
+    if test -d /sys/module/tzx_display; then modprobe -r tzx_display; fi
+    if test -f "$state"; then
+        original=$(cat "$state")
+        test "$original" = '0xd7'
+        current=$(i2cget -y 0 0x34 0x91)
+        case "$current" in 0xd7|0xdf) ;; *) exit 12;; esac
+        i2cset -y 0 0x34 0x91 "$original"
+        rm -f "$state"
+    fi
+    ;;
+*) exit 2;;
+esac

@@ -1,0 +1,15 @@
+[Unit]
+Description=Initialize the TZX A523 CPU4-7 clock
+DefaultDependencies=no
+After=systemd-remount-fs.service
+Conflicts=shutdown.target
+Before=multi-user.target shutdown.target systemd-udevd.service systemd-udev-trigger.service
+
+[Service]
+Type=oneshot
+TimeoutStartSec=5s
+ExecStart=/usr/local/sbin/tzx-enable-cpub
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

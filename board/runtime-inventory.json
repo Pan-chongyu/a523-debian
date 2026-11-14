@@ -1,0 +1,2048 @@
+[
+  {
+    "path": "/usr/local/bin/tzx-screen",
+    "bytes": 10266,
+    "sha256": "7c7639ffd3c3eeee157f156b7a8b6c00ac0bfdedc08def34d11732c65fc9fe11",
+    "mode": "0o755",
+    "text_source": "runtime/usr/local/bin/tzx-screen"
+  },
+  {
+    "path": "/usr/local/bin/tzx-video-player",
+    "bytes": 372,
+    "sha256": "b8c854eb335efe476962d96509514c17b7bc5b6fbafc886a68f1dfcbdbe21e25",
+    "mode": "0o755",
+    "text_source": "runtime/usr/local/bin/tzx-video-player"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel/overrides.json",
+    "bytes": 2063,
+    "sha256": "824e4ce883d9b37504af539e94a9fa000d1e1d69e551e88f08c9f51da7ed56f8",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel/overrides.json"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-audio/MODULES.sha256",
+    "bytes": 391,
+    "sha256": "a2e8d453531f62e382788abb6be2c8ca44aeb3aac4560a13d17e521be7029b8a",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-audio/MODULES.sha256"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-audio/tzx-audio-runtime",
+    "bytes": 1062,
+    "sha256": "4512c8c9c9ebe82acc0886a0e8fe517d40b80df81d46192b12d00f4fe23fbb26",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-audio/tzx-audio-runtime"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-audio/verify_codec_duplex.py",
+    "bytes": 2026,
+    "sha256": "61aa38f0d54d7b0104426c1d5a1f2faed5510ce8fb56b89deea2f8edfe7e93d7",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-audio/verify_codec_duplex.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-audio/verify_codec_pcm.py",
+    "bytes": 3139,
+    "sha256": "039411a07a1e90703e4fda4b8ff72174cb7fdabcc17d26052665b2dbaaf3fc75",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-audio/verify_codec_pcm.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-bluetooth/MODULE.sha256",
+    "bytes": 125,
+    "sha256": "836739712e20b9a32ad4f16b6d80151e361cc234a0916ae49247d0182ce1f88f",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-bluetooth/MODULE.sha256"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-bluetooth/runtime.py",
+    "bytes": 8658,
+    "sha256": "53079df15e2357cfe078c603f8320f09367810e74fd795a1a6f2577f235cae36",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-bluetooth/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-display/MODULE.sha256",
+    "bytes": 122,
+    "sha256": "b60984b359cb25cdc277b8fb7a17f033ffc133e0a1ec90c1b105620bf22f1dd0",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-display/MODULE.sha256"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-display/tzx-display-runtime",
+    "bytes": 1556,
+    "sha256": "d0d345f76d4b6a9410484b8bebc7246dfb4c6460debf4a2dbdca1ebd08aef961",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-display/tzx-display-runtime"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-gpu/lightdm.conf",
+    "bytes": 180,
+    "sha256": "b5a8bf1e40da98eec2ddfc2cab2a9c564caa3b0bdc72780c152c0333962ec841",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-gpu/lightdm.conf"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-gpu/xorg.conf.d/20-tzx-display.conf",
+    "bytes": 373,
+    "sha256": "c463ac7be88c56aa321aafe1673a5970ac9b218917fe9713747ee190508f4e5e",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-gpu/xorg.conf.d/20-tzx-display.conf"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-hardware/MODULES.sha256",
+    "bytes": 511,
+    "sha256": "6770b7a427466b2b4c7a90cb2db944354dd3e61d094442a1a9a1c11fac9ebb67",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-hardware/MODULES.sha256"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-hardware/tzx-acceleration-hardware",
+    "bytes": 1971,
+    "sha256": "efe74b8ba2df85063880e2a53723112cd0b18b3962450bc0a20a0b5a8a3b65ba",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-hardware/tzx-acceleration-hardware"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-hardware/verify_gpu_render.py",
+    "bytes": 6436,
+    "sha256": "84f03a4dacb526a091bf68b93e74f7144de00c917d5a130920a452380fc6fd48",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-hardware/verify_gpu_render.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-accel-hardware/verify_thermal_sensors.py",
+    "bytes": 1415,
+    "sha256": "48bac03012b37dde5936e419c22a8b5b0efd38ac0093d06387bc47f6d5de534c",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-accel-hardware/verify_thermal_sensors.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-audio/MODULES.sha256",
+    "bytes": 394,
+    "sha256": "756b061d386b9e9238003ae4aac3fde48c32d2bd6a355b6bba2cb2bc225c996b",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-audio/MODULES.sha256"
+  },
+  {
+    "path": "/usr/local/lib/tzx-audio/tzx-audio-runtime",
+    "bytes": 1057,
+    "sha256": "486003f2b034fc03deb694e1e3cace8d423fa38f7f43a3798442ae0202ab5c3a",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-audio/tzx-audio-runtime"
+  },
+  {
+    "path": "/usr/local/lib/tzx-audio/verify_codec_duplex.py",
+    "bytes": 2026,
+    "sha256": "61aa38f0d54d7b0104426c1d5a1f2faed5510ce8fb56b89deea2f8edfe7e93d7",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-audio/verify_codec_duplex.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-audio/verify_codec_pcm.py",
+    "bytes": 3140,
+    "sha256": "489cd939d37109ca612048bdaaf142ab4d33c1ade67106e624cd16f2b284a5c7",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-audio/verify_codec_pcm.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-bluetooth/MODULE.sha256",
+    "bytes": 126,
+    "sha256": "4d10406dda1e3e52080c9e4611c1b6b30a85254222ce2e7ed17e9cedb9bae481",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-bluetooth/MODULE.sha256"
+  },
+  {
+    "path": "/usr/local/lib/tzx-bluetooth/runtime.py",
+    "bytes": 8653,
+    "sha256": "9e2e21ef67bf3237a1f89eabd73b7fde23efe7dcfdc01ffa0b76265c5f8c0674",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-bluetooth/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-boot-panel/handoff.py",
+    "bytes": 7824,
+    "sha256": "03da966fd27f510e7de22d214ac2871638eabbecf91e6037ea050eac49d0e6d1",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-boot-panel/handoff.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-cooling/runtime.py",
+    "bytes": 3439,
+    "sha256": "af3eb3c7d7c690fd02abc83840a03aaa93dbe435df79620fe7368c26d20bc31c",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-cpu-cooling/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-cooling/tzx_cpu_cooling.ko",
+    "bytes": 10936,
+    "sha256": "d37b67d234a699a45eaf0c7f9c350123271754091a77c498a6f99e883ac37efa",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-cpu-cooling"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-dvfs/manifest.json",
+    "bytes": 555,
+    "sha256": "91304a2717b339c9ed781db60801c45c62e02a311b3c63136892f694af3a7623",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-cpu-dvfs/manifest.json"
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-dvfs/runtime.py",
+    "bytes": 7032,
+    "sha256": "39d47b7238ca98dacde31ae8c67ff30be1f7907d573676574c895389960815a9",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-cpu-dvfs/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-dvfs/tzx_cpu_dvfs_cooling.ko",
+    "bytes": 10960,
+    "sha256": "61fff534d611278395a398384f2d2a9ef2171ab7143fbfefc44dbc8f4e000ac2",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-cpu-dvfs"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-dvfs/tzx_cpufreq_dvfs.ko",
+    "bytes": 22072,
+    "sha256": "68fc4bfbbdb82f1817767796185eb778b1b598b630b826bfb0a51f84198b9a97",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-cpu-dvfs"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-full/manifest.json",
+    "bytes": 679,
+    "sha256": "3fc5d2c1a5966dce329e0d2ea810996c2d5016288e2b21af6de7f37851895a51",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-cpu-full/manifest.json"
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-full/runtime.py",
+    "bytes": 7852,
+    "sha256": "01b5e7999e48772b459cbcac5cd78ddd943a4f133333e37756c9f347ea797b4c",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-cpu-full/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-full/tzx_cpu_dvfs_cooling_v2.ko",
+    "bytes": 12008,
+    "sha256": "6e26041ba4a0b28ef3824b04107e88746894cdfb01aa4aca1067e41da2c30daa",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-cpu-full"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-full/tzx_cpufreq_dvfs_v2.ko",
+    "bytes": 23808,
+    "sha256": "f6187ea38bfaf5f57edd758839f0149489976465810548034b98007bc3787f64",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-cpu-full"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-performance/manifest.json",
+    "bytes": 577,
+    "sha256": "eeef740192e6310a1400b08c9c05a658bc02eb0c25fa25dc63997fa9ab82c77f",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-cpu-performance/manifest.json"
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-performance/runtime.py",
+    "bytes": 6104,
+    "sha256": "5fc6b9adca3bd5a8868e12349e39e0fd6a76885cdc53a1d341a6f158810e64cf",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-cpu-performance/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-performance/tzx_cpu_perf_cooling.ko",
+    "bytes": 10960,
+    "sha256": "26eca91311f4349fd97340429faaf225a8cfbf36cd6f5ac17fce6b777cbc5d0f",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-cpu-performance"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpu-performance/tzx_cpufreq_safepll.ko",
+    "bytes": 15600,
+    "sha256": "3c649c8516001f6ea53ee9a86249127e8b2841b288e95dc8f109bff71e87d4ea",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-cpu-performance"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpufreq/runtime.py",
+    "bytes": 3824,
+    "sha256": "295a46335c7487401060beca181e85139b06fd1a382ee4f09e61ad6d7d2e37fb",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-cpufreq/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-cpufreq/tzx_cpufreq_divider.ko",
+    "bytes": 10000,
+    "sha256": "95a0d572d6a363b1b70984cf51e2ae6dff7e8470fc3a2e66072af5a8a508903c",
+    "mode": "0o644",
+    "source_directories": [
+      "linux-7.3.3 or modules/ (consult per-file symbols)"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-display/MODULE.sha256",
+    "bytes": 123,
+    "sha256": "ce0aabecaa2ec14f44de3955b9bcd483ec55d2ccea37c22bd46805b1cf41d2fd",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-display/MODULE.sha256"
+  },
+  {
+    "path": "/usr/local/lib/tzx-display/tzx-display-runtime",
+    "bytes": 1551,
+    "sha256": "72eeabe0d7cfa537392b72fa38a111758558e8908cc9cb561e10002caa432f37",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-display/tzx-display-runtime"
+  },
+  {
+    "path": "/usr/local/lib/tzx-dram-gpu/display-runtime",
+    "bytes": 1723,
+    "sha256": "458c88882324e7814fa8345783a3d8991203056815ae1040b0eca2018089af71",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-dram-gpu/display-runtime"
+  },
+  {
+    "path": "/usr/local/lib/tzx-dram-gpu/panfrost.ko",
+    "bytes": 141200,
+    "sha256": "d17b1f2466f70dab017dfd3de2579ddc947a907587422a9d2e7565fccc52fdc8",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-native-panfrost"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-dram-gpu/read_axp_dram_status.py",
+    "bytes": 1555,
+    "sha256": "dc22def4677c14f128e9a4f5cdcefd1eb41f9b2e1c6f6d7233791c44ee3954d0",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-dram-gpu/read_axp_dram_status.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-dram-gpu/runtime.py",
+    "bytes": 8571,
+    "sha256": "a7c7470494055e7f12def09361362689620e5b1dacb9be7031673d0cad222379",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-dram-gpu/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-dram-gpu/tzx_direct_io.py",
+    "bytes": 3047,
+    "sha256": "1ecabb4f0493976e3b1f92bebe42029715b78efd385fd33b59e490b90743a3b6",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-dram-gpu/tzx_direct_io.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-dram-gpu/tzx_display.ko",
+    "bytes": 81320,
+    "sha256": "49faef93a64f7c4c24dcf330fa8d21c47f9681a848e83bd6716bbfa4643b4440",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-gpu-dma32-mmu-init",
+      "modules/tzx-gpu-dma32-trial",
+      "modules/tzx-gpu-dma32-aarch64"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-emmc-hs/manifest.json",
+    "bytes": 714,
+    "sha256": "b7da67985b27b211c79aead4021654e1c8597bd28d25e0c18d532d8f39b37bd8",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-emmc-hs/manifest.json"
+  },
+  {
+    "path": "/usr/local/lib/tzx-emmc-hs/runtime.py",
+    "bytes": 5366,
+    "sha256": "44af432a243f749133275310239b1ec399fcf2b91b4469a97991d7ef037e48c9",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-emmc-hs/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-emmc-hs/transition-guard",
+    "bytes": 657224,
+    "sha256": "da2bbbc64e359b42dc83af0ef0b1163132436b01716f590f1c2b5dc5171d9a53",
+    "mode": "0o755"
+  },
+  {
+    "path": "/usr/local/lib/tzx-emmc-hs/tzx_emmc_hs_lease.ko",
+    "bytes": 12912,
+    "sha256": "e2229c3e7a6753362ad434aee0f52a5d1cf81de82fedabd22ec9d3e8ce885cd6",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/public-emmc-lease"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-emmc-performance/cleanup.py",
+    "bytes": 686,
+    "sha256": "b6856b2d8166d4aea3a0c8d47a6899dfa3aaedd707bb9ae357776889f0a504cb",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-emmc-performance/cleanup.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-emmc-performance/manifest.json",
+    "bytes": 591,
+    "sha256": "071e89cd5d8cbed176a6782c6f5a440903c53a5675ece5c1bf24dd2ff7d3ceee",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-emmc-performance/manifest.json"
+  },
+  {
+    "path": "/usr/local/lib/tzx-emmc-performance/runtime.py",
+    "bytes": 3544,
+    "sha256": "e38195fd658624f08ee9a0e432fc0469ca7bfbb57b37915480316300d8d4325c",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-emmc-performance/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-emmc-performance/tzx_emmc_performance.ko",
+    "bytes": 11656,
+    "sha256": "8db02845e4630a11b711145cf5c4403d334416244807e519c85755d5a7a5a878",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-emmc-performance"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-devfreq/cleanup.py",
+    "bytes": 111,
+    "sha256": "be6c194e6be39866cf35fd718a2f5fb6dcd40dcb256e00f59aa058733418853a",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-gpu-devfreq/cleanup.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-devfreq/common.py",
+    "bytes": 2456,
+    "sha256": "531760c4a5aa9b380397d2de87f2e1b6f9785a81d23d9cab7ba05662d4e1c93e",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-gpu-devfreq/common.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-devfreq/fallback.py",
+    "bytes": 112,
+    "sha256": "fc1af0580fc2e931e9cb38bd86012a0e9a1420a08def57496deef835a8576b9b",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-gpu-devfreq/fallback.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-devfreq/manifest.json",
+    "bytes": 1448,
+    "sha256": "566749b0c176223836debeb73e5f79a5bac495b76a3e3cc775da5b525d2a4805",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-gpu-devfreq/manifest.json"
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-devfreq/runtime.py",
+    "bytes": 2495,
+    "sha256": "6281e06daa55990976bda6a5c5c1b7ea1e4be50dc8f7ec7867665250d66391c7",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-gpu-devfreq/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-devfreq/startup.py",
+    "bytes": 1439,
+    "sha256": "e11f8a3831123270682f01e46862139bc93ce12c910403e14670c2ace47b855b",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-gpu-devfreq/startup.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-devfreq/tzx_gpu_devfreq_guard.ko",
+    "bytes": 15936,
+    "sha256": "317fd2d59b88f361d057e6d0403d385f0746d0f5aa1e3c4a01dc7bc4a773df0e",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-gpu-devfreq"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-devfreq/tzx_gpu_devfreq_opps.ko",
+    "bytes": 7320,
+    "sha256": "b57af6761d348d19277deabf78633b42aae435756bf951f2b223fe0e079b8c15",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-gpu-devfreq"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-performance/cleanup.py",
+    "bytes": 665,
+    "sha256": "8a43dc5211ef7153228d51dbff56f0f49d31a56c0b71d10f3dcf9fdfab78215e",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-gpu-performance/cleanup.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-performance/manifest.json",
+    "bytes": 573,
+    "sha256": "2b27f93346f79493a6557f1b6519ad403a12734ad6e9fd5610dfeae59ab9c325",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-gpu-performance/manifest.json"
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-performance/runtime.py",
+    "bytes": 4356,
+    "sha256": "68de27e32773719f0e012b5a88c4c60ba68d63577ab99b59f42c0347b30a9a36",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-gpu-performance/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-gpu-performance/tzx_gpu_performance.ko",
+    "bytes": 15128,
+    "sha256": "2f5b336419d723849a68dc0b86c00e04d13eb9bca5cffff19455d060c5989659",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-gpu-performance"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-performance-mode/early-check.py",
+    "bytes": 1330,
+    "sha256": "7ba9873d84339c95f162709c13b8102ce10429fa236f5df5a6f39383a8c3ca73",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-performance-mode/early-check.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-performance-mode/manifest.json",
+    "bytes": 1292,
+    "sha256": "5701199ebbb836105fb72beeee23df5229030d070c24f5156a1fd321963c5a36",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-performance-mode/manifest.json"
+  },
+  {
+    "path": "/usr/local/lib/tzx-performance-mode/mode.py",
+    "bytes": 3263,
+    "sha256": "8d1588e582efea16a790323b9e2a1d3e87a09fe9568674f037e87309612dc106",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-performance-mode/mode.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals/aic8800_bsp.ko",
+    "bytes": 166816,
+    "sha256": "8baa06c7ffb901cf5b5fdb07394f59e32ee3549b29d77a7a0a36e91f4077875c",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/radxa-aic8800-port"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals/aic8800_fdrv.ko",
+    "bytes": 817456,
+    "sha256": "6bc97a9ce03f18ba13e1eb334035b0c31a488de3de331a80b6f8c94ad64ce8d5",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/radxa-aic8800-port"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals/silead-seeedd1001-candidate.fw",
+    "bytes": 34848,
+    "sha256": "125728ad83424e533198f804cb6d8b393c59d3818903760cbda282138e782636",
+    "mode": "0o644"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals/tzx-touch-runtime-test.sh",
+    "bytes": 2513,
+    "sha256": "70f07aa501e393ba81cf0772fb3bfed965faab6c4e00cbc5474ea92e6bcb27fe",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals/tzx-touch-runtime-test.sh"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals/tzx-wifi-runtime",
+    "bytes": 1239,
+    "sha256": "a5ec3dc5812ba7c789167b5a79f642ec7025fc738bba201081c5ff8c93bc7d8f",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals/tzx-wifi-runtime"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals/tzx-wifi-runtime-test.sh",
+    "bytes": 1833,
+    "sha256": "5a0e0bbd642ad4d5b7af8dd8468775f21bd4aefca6ac98820c77eaa5056d45c5",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals/tzx-wifi-runtime-test.sh"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals/tzx_gsl3670.ko",
+    "bytes": 13672,
+    "sha256": "66ee5e321c5e7cecc28107a2769e2cb5ee8604270ed8276279cf8924ccb72e5e",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-touch-module"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals/tzx_touch_runtime.ko",
+    "bytes": 9328,
+    "sha256": "120f38bfd5916970739dcac2407bd7138b86417a9fa19215863f60833fb32acb",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-touch-module"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals/tzx_wifi_runtime.ko",
+    "bytes": 10192,
+    "sha256": "7bedd49c07d0eae77c7a4aef53039d2c50e6c33bfb5ead1816b2ff719dec258a",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-wifi-module"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-accel1/aic8800_bsp.ko",
+    "bytes": 166824,
+    "sha256": "9bf1e8f5015861720077e870e583bf7a58395b6a596245d833e0d60e834f3440",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/radxa-aic8800-acceleration"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-accel1/aic8800_fdrv.ko",
+    "bytes": 817544,
+    "sha256": "1bc81c0e382ddba06aa67e8fa9d754b7baa3746ce6529b34be3f795c9861db42",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/radxa-aic8800-acceleration"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-accel1/silead-seeedd1001-candidate.fw",
+    "bytes": 34848,
+    "sha256": "125728ad83424e533198f804cb6d8b393c59d3818903760cbda282138e782636",
+    "mode": "0o644"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-accel1/tzx-touch-runtime-test.sh",
+    "bytes": 2940,
+    "sha256": "1df3708d926a07b33016b6ba58e8f59417c25fcae4807bbab5746ac958f92ab7",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals-accel1/tzx-touch-runtime-test.sh"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-accel1/tzx-wifi-runtime",
+    "bytes": 1524,
+    "sha256": "fff2d79773c26ab12233a497cba755f941dba09a625bc6e0849be193e9c466be",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals-accel1/tzx-wifi-runtime"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-accel1/tzx-wifi-runtime-test.sh",
+    "bytes": 1887,
+    "sha256": "0d1f1598a29a1f52fe41d2e72b54784b5cd594833515580efa354503e371722e",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals-accel1/tzx-wifi-runtime-test.sh"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-accel1/tzx_gsl3670.ko",
+    "bytes": 13680,
+    "sha256": "dd25a872e7459896063d50c9b0baa486a8c36c997eec749715c8014827bd1778",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-acceleration-modules"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-accel1/tzx_touch_runtime.ko",
+    "bytes": 9336,
+    "sha256": "fca5b74118002d48671455b1847ba784e4a744b2d0864a20744ef5264ac735dd",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-acceleration-modules"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-accel1/tzx_wifi_runtime.ko",
+    "bytes": 12328,
+    "sha256": "c89472e3d800beba1796940a7c6afc78d82d22166f7a72b4ae9310caf222c751",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-wifi-performance"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-gfx1/aic8800_bsp.ko",
+    "bytes": 166824,
+    "sha256": "2df8cad944e50cc493ee1874c49d09a76071e141bb4254037438139677718388",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/radxa-aic8800-graphics"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-gfx1/aic8800_fdrv.ko",
+    "bytes": 817464,
+    "sha256": "42d6618091cea2f6131f521288a918c1eac7b6a6e916bbecd528d8e46f89c317",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/radxa-aic8800-graphics"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-gfx1/silead-seeedd1001-candidate.fw",
+    "bytes": 34848,
+    "sha256": "125728ad83424e533198f804cb6d8b393c59d3818903760cbda282138e782636",
+    "mode": "0o644"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-gfx1/tzx-touch-runtime-test.sh",
+    "bytes": 2548,
+    "sha256": "f5b641dbb182068f8dfb341c0147d528eb9baf412b0012c0b155d0df98910413",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals-gfx1/tzx-touch-runtime-test.sh"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-gfx1/tzx-wifi-runtime",
+    "bytes": 1244,
+    "sha256": "f23500d682228e5531842f17e88625a25e7690084f1f5a4f020d30888f72975f",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals-gfx1/tzx-wifi-runtime"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-gfx1/tzx-wifi-runtime-test.sh",
+    "bytes": 1848,
+    "sha256": "9f8f43639d3ac72ce9bdfdc78ddd34b1ee3b9dd93c48a5aae9f963e19d921264",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals-gfx1/tzx-wifi-runtime-test.sh"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-gfx1/tzx_gsl3670.ko",
+    "bytes": 13680,
+    "sha256": "46b265a1d2b26c31be31a88efb9ac607795abfa3ffd67e280fd23eac3b70ee0c",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-touch-graphics"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-gfx1/tzx_touch_runtime.ko",
+    "bytes": 9336,
+    "sha256": "0e79c17ba5a27320d1d142a28bf5ae3fa5844586a55add3a26c482c02a463e00",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-touch-graphics"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-gfx1/tzx_wifi_runtime.ko",
+    "bytes": 10200,
+    "sha256": "f54975e765039a14bd2b7762d2ab5d0c16a1d1e7625e481fc5cf046e534dcc50",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-wifi-graphics"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-periph1/aic8800_bsp.ko",
+    "bytes": 166824,
+    "sha256": "6e09b64cb29ee9635decfc3e007e9ac5657f15c20b3ba8aa426b1bf43e68733a",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/radxa-aic8800-peripheral"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-periph1/aic8800_fdrv.ko",
+    "bytes": 817464,
+    "sha256": "411794f548bcb31d155208db5d3f699c9690e7b895fa70b55da505ed33d7849a",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/radxa-aic8800-peripheral"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-periph1/silead-seeedd1001-candidate.fw",
+    "bytes": 34848,
+    "sha256": "125728ad83424e533198f804cb6d8b393c59d3818903760cbda282138e782636",
+    "mode": "0o644"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-periph1/tzx-touch-runtime-test.sh",
+    "bytes": 2569,
+    "sha256": "6ab433c6025b263f82d433d6abcefa81bed67f33d912227a8277c987265518dc",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals-periph1/tzx-touch-runtime-test.sh"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-periph1/tzx-wifi-runtime",
+    "bytes": 1525,
+    "sha256": "77b7ddc959076d65df98c98e43c7770ad59b37d8ca008070da0a6ad6e67e1954",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals-periph1/tzx-wifi-runtime"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-periph1/tzx-wifi-runtime-test.sh",
+    "bytes": 1857,
+    "sha256": "0745d5a463017d910093a06def004d92923bb51f91e26999785b20dec9ec2e66",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-peripherals-periph1/tzx-wifi-runtime-test.sh"
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-periph1/tzx_gsl3670.ko",
+    "bytes": 13680,
+    "sha256": "e44671970d20a5a33eec025f7900a5b7012f279f6c125b368608f45c32f4005f",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-touch-peripheral"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-periph1/tzx_touch_runtime.ko",
+    "bytes": 9336,
+    "sha256": "9fe5f60d9e48a2ac10b3ed7af5ed95abf35e414439287915aa8c112e23881c99",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-touch-peripheral"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-peripherals-periph1/tzx_wifi_runtime.ko",
+    "bytes": 10280,
+    "sha256": "992899727e93a53b9a3b3312b43c7eedf095543c38c1b2a895d16e158d847a75",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-wifi-peripheral"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-pmic-poweroff/read_pmic_shutdown_status.py",
+    "bytes": 1412,
+    "sha256": "9a583bfafe9f358ef6f7b10803de25625342c83869f4b5352d6267860b5eb2d0",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-pmic-poweroff/read_pmic_shutdown_status.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-pmic-poweroff/runtime.py",
+    "bytes": 3087,
+    "sha256": "b383e41b110972436a2036b9c24181474264e6eb26b7930733ff2c523f9af5bc",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-pmic-poweroff/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-pmic-poweroff/tzx_pmic_poweroff.ko",
+    "bytes": 8656,
+    "sha256": "eabf81dae1d5cf430ad4791c0dacd625825e15690ffeff919caf7c59d0ff9af8",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-pmic-poweroff"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-rtc-context/rtc_context_codec.py",
+    "bytes": 1232,
+    "sha256": "c1f02165b4c7c2b495bdcbddd33ac5eaa331fec1309e0d970462e42971f92bbf",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-rtc-context/rtc_context_codec.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-rtc-context/runtime.py",
+    "bytes": 5112,
+    "sha256": "d71260623d4fbc47b43aeba29e2e482306fc536507d6e9cc6c9146ab9c228203",
+    "mode": "0o755",
+    "text_source": "runtime/usr/local/lib/tzx-rtc-context/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-rtc-context/tzx_rtc_log.ko",
+    "bytes": 11360,
+    "sha256": "bb446382bdfec6fb87120540f67bd521851149538547f3c162697a2bb9eb22bb",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-rtc-context"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-rtc-log/runtime.py",
+    "bytes": 4040,
+    "sha256": "42a35cddb87415c381285f62eb164a9b4347a082fcf98814d8f2e5f168f5a303",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-rtc-log/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-rtc-log/tzx_rtc_log.ko",
+    "bytes": 10880,
+    "sha256": "80e8e0522faec7ead866a254667a3272ccd6939551ed2f13bce0f2aa1b3fca73",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-rtc-log"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-screen/display-setup.py",
+    "bytes": 2293,
+    "sha256": "c868f8384caa93517b7e2854b0e768673654cc5f7e3f0a381fb0a50a7252ca5a",
+    "mode": "0o755",
+    "text_source": "runtime/usr/local/lib/tzx-screen/display-setup.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-screen/lightdm.conf",
+    "bytes": 241,
+    "sha256": "4d64ff448cfd2eecb20385b36bf0a94f3a7e34520bc25a59c4e84e147013a9cc",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-screen/lightdm.conf"
+  },
+  {
+    "path": "/usr/local/lib/tzx-screen/lightdm.py",
+    "bytes": 696,
+    "sha256": "39830422c03953477747a15f45ecd55f37b95e381ef3346582d8d5f8d71fb619",
+    "mode": "0o755",
+    "text_source": "runtime/usr/local/lib/tzx-screen/lightdm.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-screen/runtime.py",
+    "bytes": 6330,
+    "sha256": "6a058b9f0f9c39e7c1d48d247dfd08279a1ee2083e0d76842ded689851e1927a",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-screen/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-screen/tzx_display.ko",
+    "bytes": 95688,
+    "sha256": "6f16bad51fe6c9b5ca56f0b9f075d01899b994d8ec8c4eb9ca7ab54b4d69d427",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-screen-poweron"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-screen/xorg.conf.d/20-tzx-display.conf",
+    "bytes": 373,
+    "sha256": "c463ac7be88c56aa321aafe1673a5970ac9b218917fe9713747ee190508f4e5e",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-screen/xorg.conf.d/20-tzx-display.conf"
+  },
+  {
+    "path": "/usr/local/lib/tzx-screen/xorg.conf.d/90-tzx-landscape.conf",
+    "bytes": 348,
+    "sha256": "ab0d7315528404497e1fd14fc5c56485ca32224ed1a5841651dac11b73d5b5b1",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-screen/xorg.conf.d/90-tzx-landscape.conf"
+  },
+  {
+    "path": "/usr/local/lib/tzx-screen-fast/touch_ready.py",
+    "bytes": 2780,
+    "sha256": "f4f09d65bf81fcb0f9a03739d95db2bb5b34cdb2ac026c1e1a5a2afc69cc0e10",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-screen-fast/touch_ready.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-sram-log/runtime.py",
+    "bytes": 3716,
+    "sha256": "f1d5fb350c7321f7987548941c1021ae3d6ffb5ecddfe2919646533151321893",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-sram-log/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-sram-log/tzx_sram_log.ko",
+    "bytes": 12200,
+    "sha256": "4f0e595ed91fc68972f91d8757b73f814b11ff6f3fb9fbe3bcbaa9c691be891c",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-sram-log"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-tablet-keys/MODULES.sha256",
+    "bytes": 253,
+    "sha256": "7cbde6ad2ea09a9c28e3a95623bfce052858c65e1713b94f5a1fa728192febb0",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-tablet-keys/MODULES.sha256"
+  },
+  {
+    "path": "/usr/local/lib/tzx-tablet-keys/tzx-tablet-keys",
+    "bytes": 576,
+    "sha256": "e16c415d9c11235371f5fcb393c05de33c5842cfbd1f82798ca43ee10d1bdf39",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-tablet-keys/tzx-tablet-keys"
+  },
+  {
+    "path": "/usr/local/lib/tzx-va48/rtc/runtime.py",
+    "bytes": 4038,
+    "sha256": "ad0f95db1fd0e809f8e77a087ff0c34eb0470a6fb01f820efb5b1e7fb52d8edf",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-va48/rtc/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-va48/rtc/tzx_rtc_log.ko",
+    "bytes": 10880,
+    "sha256": "e04c92e6757354c553efffc2b79157de9a26836241e6e0e6b33bf0c497310ac4",
+    "mode": "0o644",
+    "source_directories": [
+      "linux-7.3.3 or modules/ (consult per-file symbols)"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-video/player.py",
+    "bytes": 9226,
+    "sha256": "cf062266d91c56321edca08ff2b168e194c8c35cb4e962836960a1e57a13ab7e",
+    "mode": "0o755",
+    "text_source": "runtime/usr/local/lib/tzx-video/player.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-video/runtime.py",
+    "bytes": 1700,
+    "sha256": "3b7cb431ae4234b711a9c098fb6371f4706770a82dbebf31bfd8622e13fa2a8f",
+    "mode": "0o755",
+    "text_source": "runtime/usr/local/lib/tzx-video/runtime.py"
+  },
+  {
+    "path": "/usr/local/lib/tzx-video/sunxi-ve.ko",
+    "bytes": 62672,
+    "sha256": "37a685c4657e234e1e79812757f9a2940fc5fa9782f95607a2780777cbecd799",
+    "mode": "0o644",
+    "source_directories": [
+      "linux-7.3.3 or modules/ (consult per-file symbols)"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-video/tzx_video_nodes.ko",
+    "bytes": 7696,
+    "sha256": "5fa3ee3281ddcf305ce9d54532e0f689122f20a3a1a04504eba97c973facfd97",
+    "mode": "0o644",
+    "source_directories": [
+      "modules/tzx-video-runtime"
+    ]
+  },
+  {
+    "path": "/usr/local/lib/tzx-zram/native-installed.json",
+    "bytes": 707,
+    "sha256": "e5f59088ca15a467931c57f632272af3639c04f34999d412adf4bf1510c801c3",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-zram/native-installed.json"
+  },
+  {
+    "path": "/usr/local/lib/tzx-zram/runtime.py",
+    "bytes": 2382,
+    "sha256": "509c9be349a2c77aee7985b50afe91781483b220e4d265906e3871c93f46b67d",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/lib/tzx-zram/runtime.py"
+  },
+  {
+    "path": "/usr/local/man",
+    "symlink": "share/man"
+  },
+  {
+    "path": "/usr/local/sbin/tzx-enable-cpub",
+    "bytes": 650080,
+    "sha256": "1b710f8dcd502b72262afa2731c772befc2e2c43a380610951f7fdb518de4539",
+    "mode": "0o755"
+  },
+  {
+    "path": "/usr/local/sbin/tzx-peripherals-dispatch",
+    "bytes": 473,
+    "sha256": "cc82e2ae387ce79225fcfed9d8405b67f23c2d2aac838cc96a104c8fa892a44f",
+    "mode": "0o644",
+    "text_source": "runtime/usr/local/sbin/tzx-peripherals-dispatch"
+  },
+  {
+    "path": "/usr/local/sbin/tzx-public-firstboot",
+    "bytes": 599,
+    "sha256": "f36e3d325106522246250bccc059b21391b17e42a5cf440cc72a2712b28c451f",
+    "mode": "0o755",
+    "text_source": "runtime/usr/local/sbin/tzx-public-firstboot"
+  },
+  {
+    "path": "/usr/local/sbin/tzx-usb-network",
+    "bytes": 699,
+    "sha256": "e11eebb0a5e49f9fd7ded53f29db193b5ccc353d5ae60a9b5a9238e49ad00428",
+    "mode": "0o755",
+    "text_source": "runtime/usr/local/sbin/tzx-usb-network"
+  },
+  {
+    "path": "/etc/systemd/system/bluetooth.service.d/20-tzx-uart.conf",
+    "bytes": 67,
+    "sha256": "20f544f3a62e303fe1d73bc2518e0020328e6fe760b1c8df15b592663855886c",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/bluetooth.service.d/20-tzx-uart.conf"
+  },
+  {
+    "path": "/etc/systemd/system/bluetooth.target.wants/bluetooth.service",
+    "symlink": "/usr/lib/systemd/system/bluetooth.service"
+  },
+  {
+    "path": "/etc/systemd/system/dbus-fi.w1.wpa_supplicant1.service",
+    "symlink": "/usr/lib/systemd/system/wpa_supplicant.service"
+  },
+  {
+    "path": "/etc/systemd/system/dbus-org.bluez.service",
+    "symlink": "/usr/lib/systemd/system/bluetooth.service"
+  },
+  {
+    "path": "/etc/systemd/system/dbus-org.freedesktop.nm-dispatcher.service",
+    "symlink": "/usr/lib/systemd/system/NetworkManager-dispatcher.service"
+  },
+  {
+    "path": "/etc/systemd/system/default.target",
+    "symlink": "/usr/lib/systemd/system/graphical.target"
+  },
+  {
+    "path": "/etc/systemd/system/display-manager.service",
+    "symlink": "/lib/systemd/system/lightdm.service"
+  },
+  {
+    "path": "/etc/systemd/system/getty.target.wants/getty@tty1.service",
+    "symlink": "/usr/lib/systemd/system/getty@.service"
+  },
+  {
+    "path": "/etc/systemd/system/getty.target.wants/serial-getty@ttyGS0.service",
+    "symlink": "/usr/lib/systemd/system/serial-getty@.service"
+  },
+  {
+    "path": "/etc/systemd/system/graphical.target.wants/accounts-daemon.service",
+    "symlink": "/usr/lib/systemd/system/accounts-daemon.service"
+  },
+  {
+    "path": "/etc/systemd/system/graphical.target.wants/tzx-cpu-dvfs.service",
+    "symlink": "/etc/systemd/system/tzx-cpu-dvfs.service"
+  },
+  {
+    "path": "/etc/systemd/system/graphical.target.wants/tzx-cpu-performance-mode.service",
+    "symlink": "/etc/systemd/system/tzx-cpu-performance-mode.service"
+  },
+  {
+    "path": "/etc/systemd/system/graphical.target.wants/tzx-emmc-hs.service",
+    "symlink": "/etc/systemd/system/tzx-emmc-hs.service"
+  },
+  {
+    "path": "/etc/systemd/system/graphical.target.wants/tzx-gpu-performance.service",
+    "symlink": "/etc/systemd/system/tzx-gpu-performance.service"
+  },
+  {
+    "path": "/etc/systemd/system/lightdm.service.d/10-tzx-display.conf",
+    "bytes": 62,
+    "sha256": "3ec8040336b6a01b6badbac35d413cd97b8883889dd7e36da086c4830d3fabec",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/lightdm.service.d/10-tzx-display.conf"
+  },
+  {
+    "path": "/etc/systemd/system/lightdm.service.d/96-dram-gpu.conf",
+    "bytes": 146,
+    "sha256": "1e1aad94fe6828d8105eaa33733a0a769829e1ed4107905d8210c360bcaa53ce",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/lightdm.service.d/96-dram-gpu.conf"
+  },
+  {
+    "path": "/etc/systemd/system/lightdm.service.d/98-screen-landscape.conf",
+    "bytes": 85,
+    "sha256": "36cb4f252faa30fba90f1f3af0a9dcbdf65f27228f43d3bd6c93094191699970",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/lightdm.service.d/98-screen-landscape.conf"
+  },
+  {
+    "path": "/etc/systemd/system/lightdm.service.d/99-touch-complete.conf",
+    "bytes": 82,
+    "sha256": "faf101208c6f66b51de9d980944a30fcf8e4dc8057771081219582930efaa25c",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/lightdm.service.d/99-touch-complete.conf"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/NetworkManager.service",
+    "symlink": "/usr/lib/systemd/system/NetworkManager.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/blueman-mechanism.service",
+    "symlink": "/usr/lib/systemd/system/blueman-mechanism.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/e2scrub_reap.service",
+    "symlink": "/usr/lib/systemd/system/e2scrub_reap.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/remote-fs.target",
+    "symlink": "/usr/lib/systemd/system/remote-fs.target"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-accel-power.service",
+    "symlink": "/etc/systemd/system/tzx-accel-power.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-audio.service",
+    "symlink": "/etc/systemd/system/tzx-audio.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-battery.service",
+    "symlink": "/etc/systemd/system/tzx-battery.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-bluetooth.service",
+    "symlink": "/etc/systemd/system/tzx-bluetooth.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-bt-hardware.service",
+    "symlink": "/etc/systemd/system/tzx-bt-hardware.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-cpub.service",
+    "symlink": "/etc/systemd/system/tzx-cpub.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-display.service",
+    "symlink": "/etc/systemd/system/tzx-display.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-dram-gpu-health.service",
+    "symlink": "/etc/systemd/system/tzx-dram-gpu-health.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-gpu.service",
+    "symlink": "/etc/systemd/system/tzx-gpu.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-pmic-poweroff.service",
+    "symlink": "/etc/systemd/system/tzx-pmic-poweroff.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-public-firstboot.service",
+    "symlink": "../tzx-public-firstboot.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-rtc-log.service",
+    "symlink": "/etc/systemd/system/tzx-rtc-log.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-screen-health.service",
+    "symlink": "/etc/systemd/system/tzx-screen-health.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-tablet-keys.service",
+    "symlink": "/etc/systemd/system/tzx-tablet-keys.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-thermal.service",
+    "symlink": "/etc/systemd/system/tzx-thermal.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-touch.service",
+    "symlink": "/etc/systemd/system/tzx-touch.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-usb-network.service",
+    "symlink": "/etc/systemd/system/tzx-usb-network.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-video.service",
+    "symlink": "/etc/systemd/system/tzx-video.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-wifi.service",
+    "symlink": "/etc/systemd/system/tzx-wifi.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/tzx-zram.service",
+    "symlink": "/etc/systemd/system/tzx-zram.service"
+  },
+  {
+    "path": "/etc/systemd/system/multi-user.target.wants/wpa_supplicant.service",
+    "symlink": "/usr/lib/systemd/system/wpa_supplicant.service"
+  },
+  {
+    "path": "/etc/systemd/system/network-online.target.wants/NetworkManager-wait-online.service",
+    "symlink": "/usr/lib/systemd/system/NetworkManager-wait-online.service"
+  },
+  {
+    "path": "/etc/systemd/system/ssh.service.wants/sshd-keygen.service",
+    "symlink": "/usr/lib/systemd/system/sshd-keygen.service"
+  },
+  {
+    "path": "/etc/systemd/system/ssh.socket.wants/sshd-keygen.service",
+    "symlink": "/usr/lib/systemd/system/sshd-keygen.service"
+  },
+  {
+    "path": "/etc/systemd/system/sshd.service.wants/sshd-keygen.service",
+    "symlink": "/usr/lib/systemd/system/sshd-keygen.service"
+  },
+  {
+    "path": "/etc/systemd/system/sshd@.service.wants/sshd-keygen.service",
+    "symlink": "/usr/lib/systemd/system/sshd-keygen.service"
+  },
+  {
+    "path": "/etc/systemd/system/sysinit.target.wants/systemd-pstore.service",
+    "symlink": "/usr/lib/systemd/system/systemd-pstore.service"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/apt-daily-upgrade.timer",
+    "symlink": "/lib/systemd/system/apt-daily-upgrade.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/apt-daily.timer",
+    "symlink": "/lib/systemd/system/apt-daily.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/dpkg-db-backup.timer",
+    "symlink": "/lib/systemd/system/dpkg-db-backup.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/e2scrub_all.timer",
+    "symlink": "/usr/lib/systemd/system/e2scrub_all.timer"
+  },
+  {
+    "path": "/etc/systemd/system/timers.target.wants/fstrim.timer",
+    "symlink": "/lib/systemd/system/fstrim.timer"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-accel-power.service",
+    "bytes": 438,
+    "sha256": "e426c497009f0bbc777c6490c92055c5e6b63dff8d9cab766569ebc7c826b1e6",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-accel-power.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-audio.service",
+    "bytes": 429,
+    "sha256": "458d4b839549a44998c0d982e662d478d7f0a26a31c0988ff09327d8607b5a91",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-audio.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-battery.service",
+    "bytes": 283,
+    "sha256": "607fffcc30cccafb1b5b96923839c5592f97a1b265b12b7e39aaf62bc9ee0ec9",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-battery.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-bluetooth.service",
+    "bytes": 470,
+    "sha256": "493a1fdbe3d79e8618884395e7cb2e2a1e8541a69524d22e091cb13a4ef84584",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-bluetooth.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-boot-panel-handoff.service",
+    "bytes": 366,
+    "sha256": "2fbef5957f00ddd8b49ff92b739cc832fe78c90a274d70675c95b778dce491b7",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-boot-panel-handoff.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-bt-hardware.service",
+    "bytes": 465,
+    "sha256": "07c92ca8d5bad67e66053809da1a06847b2feeb1ef354ab8c46be200dfb49667",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-bt-hardware.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-cpu-cooling.service",
+    "bytes": 467,
+    "sha256": "0c0f21085f8db919274bd6759b2c5b71369c160173797661828fdd7f25bc1fe8",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-cpu-cooling.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-cpu-dvfs.service",
+    "bytes": 677,
+    "sha256": "68c288626eb566c027dde09e2f94612caed15ed3ef15ada7397dce3ae40b9382",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-cpu-dvfs.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-cpu-dvfs.service.d/97-vf0300-full.conf",
+    "bytes": 396,
+    "sha256": "15b96e71e85786d2e397613f6d5e48ab19432d8f23bc1d48ec0ce1f3dcb44827",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-cpu-dvfs.service.d/97-vf0300-full.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-cpu-dvfs.service.d/99-clean-shutdown.conf",
+    "bytes": 180,
+    "sha256": "1e65e8f08e656c11adb9b533519a5bb471a96e76c7dca8d18f6c5ec9e64a36a2",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-cpu-dvfs.service.d/99-clean-shutdown.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-cpu-performance-mode.service",
+    "bytes": 499,
+    "sha256": "a51acbe2443c7e893b917968f229f32fb50bcf0b9f116a18ac27a06aab32bf79",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-cpu-performance-mode.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-cpu-performance.service",
+    "bytes": 728,
+    "sha256": "c9deb9eee854c5e95fb853819fb2be8e0f1f9c71622f232f392373dbf1af067e",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-cpu-performance.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-cpub.service",
+    "bytes": 373,
+    "sha256": "e8a3576e1a1809aa61c55fc908bc075821606580a43581888f6b341fd685230c",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-cpub.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-cpufreq.service",
+    "bytes": 417,
+    "sha256": "d08bde73706e602423233dfa4216f9b1770fc7b605b93404d516968c19534aac",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-cpufreq.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-display.service",
+    "bytes": 437,
+    "sha256": "8511f50ef51a33ec8f4424e5ba212107745ede26a98a8089710d7cd95b110fd7",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-display.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-display.service.d/96-dram-gpu.conf",
+    "bytes": 255,
+    "sha256": "8410e7940ed8df9fe031286f10dc003035a6104774f894fd6d6f844f53720e45",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-display.service.d/96-dram-gpu.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-display.service.d/98-screen.conf",
+    "bytes": 169,
+    "sha256": "06a3beb8988e78e1125606b9979522ff7f2e48eb9c5790024af8ffadb78c910a",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-display.service.d/98-screen.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-display.service.d/99-touch-lifetime.conf",
+    "bytes": 33,
+    "sha256": "7a3deabf535fb72c876e0471d95e68ff0b1261c2d0083c921dc4d689f7b83b3e",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-display.service.d/99-touch-lifetime.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-dram-boot-gpu-autosuspend.service",
+    "bytes": 592,
+    "sha256": "a01866c3522154e6b441b824439ba9b56ffbecb2740eb7fceca4718fbb30b040",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-dram-boot-gpu-autosuspend.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-dram-c-step-1200.service",
+    "symlink": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-dram-c-step-boot-restore.service",
+    "symlink": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-dram-gpu-fallback.service",
+    "bytes": 214,
+    "sha256": "e42a9e4665b150afb257f8d2f78a55f9417d91735b0efa42960fac402c3e6459",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-dram-gpu-fallback.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-dram-gpu-fallback.service.d/97-native-devfreq.conf",
+    "bytes": 114,
+    "sha256": "64bf9c1564f547c2c12a964a195234f6104c0886912082ed5ee6c5fb70631bb0",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-dram-gpu-fallback.service.d/97-native-devfreq.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-dram-gpu-health.service",
+    "bytes": 438,
+    "sha256": "03cb9809fd7a00dbcb20bae22e0f53f7922ff8e21f80d2c39870a3f3bc0d0621",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-dram-gpu-health.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-dram-rail-baseline.service",
+    "symlink": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-dram-rail-nominal.service",
+    "symlink": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-dram-step-1200.service",
+    "symlink": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-dram-step-boot-restore.service",
+    "symlink": "/dev/null"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-early-performance-check.service",
+    "bytes": 368,
+    "sha256": "124837403ec4a58dd898b7eb2c5f4b10a9c6a3257119dff7c60a57a84210f226",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-early-performance-check.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-emmc-hs.service",
+    "bytes": 606,
+    "sha256": "fff603d6e94447d211952bd53600d3714fa19f45cbae03cd151c95b28055d1f0",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-emmc-hs.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-emmc-hs.service.d/99-clean-shutdown.conf",
+    "bytes": 180,
+    "sha256": "1e65e8f08e656c11adb9b533519a5bb471a96e76c7dca8d18f6c5ec9e64a36a2",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-emmc-hs.service.d/99-clean-shutdown.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-emmc-performance.service",
+    "bytes": 595,
+    "sha256": "e6b43c15222cc28965d663d916a2177967aa94085a0b5c3d727a598d36285db6",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-emmc-performance.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-gpu-performance.service",
+    "bytes": 593,
+    "sha256": "c3ad80b491f61852d988277e721c56ffbc1cf90b2d3413f5db33eac0dabb5aee",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-gpu-performance.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-gpu-performance.service.d/97-native-devfreq.conf",
+    "bytes": 349,
+    "sha256": "b51a8f646444cb5f8f1485716425619e1cb53ba373807c65b0d5b62303cc4f4e",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-gpu-performance.service.d/97-native-devfreq.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-gpu-performance.service.d/99-clean-shutdown.conf",
+    "bytes": 180,
+    "sha256": "1e65e8f08e656c11adb9b533519a5bb471a96e76c7dca8d18f6c5ec9e64a36a2",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-gpu-performance.service.d/99-clean-shutdown.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-gpu.service",
+    "bytes": 559,
+    "sha256": "2deb0c27104a6961d64c56f2a31b31a960e0f705ba983b39285d9020368c2944",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-gpu.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-gpu.service.d/90-unqualified.conf",
+    "bytes": 54,
+    "sha256": "421f5fffd349f3ceb5a3e1b4edc58305ac1f21445cec96d8569083867276cd40",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-gpu.service.d/90-unqualified.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-gpu.service.d/96-dram-gpu.conf",
+    "bytes": 189,
+    "sha256": "99b4951a0ea7ce70d42badc30e2deb02b09f64ec0b2d020baa8f7c53d3ef2277",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-gpu.service.d/96-dram-gpu.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-gpu.service.d/97-native-devfreq.conf",
+    "bytes": 244,
+    "sha256": "9217af8a28b8b0698d12785b28e602d32f57c8c9b6a7529bc71851170ee82e02",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-gpu.service.d/97-native-devfreq.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-pmic-poweroff.service",
+    "bytes": 349,
+    "sha256": "15fe5e3646930e01c4633aa3f08cbeac7130d2d2af13fe1bf75cb670681eae7e",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-pmic-poweroff.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-public-firstboot.service",
+    "bytes": 213,
+    "sha256": "202d838c5fa9438df5d9374d69422da6636b304abe3589ba3ad7bd18d19b5dee",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-public-firstboot.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-rtc-log.service",
+    "bytes": 334,
+    "sha256": "80b1df619f8431a933269ebee9bce8ad3fa3ccee28cdc77b5aea2864cb37abea",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-rtc-log.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-rtc-log.service.d/97-abort-context.conf",
+    "bytes": 90,
+    "sha256": "3bf3efe09ad7abce8117af8fb7c748a816e25c76da8201af3281488120eef477",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-rtc-log.service.d/97-abort-context.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-screen-health.service",
+    "bytes": 400,
+    "sha256": "2cd69d8575a4de29dcde87cb5ac4bedb7a44a8aa96f56ac68727fd56ddf411de",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-screen-health.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-sram-log.service",
+    "bytes": 317,
+    "sha256": "18d4c1cf15c4535ae2d2ec1cc895daedaf58309345923e569e197387d663f7dc",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-sram-log.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-tablet-keys.service",
+    "bytes": 409,
+    "sha256": "a2b3490e9a22a2eb64e3ec8c564ae854e2bc5c0a6deb6774e5128cd2f45c56b7",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-tablet-keys.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-thermal.service",
+    "bytes": 475,
+    "sha256": "71dba25b7237a2c9e4de329ac43d2221dde1b5c29393f03aa2c9ce4cff8adf01",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-thermal.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-touch-input-ready.service",
+    "bytes": 284,
+    "sha256": "0fdbf9fb92d246e07aaca96b44ce142d0f80da6c1e6c818504327f1faa4a4781",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-touch-input-ready.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-touch.service",
+    "bytes": 476,
+    "sha256": "a578934650f7b3f9b0a9db078f6700bbfb204165550f4aa57234c74397a94cde",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-touch.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-touch.service.d/99-fast-panel.conf",
+    "bytes": 146,
+    "sha256": "ede380b71d72746f13405552a41ef6c1c0cdcc88e7ac5121c83c5983aaa5554d",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-touch.service.d/99-fast-panel.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-touch.service.d/99-sram-panel-handoff.conf",
+    "bytes": 84,
+    "sha256": "da08547aa6487edcdd718d8b0929f58c47d144bd9d23777b6878e7fe0bfcff01",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-touch.service.d/99-sram-panel-handoff.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-usb-network.service",
+    "bytes": 238,
+    "sha256": "82ea87969fef650284b857e329a044d4535e338d00c3c256f93b0a82f8986a8d",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-usb-network.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-video.service",
+    "bytes": 383,
+    "sha256": "543bc2ca3bc5587e503a97a24ea8a8a7c333422065e86dce12e784606fb94f07",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-video.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-video.service.d/99-sid-thermal-order.conf",
+    "bytes": 62,
+    "sha256": "ad9a0baca63936ac97b2ea46cbe814152f1cb1be9ffba3a2858b75e22fd36689",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-video.service.d/99-sid-thermal-order.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-wifi.service",
+    "bytes": 339,
+    "sha256": "86a1902ebb14da6f188d86b6d61a853428f58f7881798f1f3ed43673c6143634",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-wifi.service"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-wifi.service.d/20-bluetooth.conf",
+    "bytes": 67,
+    "sha256": "20f544f3a62e303fe1d73bc2518e0020328e6fe760b1c8df15b592663855886c",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-wifi.service.d/20-bluetooth.conf"
+  },
+  {
+    "path": "/etc/systemd/system/tzx-zram.service",
+    "bytes": 430,
+    "sha256": "494cdc0e35817e233e0d6a3d3976853fc2208846f7aa9bedbdffa9181d4ad239",
+    "mode": "0o644",
+    "text_source": "runtime/etc/systemd/system/tzx-zram.service"
+  },
+  {
+    "path": "/etc/X11/Xreset",
+    "bytes": 709,
+    "sha256": "a6a17509c4d16c95018c14c199350527c2c358cf440e32331eb3fc2afc12aa62",
+    "mode": "0o755",
+    "text_source": "runtime/etc/X11/Xreset"
+  },
+  {
+    "path": "/etc/X11/Xreset.d/README",
+    "bytes": 205,
+    "sha256": "d56429429532b7e87013aca475067890964e3e4746ee2d7025180800310d0f26",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xreset.d/README"
+  },
+  {
+    "path": "/etc/X11/Xresources/x11-common",
+    "bytes": 319,
+    "sha256": "abb8f49e63779b32ffc3b678212650b4c307567afc9216f522876d7b5857b25b",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xresources/x11-common"
+  },
+  {
+    "path": "/etc/X11/Xsession",
+    "bytes": 3926,
+    "sha256": "f0e3a90f77d470d65ae5f276fb39820cc1262aa4a65d5629ebb302312975494c",
+    "mode": "0o755",
+    "text_source": "runtime/etc/X11/Xsession"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/20x11-common_process-args",
+    "bytes": 1565,
+    "sha256": "362448dd9614fd95042391750279c6b8c2bcaddac378193330cafe4c4c1b59dc",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/20x11-common_process-args"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/30x11-common_xresources",
+    "bytes": 878,
+    "sha256": "afe858a06cfa7f21b8b5694780b98766de39c0cb6eaf7a4623b978ad3c6bc51c",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/30x11-common_xresources"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/35x11-common_xhost-local",
+    "bytes": 389,
+    "sha256": "162189201eaa9ee96f1fc9546b83d88682903b69dc326e8c3cb51f58043a18d4",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/35x11-common_xhost-local"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/40x11-common_xsessionrc",
+    "bytes": 187,
+    "sha256": "76944eea06861af747d0ed1cd516ef597d4f1543b040e025bfa1df15906ce73f",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/40x11-common_xsessionrc"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/50x11-common_determine-startup",
+    "bytes": 1568,
+    "sha256": "c8aa9d6622178eeae1b0c20475338384f0f4e6a3b1a2f788906006bdacf3792a",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/50x11-common_determine-startup"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/55xfce4-session",
+    "bytes": 864,
+    "sha256": "979db5128931b195bc79408d32577471ce2469456f3386f52e5f7b512bbd4ff1",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/55xfce4-session"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/75dbus_dbus-launch",
+    "bytes": 752,
+    "sha256": "b6a4a45ea798310fefa5f1c1d623f45a9f4058ab25c5c600393df6bafd1076d4",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/75dbus_dbus-launch"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/90gpg-agent",
+    "bytes": 997,
+    "sha256": "4b08becff838f6f80fc3a10498e9c808adc05badd5e020023d3c10a7b8a2340f",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/90gpg-agent"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/90qt-a11y",
+    "bytes": 335,
+    "sha256": "24852ad2d93d99aff475ca6cf3d16b589a768b13724cb628cd550fc44bb21eb5",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/90qt-a11y"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/90x11-common_ssh-agent",
+    "bytes": 385,
+    "sha256": "91ccb7ffc6e17cb36c7cefcd39a6f7b95c355ef1187c91e1f23f9367ca3a588b",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/90x11-common_ssh-agent"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/95dbus_update-activation-env",
+    "bytes": 564,
+    "sha256": "cf1f40a657cb397091063515443c051c71d33c6f9e7d78f1bf4cae94e73c8c1d",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/95dbus_update-activation-env"
+  },
+  {
+    "path": "/etc/X11/Xsession.d/99x11-common_start",
+    "bytes": 166,
+    "sha256": "e1e8fccc5299746efba8d7550ac0cf19002659ee298c53c8591ee6e3efcc7220",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.d/99x11-common_start"
+  },
+  {
+    "path": "/etc/X11/Xsession.options",
+    "bytes": 265,
+    "sha256": "0d59030f6d7a466ba62f301ff970ebda039cc9eac8ed9045dcf570460d41fb64",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/Xsession.options"
+  },
+  {
+    "path": "/etc/X11/app-defaults/Xvidtune",
+    "bytes": 6628,
+    "sha256": "53b1755eb0d170cb73ead3bbeb1029cbeb2c708a9d0ee74fbf7d2eed5c5dc799",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/app-defaults/Xvidtune"
+  },
+  {
+    "path": "/etc/X11/default-display-manager",
+    "bytes": 18,
+    "sha256": "ce87bfbb15be1bba4d16d93c1a3a8b0184737204f40afc92a078bc6aed4b7094",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/default-display-manager"
+  },
+  {
+    "path": "/etc/X11/rgb.txt",
+    "bytes": 17394,
+    "sha256": "2c8ab5acc9eb072f4cc88696834188100d05e50af5d1425501d993700aaa3164",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/rgb.txt"
+  },
+  {
+    "path": "/etc/X11/xorg.conf.d/20-tzx-display.conf",
+    "bytes": 242,
+    "sha256": "47ed0e280080e91ccc052104ba1ad8e24ea9d2342be8d01e91366b083398b444",
+    "mode": "0o644",
+    "text_source": "runtime/etc/X11/xorg.conf.d/20-tzx-display.conf"
+  },
+  {
+    "path": "/etc/lightdm/keys.conf",
+    "bytes": 40,
+    "sha256": "306c41651d4154d0736aa1d5876f3977619787a6662a55e8cdd255d46d87a9ec",
+    "mode": "0o644",
+    "text_source": "runtime/etc/lightdm/keys.conf"
+  },
+  {
+    "path": "/etc/lightdm/lightdm-gtk-greeter.conf",
+    "bytes": 3557,
+    "sha256": "c54826310c7942eb00bf5a82d8ae3f78764173b79c58de8e8368ea3bbb6e32a3",
+    "mode": "0o644",
+    "text_source": "runtime/etc/lightdm/lightdm-gtk-greeter.conf"
+  },
+  {
+    "path": "/etc/lightdm/lightdm.conf",
+    "bytes": 6634,
+    "sha256": "ae4c57f7f1decd1b2ed6b3571bb5b0a3325c8acc5c327a8518e77694aa349171",
+    "mode": "0o644",
+    "text_source": "runtime/etc/lightdm/lightdm.conf"
+  },
+  {
+    "path": "/etc/lightdm/lightdm.conf.d/50-tzx-tablet.conf",
+    "bytes": 110,
+    "sha256": "374fcbc8760f7764f9277510ae726158350ddd9c2baa788d0db33c260985c50d",
+    "mode": "0o644",
+    "text_source": "runtime/etc/lightdm/lightdm.conf.d/50-tzx-tablet.conf"
+  },
+  {
+    "path": "/etc/lightdm/users.conf",
+    "bytes": 466,
+    "sha256": "1175c2f0ca50563710bcfedac34b86f755abd89a09851145466af178e4b48e5d",
+    "mode": "0o644",
+    "text_source": "runtime/etc/lightdm/users.conf"
+  },
+  {
+    "path": "/etc/xdg/Thunar/uca.xml",
+    "bytes": 1417,
+    "sha256": "982d45b4a642f044fd70767e9e51db77bbca23ca81e57d524fc292b6d788959f",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/Thunar/uca.xml"
+  },
+  {
+    "path": "/etc/xdg/Xwayland-session.d/00-at-spi",
+    "bytes": 453,
+    "sha256": "f6484e2febe3b767cb00710eca64de18ca2f8a2de1e679951682bcf5698beb05",
+    "mode": "0o755",
+    "text_source": "runtime/etc/xdg/Xwayland-session.d/00-at-spi"
+  },
+  {
+    "path": "/etc/xdg/Xwayland-session.d/00-pulseaudio-x11",
+    "bytes": 2159,
+    "sha256": "89c70d956100e4e750b86273cbdbf45afe6928bde98319740283b7a86cf604d5",
+    "mode": "0o755",
+    "text_source": "runtime/etc/xdg/Xwayland-session.d/00-pulseaudio-x11"
+  },
+  {
+    "path": "/etc/xdg/autostart/at-spi-dbus-bus.desktop",
+    "bytes": 193,
+    "sha256": "193c665542076f0305b6204c6c94f22280857e36bbf4670de50d1e0ddf6d3042",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/at-spi-dbus-bus.desktop"
+  },
+  {
+    "path": "/etc/xdg/autostart/blueman.desktop",
+    "bytes": 2838,
+    "sha256": "147fa3e087a89e6ec6bb72a8ca51bb9016699e790a72753cd7ce13b2a0945d93",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/blueman.desktop"
+  },
+  {
+    "path": "/etc/xdg/autostart/lxpolkit.desktop",
+    "bytes": 2628,
+    "sha256": "3d3eaf3ce57fd18b136fe8cdbb60bc01dd9a1dba195083dc5177b5159d77a53e",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/lxpolkit.desktop"
+  },
+  {
+    "path": "/etc/xdg/autostart/nm-applet.desktop",
+    "bytes": 7786,
+    "sha256": "48e5973fa064e96ca857659c2cc665295ba49f3b5cfeef630132fbf8609b34d3",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/nm-applet.desktop"
+  },
+  {
+    "path": "/etc/xdg/autostart/onboard-autostart.desktop",
+    "bytes": 5292,
+    "sha256": "c3b651724d487f166a2594b8d64fe3b332af353ee5fd1243601a01651c27d9b4",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/onboard-autostart.desktop"
+  },
+  {
+    "path": "/etc/xdg/autostart/polkit-ukui-authentication-agent-1.desktop",
+    "bytes": 4061,
+    "sha256": "b61269b7ae488cc30e68d7587ff1df8c06666ed5f635794b1ca2d663ad9ac66c",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/polkit-ukui-authentication-agent-1.desktop"
+  },
+  {
+    "path": "/etc/xdg/autostart/pulseaudio.desktop",
+    "bytes": 5370,
+    "sha256": "512d21f33150c19b00ece8e3d157a2b02e0470187b2c8da96821f29126ffb13b",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/pulseaudio.desktop"
+  },
+  {
+    "path": "/etc/xdg/autostart/tzx-screen-orientation.desktop",
+    "bytes": 195,
+    "sha256": "f4465d467bc4c0f1ea8fbcb2551488123718214fb1fcaafb223c78ecba2841ee",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/tzx-screen-orientation.desktop"
+  },
+  {
+    "path": "/etc/xdg/autostart/xdg-user-dirs.desktop",
+    "bytes": 212,
+    "sha256": "ea05f42fe125aaa3fade8ec6b2b3addbd2754dcf4d8b309dc33f6cdf983f24ba",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/xdg-user-dirs.desktop"
+  },
+  {
+    "path": "/etc/xdg/autostart/xfce4-notifyd.desktop",
+    "bytes": 1773,
+    "sha256": "b71d2bfac9bc518f43aa5c3640476983c3fe49c5ed51e45ba42e46d93d292939",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/xfce4-notifyd.desktop"
+  },
+  {
+    "path": "/etc/xdg/autostart/xfce4-power-manager.desktop",
+    "bytes": 5992,
+    "sha256": "7f1a539e985f6fa492e3f04c64590cc79857566a68859142de847755865109b3",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/xfce4-power-manager.desktop"
+  },
+  {
+    "path": "/etc/xdg/autostart/xfsettingsd.desktop",
+    "bytes": 8279,
+    "sha256": "e58536e75257ba56803f1b2982f2475f8d1ff14b9750d133a1dcf07b0d4dc1f0",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/autostart/xfsettingsd.desktop"
+  },
+  {
+    "path": "/etc/xdg/menus/xfce-applications.menu",
+    "bytes": 4494,
+    "sha256": "7371a09dcb7bccc01255fee773e5dd7f0b9f33bc56ba08b21bca2096f6bd0023",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/menus/xfce-applications.menu"
+  },
+  {
+    "path": "/etc/xdg/menus/xfce-settings-manager.menu",
+    "bytes": 2243,
+    "sha256": "dcf1bb4b6c63564b9d47ed245f4a5dea3fcb9652f24e812b43e5628bce7f2816",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/menus/xfce-settings-manager.menu"
+  },
+  {
+    "path": "/etc/xdg/systemd/user",
+    "symlink": "../../systemd/user"
+  },
+  {
+    "path": "/etc/xdg/user-dirs.conf",
+    "bytes": 414,
+    "sha256": "435ecfed78ebd03efc6257c2aafb211b7136e2e1a9e466d42dfaa7a16acfd4f7",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/user-dirs.conf"
+  },
+  {
+    "path": "/etc/xdg/user-dirs.defaults",
+    "bytes": 418,
+    "sha256": "49eb605821e8f5ebd7a1fa5966e56f55adf92ee0bac42b00610aa906d7fdf032",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/user-dirs.defaults"
+  },
+  {
+    "path": "/etc/xdg/xfce4/Xft.xrdb",
+    "bytes": 221,
+    "sha256": "db36786118c595c8481eb688669e0167d1d2faf9adbcc0494316b61171116eda",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/xfce4/Xft.xrdb"
+  },
+  {
+    "path": "/etc/xdg/xfce4/helpers.rc",
+    "bytes": 242,
+    "sha256": "1910250dfa555acd8e333bb336ca04bb98b4e8c5ec7306a39e1f0f99bae36ef3",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/xfce4/helpers.rc"
+  },
+  {
+    "path": "/etc/xdg/xfce4/panel/default.xml",
+    "bytes": 4140,
+    "sha256": "54dbf7527908ddced49ff4f0121a1f140d4ad18e624237152cc4cda0a14e0e9f",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/xfce4/panel/default.xml"
+  },
+  {
+    "path": "/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml",
+    "bytes": 7672,
+    "sha256": "418368a0659e9d30c02a80a8244c9c2d07f2cb91cd1f2cd8de7ef559ce6cd947",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-keyboard-shortcuts.xml"
+  },
+  {
+    "path": "/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml",
+    "bytes": 234,
+    "sha256": "2e263e23173d1ba90f9f6a42eefe5138f65e02bc6625a92aed4e4b507bd2fd2f",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
+  },
+  {
+    "path": "/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml",
+    "bytes": 3119,
+    "sha256": "d04548443b10867ebc318a07382f7b39959516034f5b21baa8360cee56fc4924",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml"
+  },
+  {
+    "path": "/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml",
+    "bytes": 2475,
+    "sha256": "845b01b6436c329544ef8a4e42332d4a56c5723cb08ea74d2371703378f6162c",
+    "mode": "0o644",
+    "text_source": "runtime/etc/xdg/xfce4/xfconf/xfce-perchannel-xml/xsettings.xml"
+  },
+  {
+    "path": "/etc/xdg/xfce4/xinitrc",
+    "bytes": 4763,
+    "sha256": "c2190801249080a4bb3e33220dac7b32e289e290b4d2c0f401e40ccbe8e9c14e",
+    "mode": "0o755",
+    "text_source": "runtime/etc/xdg/xfce4/xinitrc"
+  }
+]

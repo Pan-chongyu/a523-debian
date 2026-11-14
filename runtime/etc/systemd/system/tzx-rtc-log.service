@@ -1,0 +1,14 @@
+[Unit]
+Description=Temporary TZX A523 retained reset breadcrumbs
+After=local-fs.target tzx-cpufreq.service
+RequiresMountsFor=/boot /home/debian
+Before=lightdm.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-rtc-log/runtime.py
+RemainAfterExit=yes
+TimeoutStartSec=30s
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,18 @@
+[Unit]
+Description=TZX P30 GSL3670 touch bring-up
+DefaultDependencies=no
+After=systemd-remount-fs.service systemd-udev-trigger.service tzx-cpub.service
+Conflicts=shutdown.target
+Before=shutdown.target
+
+[Service]
+Type=notify
+NotifyAccess=all
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/local/sbin/tzx-peripherals-dispatch touch start
+ExecStop=/bin/sh /usr/local/sbin/tzx-peripherals-dispatch touch stop
+TimeoutStartSec=25
+TimeoutStopSec=15
+
+[Install]
+WantedBy=multi-user.target

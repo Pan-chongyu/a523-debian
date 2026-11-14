@@ -1,0 +1,7 @@
+{
+  "/lib/modules/7.3.3-tzx-a523-accel1/kernel/mm/zsmalloc.ko": "a700339da2f4cfcced7b1ce23d62596a1bcee5a5ee0e195164c7a3d807be3501",
+  "/lib/modules/7.3.3-tzx-a523-accel1/kernel/drivers/dma-buf/heaps/system_heap.ko": "dda1e167be751419c9e0aacf7242c5733c6362083bad81bc3fa57a7ca6684f65",
+  "/lib/modules/7.3.3-tzx-a523-accel1/kernel/drivers/block/zram/zram.ko": "d69f43200d32c4aaec3c511059238ba7f127a0deb67607955a913ea5d619a517",
+  "/lib/modules/7.3.3-tzx-a523-accel1/kernel/lib/lz4/lz4_decompress.ko": "e360479a00117f9bf5021b5657367d02be6f6bf9c7e6e854666fde1801df6554",
+  "/lib/modules/7.3.3-tzx-a523-accel1/kernel/lib/lz4/lz4_compress.ko": "f4a0de971f92309326134c51ba5c44336ff75b0b517ad1ce77ca874d7e3b10e2"
+}

@@ -1,0 +1,14 @@
+[Unit]
+Description=Validate trained full-memory Mali-G57 desktop at boot
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+ConditionPathExists=/var/lib/tzx/gpu-qualified
+After=lightdm.service tzx-gpu.service
+Wants=lightdm.service
+OnFailure=tzx-dram-gpu-fallback.service
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-dram-gpu/runtime.py health
+TimeoutStartSec=100
+[Install]
+WantedBy=multi-user.target

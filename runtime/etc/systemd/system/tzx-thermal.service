@@ -1,0 +1,16 @@
+[Unit]
+Description=TZX P30 calibrated five-channel temperature monitoring
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+After=systemd-sysctl.service tzx-touch.service
+Before=tzx-gpu.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/local/lib/tzx-accel-hardware/tzx-acceleration-hardware thermal
+ExecStop=/bin/sh /usr/local/lib/tzx-accel-hardware/tzx-acceleration-hardware stop
+TimeoutStartSec=25
+TimeoutStopSec=5
+
+[Install]
+WantedBy=multi-user.target
