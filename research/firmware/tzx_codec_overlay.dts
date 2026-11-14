@@ -1,0 +1,23 @@
+/dts-v1/;
+/plugin/;
+/* For the exact frozen base DTB only; provider phandles are checked in C. */
+/ {
+    fragment@0 {
+        target-path = "/soc";
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <1>;
+            audio-codec@7110000 {
+                compatible = "tzx,a523-audio-codec";
+                reg = <0x07110000 0x400>;
+                clocks = <0x16 21>, <0x16 19>, <0x16 20>, <0x16 1>;
+                clock-names = "bus", "dac", "adc", "parent";
+                resets = <0x16 6>;
+                dmas = <0x15 7>, <0x15 7>;
+                dma-names = "tx", "rx";
+                #sound-dai-cells = <0>;
+                status = "okay";
+            };
+        };
+    };
+};

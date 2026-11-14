@@ -1,0 +1,12 @@
+[Unit]
+Description=Manual CPU copy comparison with temporary peripheral removal
+After=local-fs.target tzx-rtc-log.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/debian/run_quiescent_copy_trial.py
+ExecStopPost=/usr/bin/python3 /home/debian/run_quiescent_copy_trial.py --restore
+RuntimeMaxSec=520s
+TimeoutStopSec=240s
+LimitMEMLOCK=67108864
+MemoryMax=3G

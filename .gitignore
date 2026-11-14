@@ -1,0 +1,11 @@
+.venv/
+__pycache__/
+*.pyc
+*.img
+*.img.gz
+*.ext4
+*.fat
+*.part
+*.pem
+private/
+downloads/

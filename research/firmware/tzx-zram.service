@@ -1,0 +1,16 @@
+[Unit]
+Description=TZX P30 2 GiB LZ4 compressed RAM swap
+After=local-fs.target systemd-modules-load.service
+Before=graphical.target
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-zram/runtime.py start
+ExecStop=/usr/bin/python3 /usr/local/lib/tzx-zram/runtime.py stop
+TimeoutStartSec=30
+TimeoutStopSec=60
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,12 @@
+[Unit]
+Description=TZX full-memory baseline before nominal DRAM rail comparison
+After=tzx-rtc-log.service
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/python3 /home/debian/run_dram_rail_diagnostic.py baseline
+ExecStopPost=/usr/bin/python3 /home/debian/run_dram_rail_diagnostic.py restore
+RuntimeMaxSec=120
+TimeoutStopSec=45
+StandardOutput=journal
+StandardError=journal

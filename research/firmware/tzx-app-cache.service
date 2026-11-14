@@ -1,0 +1,14 @@
+[Unit]
+Description=TZX bounded application cache after the desktop
+After=lightdm.service tzx-screen-health.service tzx-emmc-hs.service tzx-cpu-dvfs.service
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-app-launch/cache.py
+Nice=19
+IOSchedulingClass=idle
+RuntimeMaxSec=40
+
+[Install]
+WantedBy=graphical.target

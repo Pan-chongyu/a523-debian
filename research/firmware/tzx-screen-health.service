@@ -1,0 +1,15 @@
+[Unit]
+Description=Validate TZX panel desktop and recovery selection
+After=lightdm.service tzx-dram-gpu-health.service
+Requires=tzx-display.service
+Wants=tzx-dram-gpu-health.service
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-screen/runtime.py health
+TimeoutStartSec=100
+
+[Install]
+WantedBy=multi-user.target

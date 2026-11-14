@@ -1,0 +1,16 @@
+[Unit]
+Description=TZX P30 A523 codec and speaker amplifier
+After=tzx-display.service systemd-sysctl.service
+Before=lightdm.service
+ConditionKernelVersion=7.3.3-tzx-a523-periph1
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/local/lib/tzx-audio/tzx-audio-runtime start
+ExecStop=/bin/sh /usr/local/lib/tzx-audio/tzx-audio-runtime stop
+TimeoutStartSec=25
+TimeoutStopSec=10
+
+[Install]
+WantedBy=multi-user.target

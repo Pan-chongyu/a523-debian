@@ -1,0 +1,35 @@
+/dts-v1/;
+/plugin/;
+/ {
+    fragment@0 {
+        target-path = "/soc/efuse@3006000";
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <1>;
+            tzx_ve_chipid: tzx-ve-chipid@0 { reg = <0 4>; };
+            tzx_ve_dvfs: tzx-ve-dvfs@48 { reg = <0x48 4>; };
+        };
+    };
+    fragment@1 {
+        target-path = "/soc";
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <1>;
+            video-engine@1c0e000 {
+                compatible = "allwinner,sunxi-cedar-ve";
+                reg = <0x01c0e000 0x1000>, <0x03000000 0x10>;
+                interrupt-parent = <0x01>;
+                interrupts = <0 120 4>;
+                clocks = <0x02 57>, <0x02 56>, <0x02 75>;
+                clock-names = "bus_ve", "ve", "mbus_ve";
+                resets = <0x02 9>;
+                reset-names = "reset_ve";
+                power-domains = <0x03 0>;
+                iommus = <0x90 2>, <0x90 3>;
+                nvmem-cells = <&tzx_ve_chipid>, <&tzx_ve_dvfs>;
+                nvmem-cell-names = "chipid", "ve-dvfs";
+                status = "okay";
+            };
+        };
+    };
+};

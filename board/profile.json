@@ -1,0 +1,22 @@
+{
+  "id": "tzx-p30a523-20t5g-lpddr3-4g-uem128",
+  "board": "TZX P30A523_20T5G",
+  "marking": "TZX P30A523-56T5G-240321",
+  "soc": "Allwinner A523 sun55iw3p1",
+  "fel_soc_id": 1609728,
+  "emmc_sectors": 244318208,
+  "emmc_cid_prefix": "3e01ff55454d2020",
+  "native_display": [
+    800,
+    1280
+  ],
+  "desktop_display": [
+    1280,
+    800
+  ],
+  "rotation": "right",
+  "dram": "LPDDR3 4GiB",
+  "panel": "JL_M1010WX92_M4027_800X1280",
+  "experimental_for_other_units": true,
+  "automatic_board_identification": false
+}

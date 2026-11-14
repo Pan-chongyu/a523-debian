@@ -1,0 +1,13 @@
+[Unit]
+Description=Manual full-RAM GPU comparison with voltage set before training
+After=local-fs.target tzx-rtc-log.service
+Wants=tzx-display.service
+
+[Service]
+Type=simple
+Environment=TZX_GPU_TRACE_SCENES=1
+Environment=TZX_GPU_EXPECT_AWAKE=1
+ExecStart=/usr/bin/python3 -u /home/debian/run_dram_boot_gpu_trial.py
+ExecStopPost=/usr/bin/python3 -u /home/debian/finish_dram_boot_gpu_trial.py
+RuntimeMaxSec=800s
+TimeoutStopSec=260s

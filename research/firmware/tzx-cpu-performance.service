@@ -1,0 +1,19 @@
+[Unit]
+Description=TZX A523 qualified fixed-voltage CPU performance and thermal cooling
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+ConditionPathExists=/var/lib/tzx/cpu-performance-qualified.json
+ConditionPathExists=/var/lib/tzx/gpu-qualified
+Requires=tzx-thermal.service
+Wants=tzx-cpufreq.service tzx-cpu-cooling.service
+After=tzx-cpufreq.service tzx-cpu-cooling.service tzx-dram-gpu-health.service tzx-screen-health.service tzx-gpu-performance.service
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/python3 -u /usr/local/lib/tzx-cpu-performance/runtime.py run
+ExecStopPost=/usr/bin/python3 -u /usr/local/lib/tzx-cpu-performance/runtime.py restore
+TimeoutStartSec=80
+TimeoutStopSec=70
+Restart=no
+
+[Install]
+WantedBy=graphical.target

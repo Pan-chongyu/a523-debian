@@ -1,0 +1,12 @@
+[Unit]
+Description=TZX temporary nominal DRAM rail and high-address CPU copy comparison
+After=tzx-rtc-log.service
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/python3 /home/debian/run_dram_rail_diagnostic.py nominal
+ExecStopPost=/usr/bin/python3 /home/debian/run_dram_rail_diagnostic.py restore
+RuntimeMaxSec=380
+TimeoutStopSec=45
+StandardOutput=journal
+StandardError=journal

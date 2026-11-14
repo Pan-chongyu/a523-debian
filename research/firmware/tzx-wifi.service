@@ -1,0 +1,14 @@
+[Unit]
+Description=TZX P30 AIC8800D80 SDIO bring-up
+After=tzx-usb-network.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/local/lib/tzx-peripherals/tzx-wifi-runtime start
+ExecStop=/bin/sh /usr/local/lib/tzx-peripherals/tzx-wifi-runtime stop
+TimeoutStartSec=45
+TimeoutStopSec=30
+
+[Install]
+WantedBy=multi-user.target

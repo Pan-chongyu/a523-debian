@@ -1,0 +1,36 @@
+License map for this distribution
+=================================
+
+This is an aggregation, not a single-license operating system.
+
+1. New release tooling: flash.py, flash.cmd, flash.ps1, flash.sh,
+   flasher/, image/, tests/, tools/ and the new documentation are licensed
+   under the MIT license in LICENSES/MIT.txt, copyright (c) 2026
+   Pan-chongyu and contributors. Third-party content is excluded.
+
+2. Adaptation code in research/ is licensed GPL-2.0-only unless a file
+   states a different upstream license. Preserve all embedded notices.
+   The Linux-derived code and the corresponding Linux source archive are
+   governed by their original GPL and SPDX declarations, not by MIT.
+   See LICENSES/SyterKit-GPL-2.0.txt for GPL version 2.
+
+3. third_party/fel-emmc/ retains the A523-root MIT license, reproduced
+   in LICENSES/A523-root-MIT.txt. SyterKit is GPL-2.0; Arm Trusted
+   Firmware is predominantly BSD-3-Clause with its own included notices;
+   AIC sources and firmware retain their individual upstream terms.
+
+4. Debian packages retain their respective licenses, available in the
+   image at /usr/share/doc/*/copyright. The image itself is not relicensed
+   under MIT. Package and source-version inventories accompany releases.
+
+5. Vendor DRAM training and wireless firmware binaries have no source
+   provided here. They retain upstream/vendor terms; see THIRD_PARTY.md.
+   No blanket open-source license is asserted for those binaries.
+
+6. assets/boot-logo.png and assets/boot-preview.png are artwork supplied
+   by the device owner for this boot screen. Original authorship and a
+   separate reusable artwork license were not supplied. The MIT/GPL
+   grants above do not relicense this artwork.
+
+All upstream copyright notices and license exceptions take precedence
+for their respective files.

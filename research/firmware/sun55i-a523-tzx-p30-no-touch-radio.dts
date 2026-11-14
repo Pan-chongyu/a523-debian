@@ -1,0 +1,140 @@
+// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
+/dts-v1/;
+#include "sun55i-a523.dtsi"
+#include <dt-bindings/gpio/gpio.h>
+
+/ {
+    model = "TZX P30A523-56T5G-240321 bring-up";
+    compatible = "tzx,p30a523", "allwinner,sun55i-a523";
+    aliases {
+        serial0 = &uart0;
+        mmc0 = &mmc2;
+        i2c0 = &r_i2c0;
+    };
+    chosen {
+        stdout-path = "serial0:115200n8";
+        bootargs = "console=tty0 console=ttyS0,115200 earlycon=uart8250,mmio32,0x02500000,115200 loglevel=8 ignore_loglevel clk_ignore_unused regulator_ignore_unused rdinit=/init panic=5";
+        linux,initrd-start = <0x0 0x60000000>;
+        linux,initrd-end = <0x0 0x61000000>;
+    };
+    /* 4096 MiB reported by training; the ARM64 entry verified distinct
+     * addresses at all sixteen 256-MiB boundaries on this board. */
+    memory@40000000 {
+        device_type = "memory";
+        reg = <0x0 0x40000000 0x1 0x00000000>;
+    };
+    reserved-memory {
+        #address-cells = <2>;
+        #size-cells = <2>;
+        ranges;
+        ramoops@43000000 {
+            compatible = "ramoops";
+            reg = <0x0 0x43000000 0x0 0x100000>;
+            record-size = <0x20000>;
+            console-size = <0x80000>;
+            pmsg-size = <0x20000>;
+        };
+    };
+    /* Fixed descriptions of the currently powered eMMC rails. These nodes
+     * have no GPIO/PMIC control and do not alter the existing rail settings. */
+    emmc_vcc: regulator-emmc-vcc {
+        compatible = "regulator-fixed";
+        regulator-name = "emmc-vcc";
+        regulator-min-microvolt = <3300000>;
+        regulator-max-microvolt = <3300000>;
+        regulator-always-on;
+    };
+    emmc_vccq: regulator-emmc-vccq {
+        compatible = "regulator-fixed";
+        regulator-name = "emmc-vccq";
+        regulator-min-microvolt = <1800000>;
+        regulator-max-microvolt = <1800000>;
+        regulator-always-on;
+    };
+    /* Hardware I2C reads work, but writes currently report bus errors.
+     * Use the same verified PH0/PH1 wires through the GPIO I2C algorithm. */
+
+
+};
+
+&mmc2 {
+    status = "okay";
+    bus-width = <8>;
+    max-frequency = <25000000>;
+    non-removable;
+    disable-wp;
+    vmmc-supply = <&emmc_vcc>;
+    vqmmc-supply = <&emmc_vccq>;
+};
+
+&pio {
+    vcc-pc-supply = <&emmc_vccq>;
+    vcc-pg-supply = <&reg_bldo1>;
+    vcc-ph-supply = <&emmc_vcc>;
+
+    touch_i2c_pins: i2c0-ph-pins {
+        pins = "PH0", "PH1";
+        function = "i2c0";
+        allwinner,pinmux = <2>;
+        drive-strength = <10>;
+        bias-pull-up;
+    };
+};
+
+/* Expose the standard tablet touch bus for targeted identification reads.
+ * No touch controller or reset GPIO is claimed until the board is verified. */
+&i2c0 {
+    status = "disabled";
+    clock-frequency = <100000>;
+    pinctrl-names = "default";
+    pinctrl-0 = <&touch_i2c_pins>;
+    /delete-property/ dmas;
+    /delete-property/ dma-names;
+};
+
+/* Keep polling while verifying the radio startup sequence. */
+
+
+&uart0 { status = "okay"; };
+
+&usb_otg {
+    status = "okay";
+    dr_mode = "peripheral";
+};
+
+&usbphy { status = "okay"; };
+
+/* Preserve unspecified rail settings; claim only the tested peripheral rails. */
+&r_i2c0 {
+    status = "okay";
+    clock-frequency = <100000>;
+    /delete-property/ dmas;
+    /delete-property/ dma-names;
+    axp717: pmic@34 {
+        compatible = "x-powers,axp717";
+        reg = <0x34>;
+        interrupt-controller;
+        #interrupt-cells = <1>;
+        interrupt-parent = <&nmi_intc>;
+        interrupts = <0 IRQ_TYPE_LEVEL_LOW>;
+        regulators {
+            reg_aldo3: aldo3 {
+                regulator-name = "wifi-vcc";
+                regulator-min-microvolt = <3300000>;
+                regulator-max-microvolt = <3300000>;
+            };
+            reg_bldo1: bldo1 {
+                regulator-name = "wifi-vcc-io-pg";
+                regulator-min-microvolt = <1800000>;
+                regulator-max-microvolt = <1800000>;
+            };
+            /* Confirmed by the chip ID appearing when enabled. */
+            reg_cldo2: cldo2 {
+                regulator-name = "touch-vcc";
+                regulator-min-microvolt = <3300000>;
+                regulator-max-microvolt = <3300000>;
+                regulator-always-on;
+            };
+        };
+    };
+};

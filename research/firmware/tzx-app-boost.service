@@ -1,0 +1,19 @@
+[Unit]
+Description=TZX four-second application and touch CPU boost
+BindsTo=tzx-cpu-dvfs.service
+After=tzx-cpu-dvfs.service tzx-screen-health.service
+ConditionKernelVersion=7.3.3-tzx-a523-accel1
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/python3 -u /usr/local/lib/tzx-app-launch/boost.py run
+ExecStopPost=/usr/bin/python3 /usr/local/lib/tzx-app-launch/boost.py restore
+WatchdogSec=5
+TimeoutStartSec=30
+TimeoutStopSec=5
+Restart=on-failure
+RestartSec=2
+KillMode=mixed
+
+[Install]
+WantedBy=graphical.target

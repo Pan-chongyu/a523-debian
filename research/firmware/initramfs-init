@@ -1,0 +1,100 @@
+#!/bin/busybox sh
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+/bin/busybox --install -s /bin
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+mkdir -p /dev/pts /sys/kernel/config /sys/fs/pstore /run /tmp
+mount -t devpts devpts /dev/pts
+mount -t tmpfs tmpfs /run
+mount -t pstore pstore /sys/fs/pstore
+mount -t configfs configfs /sys/kernel/config
+echo "TZX A523: Linux initramfs reached" > /dev/kmsg
+
+# Decide the USB functions before binding the gadget. Changing its functions
+# while a terminal is active can hang up the installation session.
+fresh_root=''
+for attempt in 1 2 3 4 5; do
+    [ -b /dev/mmcblk0 ] && break
+    sleep 1
+done
+for rootdev in /dev/mmcblk*p2; do
+    [ -b "$rootdev" ] || continue
+    mkdir -p /newroot
+    mount -t ext4 -o ro "$rootdev" /newroot || continue
+    if [ "$(cat /newroot/etc/tzx-board-id 2>/dev/null)" = 'TZX P30A523_20T5G 3e01ff55454d20202010209170281b59' ]; then
+        fresh_root="$rootdev"
+    fi
+    umount /newroot
+done
+
+g=/sys/kernel/config/usb_gadget/tzx
+mkdir -p "$g"
+echo 0x1d6b > "$g/idVendor"
+echo 0x0104 > "$g/idProduct"
+echo 0xef > "$g/bDeviceClass"
+echo 0x02 > "$g/bDeviceSubClass"
+echo 0x01 > "$g/bDeviceProtocol"
+mkdir -p "$g/strings/0x409"
+echo TZX-A523-20261109 > "$g/strings/0x409/serialnumber"
+echo TZX > "$g/strings/0x409/manufacturer"
+echo 'Debian 13 A523 bring-up' > "$g/strings/0x409/product"
+mkdir -p "$g/configs/c.1/strings/0x409"
+echo 'USB debug serial' > "$g/configs/c.1/strings/0x409/configuration"
+echo 250 > "$g/configs/c.1/MaxPower"
+mkdir -p "$g/functions/acm.usb0"
+ln -s "$g/functions/acm.usb0" "$g/configs/c.1/acm.usb0"
+if [ -z "$fresh_root" ] && [ -b /dev/mmcblk0 ]; then
+    mkdir -p "$g/functions/mass_storage.0"
+    echo 1 > "$g/functions/mass_storage.0/stall"
+    echo 0 > "$g/functions/mass_storage.0/lun.0/ro"
+    echo /dev/mmcblk0 > "$g/functions/mass_storage.0/lun.0/file"
+    ln -s "$g/functions/mass_storage.0" "$g/configs/c.1/mass_storage.0"
+fi
+for attempt in 1 2 3 4 5; do
+    for udc in /sys/class/udc/*; do
+        [ -e "$udc" ] || continue
+        basename "$udc" > "$g/UDC"
+    done
+    [ -n "$(cat "$g/UDC")" ] && break
+    sleep 1
+done
+if [ -n "$(cat "$g/UDC")" ]; then
+    # Feed/disable the loader watchdog only after the USB gadget is bound.
+    devmem 0x02050014 32 0x16aa0000
+    devmem 0x07090118 32 0
+    devmem 0x07090110 32 0xa5235501
+fi
+
+# Boot only a root filesystem carrying this fresh port's board identity.
+# An older installation on eMMC cannot pass these checks.
+for rootdev in $fresh_root; do
+    [ -b "$rootdev" ] || continue
+    mkdir -p /newroot
+    mount -t ext4 -o ro "$rootdev" /newroot || continue
+    if [ "$(cat /newroot/etc/tzx-board-id 2>/dev/null)" != 'TZX P30A523_20T5G 3e01ff55454d20202010209170281b59' ]; then
+        umount /newroot
+        continue
+    fi
+    mount -o remount,rw /newroot || continue
+    mkdir -p /newroot/dev /newroot/proc /newroot/sys /newroot/run
+    mount --move /dev /newroot/dev
+    mount --move /proc /newroot/proc
+    mount --move /sys /newroot/sys
+    mount --move /run /newroot/run
+    ln -sf /proc/self/mounts /newroot/etc/mtab
+    chroot /newroot /usr/sbin/resize2fs "$rootdev" > /newroot/run/rootfs-resize.log 2>&1
+    exec switch_root /newroot /sbin/init
+done
+
+while :; do
+    (
+        echo 'TZX A523 Linux bring-up console'
+        uname -a
+        cat /proc/meminfo | head -n 4
+        cat /proc/partitions
+        echo 'Commands run as root over the attached USB cable.'
+        exec setsid -c /bin/sh -i
+    ) < /dev/ttyGS0 > /dev/ttyGS0 2>&1
+    sleep 1
+done

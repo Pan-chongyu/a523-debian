@@ -1,0 +1,77 @@
+/dts-v1/;
+/plugin/;
+/* For the frozen periph1 base tree; provider identity is checked in C. */
+/ {
+    fragment@0 {
+        target-path = "/soc/efuse@3006000";
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <1>;
+            tzx_ths_cal: thermal-calibration@38 { reg = <0x38 0x14>; };
+        };
+    };
+    fragment@1 {
+        target-path = "/soc";
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <1>;
+            tzx_ths1: thermal-sensor@2009400 {
+                compatible = "allwinner,sun55i-a523-ths";
+                reg = <0x02009400 0x400>;
+                clocks = <0x02 126>, <0x02 123>;
+                clock-names = "bus", "mod";
+                resets = <0x02 48>;
+                nvmem-cells = <&tzx_ths_cal>;
+                nvmem-cell-names = "calibration";
+                #thermal-sensor-cells = <1>;
+            };
+            tzx_ths0: thermal-sensor@200a000 {
+                compatible = "allwinner,sun55i-a523-ths-ddr";
+                reg = <0x0200a000 0x400>;
+                clocks = <0x02 126>, <0x02 122>;
+                clock-names = "bus", "mod";
+                resets = <0x02 48>;
+                nvmem-cells = <&tzx_ths_cal>;
+                nvmem-cell-names = "calibration";
+                #thermal-sensor-cells = <1>;
+            };
+        };
+    };
+    fragment@2 {
+        target-path = "/";
+        __overlay__ {
+            thermal-zones {
+                cpu-big-thermal {
+                    polling-delay-passive = <1000>;
+                    polling-delay = <1000>;
+                    thermal-sensors = <&tzx_ths1 0>;
+                    trips { critical { temperature = <110000>; hysteresis = <2000>; type = "critical"; }; };
+                };
+                cpu-little-thermal {
+                    polling-delay-passive = <1000>;
+                    polling-delay = <1000>;
+                    thermal-sensors = <&tzx_ths1 1>;
+                    trips { critical { temperature = <110000>; hysteresis = <2000>; type = "critical"; }; };
+                };
+                gpu-thermal {
+                    polling-delay-passive = <1000>;
+                    polling-delay = <1000>;
+                    thermal-sensors = <&tzx_ths1 2>;
+                    trips { critical { temperature = <110000>; hysteresis = <2000>; type = "critical"; }; };
+                };
+                npu-thermal {
+                    polling-delay-passive = <1000>;
+                    polling-delay = <1000>;
+                    thermal-sensors = <&tzx_ths1 3>;
+                    trips { critical { temperature = <110000>; hysteresis = <2000>; type = "critical"; }; };
+                };
+                ddr-thermal {
+                    polling-delay-passive = <1000>;
+                    polling-delay = <1000>;
+                    thermal-sensors = <&tzx_ths0 0>;
+                    trips { critical { temperature = <110000>; hysteresis = <2000>; type = "critical"; }; };
+                };
+            };
+        };
+    };
+};

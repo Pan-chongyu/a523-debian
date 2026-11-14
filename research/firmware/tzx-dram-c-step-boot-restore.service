@@ -1,0 +1,13 @@
+[Unit]
+Description=Restore the prior DCDC3 setpoint after an interrupted manual test
+After=local-fs.target
+Before=tzx-display.service tzx-audio.service tzx-wifi.service tzx-cpufreq.service
+ConditionPathExists=/var/lib/tzx/diagnostics/dram-c-step/original.txt
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/lib/tzx-dram-c-step/control restore
+TimeoutStartSec=40
+
+[Install]
+WantedBy=multi-user.target

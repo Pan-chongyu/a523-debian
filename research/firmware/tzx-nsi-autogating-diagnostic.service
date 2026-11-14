@@ -1,0 +1,12 @@
+[Unit]
+Description=Manual A523 upstream NSI autogating comparison
+After=local-fs.target tzx-rtc-log.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 /home/debian/run_nsi_autogating_trial.py
+ExecStopPost=/usr/bin/python3 /home/debian/run_nsi_autogating_trial.py --restore
+RuntimeMaxSec=390s
+TimeoutStopSec=30s
+LimitMEMLOCK=67108864
+MemoryMax=3G

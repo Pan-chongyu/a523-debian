@@ -1,0 +1,48 @@
+#!/bin/sh
+set -eu
+test "$(uname -r)" = 7.3.3-tzx-a523-accel1
+test "$(cat /sys/class/block/mmcblk0/device/cid)" = 3e01ff55454d20202010209170281b59
+runtime=/usr/local/lib/tzx-accel-hardware
+sha256sum -c "$runtime/MODULES.sha256"
+case "${1:-}" in
+power)
+    modprobe sun55i_pck600
+    if test ! -d /sys/module/tzx_display_domains; then modprobe tzx_display_domains; fi
+    for domain in de vo0 vo1; do
+        test "$(cat "/sys/bus/platform/devices/tzx-display-$domain/power/runtime_status")" = active
+    done
+    echo TZX_DISPLAY_POWER_DOMAINS_READY
+    ;;
+thermal)
+    if test ! -d /sys/module/tzx_thermal_nodes; then
+        modprobe tzx_thermal_nodes
+        # NVMEM registers fixed cells at probe; refresh after adding the cell.
+        printf 3006000.efuse > /sys/bus/platform/drivers/eeprom-sunxi-sid/unbind
+        printf 3006000.efuse > /sys/bus/platform/drivers/eeprom-sunxi-sid/bind
+    fi
+    if test ! -d /sys/module/tzx_thermal_driver; then modprobe tzx_thermal_driver; fi
+    python3 -c 'from pathlib import Path; import time
+for attempt in range(15):
+    zones=list(Path("/sys/class/thermal").glob("thermal_zone*"))
+    try:
+        values={p.joinpath("type").read_text().strip():int(p.joinpath("temp").read_text()) for p in zones}
+        if len(values)==5 and all(-10000<x<90000 for x in values.values()):
+            print(values);break
+    except OSError: pass
+    time.sleep(0.2)
+else: raise SystemExit("Thermal sensors did not become ready")'
+    echo TZX_THERMAL_SENSORS_READY
+    ;;
+gpu)
+    if test ! -d /sys/module/tzx_gpu_nodes; then modprobe tzx_gpu_nodes; fi
+    modprobe panfrost
+    test -e /dev/dri/renderD128
+    timeout 15 python3 "$runtime/verify_gpu_render.py" --node /dev/dri/by-path/platform-tzx-de-scanout-card
+    echo TZX_GPU_SHADER_READBACK_READY
+    ;;
+stop)
+    # Keep modules loaded until normal kernel shutdown. In-use display and
+    # GPU domains must not be torn down while Xorg still owns their buffers.
+    ;;
+*) exit 2 ;;
+esac

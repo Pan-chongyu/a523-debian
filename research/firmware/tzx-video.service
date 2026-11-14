@@ -1,0 +1,14 @@
+[Unit]
+Description=TZX A523 video device provider
+Requires=tzx-accel-power.service
+After=systemd-modules-load.service tzx-accel-power.service
+ConditionPathExists=/usr/local/lib/tzx-video/sunxi-ve.ko
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/local/lib/tzx-video/runtime.py start
+ExecStop=/usr/local/lib/tzx-video/runtime.py stop
+
+[Install]
+WantedBy=multi-user.target

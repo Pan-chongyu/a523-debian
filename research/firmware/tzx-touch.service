@@ -1,0 +1,14 @@
+[Unit]
+Description=TZX P30 GSL3670 touch bring-up
+After=tzx-usb-network.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/bin/sh /usr/local/lib/tzx-peripherals/tzx-touch-runtime-test.sh start
+ExecStop=/bin/sh /usr/local/lib/tzx-peripherals/tzx-touch-runtime-test.sh stop
+TimeoutStartSec=25
+TimeoutStopSec=15
+
+[Install]
+WantedBy=multi-user.target

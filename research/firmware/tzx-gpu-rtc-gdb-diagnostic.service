@@ -1,0 +1,17 @@
+[Unit]
+Description=Bounded TZX A523 GPU trial with retained PC/LR and CPU debugger
+After=local-fs.target tzx-cpufreq.service tzx-rtc-log.service
+Requires=tzx-rtc-log.service
+Wants=tzx-display.service
+
+[Service]
+Type=simple
+Environment=TZX_GPU_TRACE_SCENES=1
+Environment=TZX_GPU_EXPECT_AWAKE=1
+Environment=TZX_GPU_DEBUG_STOPS=1
+ExecStartPre=/usr/bin/python3 /usr/local/lib/tzx-rtc-log/runtime.py --live
+ExecStartPre=/usr/bin/systemctl stop tzx-cpufreq.service
+ExecStart=/usr/bin/python3 /home/debian/run_guarded_gpu_trial.py --label k5-rtc-gdb --aarch64-pgtable --keep-awake
+ExecStopPost=/usr/bin/python3 /home/debian/finish_gpu_k5_trial.py
+RuntimeMaxSec=780s
+TimeoutStopSec=120s

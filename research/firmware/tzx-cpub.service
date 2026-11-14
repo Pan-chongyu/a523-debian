@@ -1,0 +1,12 @@
+[Unit]
+Description=Initialize the TZX A523 CPU4-7 clock
+After=local-fs.target
+Before=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/tzx-enable-cpub
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Bounded DRAM setpoint comparison after observed 1260mV boot request
+After=tzx-rtc-log.service
+
+[Service]
+Type=exec
+ExecStart=/usr/bin/python3 /home/debian/run_dram_voltage_step_test.py run --millivolts 1200
+ExecStopPost=/usr/bin/python3 /home/debian/run_dram_voltage_step_test.py restore
+RuntimeMaxSec=390
+TimeoutStopSec=45

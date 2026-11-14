@@ -1,0 +1,13 @@
+[Unit]
+Description=Bounded DCDC3 1200mV comparison with durable per-step trace
+After=tzx-rtc-log.service
+
+[Service]
+Type=exec
+Environment=TZX_COPY_HIGH_TARGETS=1
+ExecStartPre=/usr/local/lib/tzx-dram-c-step/control 1200
+ExecStart=/home/debian/library-copy-coherency-v8 300 /home/debian/copy-dram-c-step-1200-v8 255 libc
+ExecStopPost=/usr/local/lib/tzx-dram-c-step/control restore
+RuntimeMaxSec=380
+TimeoutStartSec=45
+TimeoutStopSec=35

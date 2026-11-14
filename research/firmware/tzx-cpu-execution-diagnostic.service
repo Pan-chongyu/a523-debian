@@ -1,0 +1,12 @@
+[Unit]
+Description=Bounded CPU-only high-address instruction and mprotect comparison
+After=tzx-cpufreq.service
+
+[Service]
+Type=exec
+ExecStartPre=/usr/bin/test ! -d /sys/module/panfrost
+ExecStartPre=/usr/bin/systemctl stop tzx-cpufreq.service
+ExecStart=/home/debian/cpu-execution-coherency
+ExecStopPost=/usr/bin/systemctl start tzx-cpufreq.service
+RuntimeMaxSec=120s
+TimeoutStopSec=45s

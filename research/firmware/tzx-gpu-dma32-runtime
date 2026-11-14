@@ -1,0 +1,15 @@
+#!/bin/sh
+set -eu
+test "$(uname -r)" = 7.3.3-tzx-a523-accel1
+case "$(uname -v)" in *'#4 '*) ;; *) exit 1 ;; esac
+test "$(cat /sys/class/block/mmcblk0/device/cid)" = 3e01ff55454d20202010209170281b59
+sha256sum -c /usr/local/lib/tzx-gpu-dma32/MODULES.sha256
+test "$(modinfo -n panfrost)" = /lib/modules/7.3.3-tzx-a523-accel1/updates/tzx-dma32/panfrost.ko
+test "$(modinfo -n tzx_display)" = /lib/modules/7.3.3-tzx-a523-accel1/updates/tzx-dma32/tzx_display.ko
+modprobe panfrost
+modprobe tzx_gpu_nodes
+test "$(cat /sys/module/panfrost/parameters/tzx_dma32)" = Y
+test -e /dev/dri/renderD128
+timeout 15 python3 /usr/local/lib/tzx-accel-hardware/verify_gpu_render.py \
+    --node /dev/dri/by-path/platform-tzx-de-scanout-card
+echo TZX_GPU_DMA32_AND_INITIAL_MMU_SHADER_READBACK_READY

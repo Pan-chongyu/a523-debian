@@ -1,0 +1,13 @@
+[Unit]
+Description=Restore the pre-test DRAM setpoint if a diagnostic was interrupted
+After=local-fs.target
+Before=tzx-display.service tzx-audio.service tzx-wifi.service
+ConditionPathExists=/var/lib/tzx/diagnostics/dram-voltage-step/active.json
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/python3 /home/debian/run_dram_voltage_step_test.py restore
+TimeoutStartSec=40
+
+[Install]
+WantedBy=multi-user.target

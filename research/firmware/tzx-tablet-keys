@@ -1,0 +1,20 @@
+#!/bin/sh
+set -eu
+test "$(uname -r)" = 7.3.3-tzx-a523-accel1
+test "$(cat /sys/class/block/mmcblk0/device/cid)" = 3e01ff55454d20202010209170281b59
+runtime=/usr/local/lib/tzx-tablet-keys
+sha256sum -c "$runtime/MODULES.sha256"
+case "${1:-}" in
+start)
+    modprobe tzx_lradc_keyboard
+    modprobe tzx_power_key
+    grep -q 'Name="TZX P30 LRADC volume keys"' /proc/bus/input/devices
+    grep -q 'Name="TZX P30 AXP717 power key"' /proc/bus/input/devices
+    echo TZX_TABLET_KEYS_READY
+    ;;
+stop)
+    modprobe -r tzx_power_key
+    modprobe -r tzx_lradc_keyboard
+    ;;
+*) exit 2 ;;
+esac

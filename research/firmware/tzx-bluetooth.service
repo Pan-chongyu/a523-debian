@@ -1,0 +1,18 @@
+[Unit]
+Description=TZX P30 AIC8800D80 Bluetooth H4 UART
+ConditionKernelVersion=7.3.3-tzx-a523-periph1
+Requires=tzx-bt-hardware.service tzx-wifi.service
+Wants=bluetooth.service
+After=tzx-bt-hardware.service tzx-wifi.service bluetooth.service
+PartOf=tzx-wifi.service
+
+[Service]
+Type=notify
+NotifyAccess=main
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-bluetooth/runtime.py attach
+TimeoutStartSec=40
+TimeoutStopSec=15
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target

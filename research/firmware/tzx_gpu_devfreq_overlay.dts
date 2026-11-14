@@ -1,0 +1,34 @@
+/dts-v1/;
+/plugin/;
+/* All universal A523 GPU points use the already powered 900mV rail.
+ * No GPIO, PMIC selector, PLL or power-domain programming is added here. */
+/ {
+    fragment@0 {
+        target-path = "/";
+        __overlay__ {
+            tzx_gpu_900: tzx-gpu-prepowered-supply {
+                compatible = "regulator-fixed";
+                regulator-name = "tzx-gpu-prepowered-900mV";
+                regulator-min-microvolt = <900000>;
+                regulator-max-microvolt = <900000>;
+                regulator-always-on;
+                regulator-boot-on;
+            };
+            tzx_gpu_opps: tzx-gpu-operating-points {
+                compatible = "operating-points-v2";
+                opp-150000000 { opp-hz = /bits/ 64 <150000000>; opp-microvolt = <900000>; };
+                opp-200000000 { opp-hz = /bits/ 64 <200000000>; opp-microvolt = <900000>; };
+                opp-300000000 { opp-hz = /bits/ 64 <300000000>; opp-microvolt = <900000>; };
+                opp-400000000 { opp-hz = /bits/ 64 <400000000>; opp-microvolt = <900000>; };
+                opp-600000000 { opp-hz = /bits/ 64 <600000000>; opp-microvolt = <900000>; };
+            };
+        };
+    };
+    fragment@1 {
+        target-path = "/soc/gpu@1800000";
+        __overlay__ {
+            operating-points-v2 = <&tzx_gpu_opps>;
+            mali-supply = <&tzx_gpu_900>;
+        };
+    };
+};

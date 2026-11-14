@@ -1,0 +1,36 @@
+// SPDX-License-Identifier: (GPL-2.0-only OR MIT)
+/* Isolation test on top of the verified base-3 tree. The fixed supply only
+ * describes voltage; CLDO2 is enabled by a guarded userspace test first. */
+/ {
+    aliases { i2c1 = "/touch-i2c"; };
+    isolated_touch_vcc: regulator-touch-vcc {
+        compatible = "regulator-fixed";
+        regulator-name = "touch-vcc-uncontrolled";
+        regulator-min-microvolt = <3300000>;
+        regulator-max-microvolt = <3300000>;
+    };
+    touch-i2c {
+        compatible = "i2c-gpio";
+        sda-gpios = <&{/soc/pinctrl@2000000} 7 1 6>;
+        scl-gpios = <&{/soc/pinctrl@2000000} 7 0 6>;
+        i2c-gpio,delay-us = <10>;
+        #address-cells = <1>;
+        #size-cells = <0>;
+        touchscreen@40 {
+            compatible = "tzx,p30-gsl3670-candidate";
+            reg = <0x40>;
+            interrupt-parent = <&{/soc/pinctrl@2000000}>;
+            interrupts = <7 9 1>;
+            power-gpios = <&{/soc/pinctrl@2000000} 7 10 0>;
+            avdd-supply = <&isolated_touch_vcc>;
+            firmware-name = "silead/tzx-p30-candidate.fw";
+            touchscreen-size-x = <1648>;
+            touchscreen-size-y = <880>;
+            touchscreen-swapped-x-y;
+            touchscreen-inverted-y;
+        };
+    };
+};
+&{/soc/pinctrl@2000000} {
+    vcc-ph-supply = <&{/regulator-emmc-vcc}>;
+};

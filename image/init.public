@@ -1,0 +1,61 @@
+#!/bin/busybox sh
+export PATH=/bin:/sbin:/usr/bin:/usr/sbin
+/bin/busybox --install -s /bin
+mount -t proc proc /proc
+mount -t sysfs sysfs /sys
+mount -t devtmpfs devtmpfs /dev
+mkdir -p /dev/pts /sys/kernel/config /run /tmp /newroot
+mount -t devpts devpts /dev/pts
+mount -t tmpfs tmpfs /run
+mount -t configfs configfs /sys/kernel/config
+for attempt in 1 2 3 4 5; do [ -b /dev/mmcblk0 ] && break; sleep 1; done
+cid=$(cat /sys/class/block/mmcblk0/device/cid 2>/dev/null)
+sectors=$(cat /sys/class/block/mmcblk0/size 2>/dev/null)
+case "$cid" in 3e01ff55454d2020????????????????) ;; *) exec sh;; esac
+[ "$sectors" = 244318208 ] || exec sh
+g=/sys/kernel/config/usb_gadget/tzx
+mkdir -p "$g/strings/0x409" "$g/configs/c.1/strings/0x409" "$g/functions/acm.usb0"
+echo 0x1d6b > "$g/idVendor"; echo 0x0104 > "$g/idProduct"
+echo 0xef > "$g/bDeviceClass"; echo 0x02 > "$g/bDeviceSubClass"; echo 0x01 > "$g/bDeviceProtocol"
+echo TZX-P30A523-PUBLIC > "$g/strings/0x409/serialnumber"
+echo TZX > "$g/strings/0x409/manufacturer"
+echo 'A523 Debian public installer' > "$g/strings/0x409/product"
+echo 'A523 Debian' > "$g/configs/c.1/strings/0x409/configuration"
+echo 250 > "$g/configs/c.1/MaxPower"
+ln -s "$g/functions/acm.usb0" "$g/configs/c.1/acm.usb0"
+installer=0
+[ -f /INSTALLER ] && installer=1
+if [ "$installer" = 0 ]; then
+    if mount -t ext4 -o ro /dev/mmcblk0p2 /newroot; then
+        [ "$(cat /newroot/etc/tzx-public-profile 2>/dev/null)" = tzx-p30a523-20t5g-lpddr3-4g-uem128 ] || installer=1
+        umount /newroot
+    else installer=1; fi
+fi
+if [ "$installer" = 1 ]; then
+    mkdir -p "$g/functions/mass_storage.0"
+    echo 1 > "$g/functions/mass_storage.0/stall"
+    echo 0 > "$g/functions/mass_storage.0/lun.0/ro"
+    echo /dev/mmcblk0 > "$g/functions/mass_storage.0/lun.0/file"
+    ln -s "$g/functions/mass_storage.0" "$g/configs/c.1/mass_storage.0"
+fi
+for udc in /sys/class/udc/*; do [ -e "$udc" ] && basename "$udc" > "$g/UDC"; done
+if [ -n "$(cat "$g/UDC")" ]; then
+    devmem 0x02050014 32 0x16aa0000
+    devmem 0x07090118 32 0
+    devmem 0x07090110 32 0xa5235501
+fi
+if [ "$installer" = 0 ]; then
+    mount -t ext4 /dev/mmcblk0p2 /newroot || exec sh
+    mkdir -p /newroot/etc/tzx
+    printf '%s\n' "$cid" > /newroot/etc/tzx/device-cid
+    chmod 600 /newroot/etc/tzx/device-cid
+    mkdir -p /newroot/dev /newroot/proc /newroot/sys /newroot/run
+    for folder in dev proc sys run; do mount --move "/$folder" "/newroot/$folder"; done
+    ln -sf /proc/self/mounts /newroot/etc/mtab
+    chroot /newroot /usr/sbin/resize2fs /dev/mmcblk0p2 > /newroot/run/rootfs-resize.log 2>&1
+    exec switch_root /newroot /sbin/init
+fi
+while :; do
+    (echo "A523_INSTALLER_READY cid=$cid sectors=$sectors"; exec setsid -c /bin/sh -i) < /dev/ttyGS0 > /dev/ttyGS0 2>&1
+    sleep 1
+done

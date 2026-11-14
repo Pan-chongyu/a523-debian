@@ -1,0 +1,16 @@
+[Unit]
+Description=TZX P30 Bluetooth UART and reset before shared firmware upload
+ConditionKernelVersion=7.3.3-tzx-a523-periph1
+After=tzx-usb-network.service tzx-touch.service
+Before=tzx-wifi.service bluetooth.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/python3 /usr/local/lib/tzx-bluetooth/runtime.py hardware-start
+ExecStop=/usr/sbin/modprobe -r tzx_bt_runtime
+TimeoutStartSec=20
+TimeoutStopSec=15
+
+[Install]
+WantedBy=multi-user.target

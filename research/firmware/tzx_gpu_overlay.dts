@@ -1,0 +1,13 @@
+/dts-v1/;
+/plugin/;
+/* Conservative first bring-up: unchanged power rail, one fixed clock rate. */
+/ {
+    fragment@0 {
+        target-path = "/soc/gpu@1800000";
+        __overlay__ {
+            assigned-clocks = <0x02 51>;
+            assigned-clock-rates = <200000000>;
+            status = "okay";
+        };
+    };
+};

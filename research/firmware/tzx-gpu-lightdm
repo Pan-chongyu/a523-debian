@@ -1,0 +1,10 @@
+#!/bin/sh
+set -eu
+if test "$(cat /sys/class/block/mmcblk0/device/cid)" = 3e01ff55454d20202010209170281b59 &&
+   test -f /var/lib/tzx/gpu-qualified &&
+   test -f /sys/module/panfrost/parameters/tzx_dma32 &&
+   test "$(cat /sys/module/panfrost/parameters/tzx_dma32)" = Y &&
+   systemctl is-active --quiet tzx-gpu.service; then
+    exec /usr/sbin/lightdm --config=/usr/local/lib/tzx-accel-gpu/lightdm.conf
+fi
+exec /usr/sbin/lightdm

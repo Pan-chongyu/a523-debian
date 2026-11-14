@@ -1,0 +1,17 @@
+/dts-v1/;
+/plugin/;
+/ {
+    fragment@0 {
+        target-path = "/soc";
+        __overlay__ {
+            #address-cells = <1>;
+            #size-cells = <1>;
+            lradc@2009800 {
+                compatible = "tzx,p30-lradc-probe";
+                reg = <0x02009800 0x100>;
+                clocks = <0x02 134>;
+                resets = <0x02 57>;
+            };
+        };
+    };
+};
