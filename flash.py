@@ -16,7 +16,7 @@ MESSAGES={
    erase='平板 eMMC 的全部现有数据将被替换。输入 FLASH 继续：',download='正在下载并校验',fel='请进入 FEL 模式，并且只连接一台平板。',
    installer='正在写入并校验临时安装引导',wait='等待 USB 磁盘出现（最长180秒）',write='正在写入镜像并逐块读回校验',
    done='刷机和读回校验完成。首次启动会扩展根文件系统。登录：debian / debian。开启 SSH 前请更改密码。',
-   reboot='无法自动重启。请安全断开 USB 后，长按电源重新启动。',dry='预演检查通过：未打开 USB 设备，未写入磁盘。'),
+   reboot='无法自动重启。请安全断开 USB 后，长按电源重新启动。',dry='预演检查通过：未打开 USB 设备，未写入目标磁盘。'),
  'ja':dict(title='A523 Debian 書き込みツール',board='基板 TZX P30A523_20T5G、LPDDR3 4GiB、UEM 128GB eMMC を確認してください。他の A523 機種には対応しません。',
    erase='タブレットの eMMC データがすべて置き換えられます。続行するには FLASH と入力: ',download='ダウンロードと検証',fel='FEL モードのタブレットを1台だけ接続してください。',
    installer='一時インストーラーを書き込み・検証中',wait='USB ストレージを待機中（最大180秒）',write='イメージの書き込みと読み戻し検証中',
@@ -97,9 +97,11 @@ def main():
     if not args.dry_run and not (sys.platform=='win32' or sys.platform.startswith('linux')):
         raise RuntimeError('Disk installation supports Windows and Linux only')
     base='https://github.com/'+REPOSITORY+'/releases/download/'+VERSION
-    manifest_path=args.manifest or args.cache/'release-manifest.json'
+    bundled=Path(__file__).resolve().parent/'release-manifest.json'
+    manifest_path=args.manifest or (bundled if bundled.exists() else args.cache/'release-manifest.json')
     if not manifest_path.exists():download(base+'/release-manifest.json',manifest_path)
     manifest=validate_manifest(json.loads(manifest_path.read_text(encoding='utf-8')))
+    if manifest.get('version')!=VERSION:raise ValueError('Manifest version does not match this flasher release')
     for item in manifest['files'].values():
         path=args.cache/item['name']
         if not path.exists():print(m['download'],item['name'],flush=True);download(base+'/'+item['name'],path)
