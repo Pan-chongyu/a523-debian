@@ -1,0 +1,12 @@
+[Unit]
+Description=Live Linux boot log on retained landscape display
+DefaultDependencies=no
+After=systemd-remount-fs.service tzx-cpub.service
+Before=tzx-boot-panel-handoff.service shutdown.target
+Conflicts=shutdown.target
+[Service]
+Type=notify
+NotifyAccess=main
+ExecStart=/usr/bin/python3 -u /usr/local/lib/tzx-boot-console/log.py
+TimeoutStartSec=10s
+TimeoutStopSec=2s

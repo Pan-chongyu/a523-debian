@@ -20,6 +20,8 @@ Linux 使用 [镜像 Release](https://github.com/Pan-chongyu/a523-debian/release
 
 [压缩内核与启动精简](docs/zh-CN/BOOT-COMPACT.md)进一步将引导读取/CRC降至 2.22 / 2.22 秒，桌面进程全部创建降至内核启动后 19.83 / 19.96 秒；两次重启和完整联合负载通过。本轮公开源码与实测，Release 文件保持原版。
 
+[实时开机日志与连续显示](docs/zh-CN/BOOT-CONSOLE.md)已在原机验证：开机图片之后显示真实内核日志，再进入横屏桌面；用户确认彩条和中途黑屏均已消失、桌面触摸正常。五次熄屏唤醒及两次整机联合负载通过。本轮发布源码与实测，下载镜像和刷机程序未重新打包。
+
 [GPU API 补充更新](docs/zh-CN/GPU-API.md)增加 Rusticl OpenCL 3.0、选定 OpenCL C 3.0 功能、SPIR-V 输入测试和持久健康记录，已验证 WebGL 1/2 使用真实 GPU。原镜像与刷机工具内容未变，新刷机后需另装本补充包；实际持续测试结果见更新 Release。
 
 **尚未完整适配或验证：** HS400、摄像头、整机休眠、耳机与蓝牙音频端到端，以及其他内存、屏幕或 eMMC 的变体。当前开源驱动栈不提供这块 Mali-G57 的合格 Vulkan 硬件实现。

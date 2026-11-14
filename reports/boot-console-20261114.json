@@ -1,0 +1,385 @@
+{
+  "profile": "screen-boot-console-1",
+  "date": "2026-11-14",
+  "scope": "Original TZX P30A523_20T5G tablet only",
+  "result": "PASS",
+  "owner_confirmation": "Live boot logs visible; no color bars or intermediate black screen; landscape desktop and touch normal",
+  "behavior": {
+    "early_SRAM_artwork": "Unchanged star-cat asset",
+    "logs": "/dev/kmsg, reserved framebuffer then native VT1",
+    "direction": "right landscape 1280x800",
+    "desktop": "XFCE on native Panfrost",
+    "visible_color_bars": false,
+    "intermediate_black_gap": false
+  },
+  "native_parameters": {
+    "screen_revision": "screen-functions-5-poweron",
+    "panel_startup_revision": "black-until-committed-1",
+    "panel_startup_black": "N",
+    "panel_black_masks": "5",
+    "panel_black_releases": "6",
+    "panel_black_errors": "0",
+    "panel_boot_adopted": "Y",
+    "screen_buffer_errors": "0",
+    "screen_panel_errors": "0"
+  },
+  "retained_power_domains": {
+    "VO0": 8,
+    "VO1": 8,
+    "DE": 8
+  },
+  "normal_boots": [
+    {
+      "boot_id": "e019a921-7990-4871-95b0-da5a22d48cab",
+      "log_records": 422,
+      "physical_log_frames": 12,
+      "native_takeover": true,
+      "mixed_load": {
+        "status": "PASS",
+        "boot_id": "e019a921-7990-4871-95b0-da5a22d48cab",
+        "seconds": 42.51,
+        "cpu_peak_khz": [
+          1416000,
+          1800000
+        ],
+        "gpu_score": 903,
+        "video_hardware_irq_delta": 600,
+        "iommu_faults": 0,
+        "storage": [
+          {
+            "bytes": 134217728,
+            "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+            "write_MiB_s": 59.88,
+            "read_MiB_s": 78.81
+          },
+          {
+            "bytes": 134217728,
+            "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+            "write_MiB_s": 73.91,
+            "read_MiB_s": 84.39
+          }
+        ],
+        "memory": "RAM: 2560 MiB, 8 threads, two full write/read patterns, errors=0, 6.65 seconds\nMEMORY_TEST_2560_MIB_8_THREADS_PASS\n",
+        "temperature_peaks_mc": {
+          "gpu-thermal": 57850,
+          "cpu-big-thermal": 73515,
+          "tzx-board-thermal": 73515,
+          "npu-thermal": 59215,
+          "cpu-little-thermal": 71175,
+          "ddr-thermal": 72410
+        },
+        "emmc_timing": "HS200",
+        "emmc_hz": 100000000,
+        "zram_bytes": 2147483648,
+        "screen_buffer_and_panel_errors": 0,
+        "gpu_rates_hz": [
+          200000000,
+          400000000,
+          600000000
+        ],
+        "gpu_compute": "MALI_G57_COMPUTE_ALL_WORDS_PASS {\"status\": \"PASS\", \"renderer\": \"Mali-G57 (Panfrost)\", \"version\": \"OpenGL ES 3.1 Mesa 25.0.7-2+deb13u1\", \"shader\": \"OpenGL ES 3.1 compute\", \"words_checked\": 65536, \"dispatches\": 32, \"integer_operations_checked\": 2097152, \"fence_and_SSBO_readback\": true, \"elapsed_s\": 4.583, \"boot_id\": \"e019a921-7990-4871-95b0-da5a22d48cab\"}\n"
+      }
+    },
+    {
+      "boot_id": "590f502d-b509-450f-bf68-97a8459ae29e",
+      "log": {
+        "boot_id": "590f502d-b509-450f-bf68-97a8459ae29e",
+        "records": 424,
+        "physical_frames": 12,
+        "native_takeover": true,
+        "completed_kernel_s": 20.928841509,
+        "source": "/dev/kmsg",
+        "result": "PASS"
+      },
+      "service_timings_kernel_s": {
+        "tzx-boot-console-log": {
+          "ExecMainStartTimestampMonotonic": 4.907564,
+          "ActiveEnterTimestampMonotonic": 5.480713
+        },
+        "tzx-boot-panel-handoff": {
+          "ExecMainStartTimestampMonotonic": 5.559039,
+          "ActiveEnterTimestampMonotonic": 6.335603
+        },
+        "tzx-display": {
+          "ExecMainStartTimestampMonotonic": 7.806517,
+          "ActiveEnterTimestampMonotonic": 10.351309
+        },
+        "lightdm": {
+          "ExecMainStartTimestampMonotonic": 15.211716,
+          "ActiveEnterTimestampMonotonic": 15.49067
+        }
+      },
+      "last_desktop_process_kernel_s": 20.69,
+      "mixed_load": {
+        "status": "PASS",
+        "boot_id": "590f502d-b509-450f-bf68-97a8459ae29e",
+        "seconds": 44.06,
+        "cpu_peak_khz": [
+          1416000,
+          1800000
+        ],
+        "gpu_score": 970,
+        "video_hardware_irq_delta": 600,
+        "iommu_faults": 0,
+        "storage": [
+          {
+            "bytes": 134217728,
+            "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+            "write_MiB_s": 55.28,
+            "read_MiB_s": 68.54
+          },
+          {
+            "bytes": 134217728,
+            "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+            "write_MiB_s": 71.74,
+            "read_MiB_s": 77.24
+          }
+        ],
+        "memory": "RAM: 2560 MiB, 8 threads, two full write/read patterns, errors=0, 6.23 seconds\nMEMORY_TEST_2560_MIB_8_THREADS_PASS\n",
+        "temperature_peaks_mc": {
+          "gpu-thermal": 58175,
+          "cpu-big-thermal": 70915,
+          "tzx-board-thermal": 71955,
+          "npu-thermal": 58760,
+          "cpu-little-thermal": 70590,
+          "ddr-thermal": 71955
+        },
+        "emmc_timing": "HS200",
+        "emmc_hz": 100000000,
+        "zram_bytes": 2147483648,
+        "screen_buffer_and_panel_errors": 0,
+        "gpu_rates_hz": [
+          200000000,
+          400000000,
+          600000000
+        ],
+        "gpu_compute": "MALI_G57_COMPUTE_ALL_WORDS_PASS {\"status\": \"PASS\", \"renderer\": \"Mali-G57 (Panfrost)\", \"version\": \"OpenGL ES 3.1 Mesa 25.0.7-2+deb13u1\", \"shader\": \"OpenGL ES 3.1 compute\", \"words_checked\": 65536, \"dispatches\": 32, \"integer_operations_checked\": 2097152, \"fence_and_SSBO_readback\": true, \"elapsed_s\": 4.989, \"boot_id\": \"590f502d-b509-450f-bf68-97a8459ae29e\"}\n"
+      }
+    }
+  ],
+  "standby": {
+    "boot_id": "590f502d-b509-450f-bf68-97a8459ae29e",
+    "result": "PASS",
+    "samples": [
+      {
+        "cycle": 0,
+        "off": {
+          "sleeping": true,
+          "sleep_count": 1,
+          "wake_count": 0,
+          "errors": 0,
+          "scanout_errors": 0,
+          "sleep_status": 8,
+          "wake_status": -1,
+          "DSI_instruction_running": 0,
+          "actual_brightness": 0
+        },
+        "on": {
+          "sleeping": false,
+          "sleep_count": 1,
+          "wake_count": 1,
+          "errors": 0,
+          "scanout_errors": 0,
+          "sleep_status": 8,
+          "wake_status": 24,
+          "DSI_instruction_running": 1,
+          "actual_brightness": 20
+        }
+      },
+      {
+        "cycle": 1,
+        "off": {
+          "sleeping": true,
+          "sleep_count": 2,
+          "wake_count": 1,
+          "errors": 0,
+          "scanout_errors": 0,
+          "sleep_status": 8,
+          "wake_status": 24,
+          "DSI_instruction_running": 0,
+          "actual_brightness": 0
+        },
+        "on": {
+          "sleeping": false,
+          "sleep_count": 2,
+          "wake_count": 2,
+          "errors": 0,
+          "scanout_errors": 0,
+          "sleep_status": 8,
+          "wake_status": 24,
+          "DSI_instruction_running": 1,
+          "actual_brightness": 20
+        }
+      },
+      {
+        "cycle": 2,
+        "off": {
+          "sleeping": true,
+          "sleep_count": 3,
+          "wake_count": 2,
+          "errors": 0,
+          "scanout_errors": 0,
+          "sleep_status": 8,
+          "wake_status": 24,
+          "DSI_instruction_running": 0,
+          "actual_brightness": 0
+        },
+        "on": {
+          "sleeping": false,
+          "sleep_count": 3,
+          "wake_count": 3,
+          "errors": 0,
+          "scanout_errors": 0,
+          "sleep_status": 8,
+          "wake_status": 24,
+          "DSI_instruction_running": 1,
+          "actual_brightness": 20
+        }
+      },
+      {
+        "cycle": 3,
+        "off": {
+          "sleeping": true,
+          "sleep_count": 4,
+          "wake_count": 3,
+          "errors": 0,
+          "scanout_errors": 0,
+          "sleep_status": 8,
+          "wake_status": 24,
+          "DSI_instruction_running": 0,
+          "actual_brightness": 0
+        },
+        "on": {
+          "sleeping": false,
+          "sleep_count": 4,
+          "wake_count": 4,
+          "errors": 0,
+          "scanout_errors": 0,
+          "sleep_status": 8,
+          "wake_status": 24,
+          "DSI_instruction_running": 1,
+          "actual_brightness": 20
+        }
+      },
+      {
+        "cycle": 4,
+        "off": {
+          "sleeping": true,
+          "sleep_count": 5,
+          "wake_count": 4,
+          "errors": 0,
+          "scanout_errors": 0,
+          "sleep_status": 8,
+          "wake_status": 24,
+          "DSI_instruction_running": 0,
+          "actual_brightness": 0
+        },
+        "on": {
+          "sleeping": false,
+          "sleep_count": 5,
+          "wake_count": 5,
+          "errors": 0,
+          "scanout_errors": 0,
+          "sleep_status": 8,
+          "wake_status": 24,
+          "DSI_instruction_running": 1,
+          "actual_brightness": 20
+        }
+      }
+    ],
+    "qualification": "DSI host stopped, backlight off, DCS sleep-out bit toggles and accelerated desktop resumes",
+    "limitation": "bias and panel supply remain powered; not full rail gating or system suspend"
+  },
+  "failed_services": [],
+  "performance": {
+    "cpu_khz": [
+      1416000,
+      1800000
+    ],
+    "governor": "performance",
+    "gpu_min_request_mhz": 600,
+    "native_thermal_and_fault_caps": true,
+    "emmc_hz": 100000000,
+    "emmc": "HS200",
+    "zram_bytes": 2147483648,
+    "browser_preloading": false
+  },
+  "changed_layer": "File-only display child; no raw boot, GPT or rootfs replacement",
+  "raw_invariants": {
+    "toc0": {
+      "lba": 256,
+      "size": 49152,
+      "sha256": "3031c2e408edb41dab4ab0f35171bf9ea3398842bfd2c653c8017149b13791ba"
+    },
+    "asset": {
+      "lba": 49152,
+      "size": 925696,
+      "sha256": "3f743e7b748fe628cc6485e85c8e3cddc2b3bebf0473ae3b3e80923de9718ea0"
+    },
+    "header": {
+      "lba": 4096,
+      "size": 512,
+      "sha256": "5c137992bb62831690195cab9920e3a2723d3b3298e471c9a586399d2f57abe7"
+    },
+    "active": {
+      "lba": 98304,
+      "size": 15008768,
+      "sha256": "83e527786de54ae7fd9acd0496005473550ea321fea9da1d04dc4d1d67c0b107"
+    },
+    "primary-GPT": {
+      "lba": 0,
+      "size": 17408,
+      "sha256": "82f7b6c741b4292fcb22a2860849e47f811fd85511b7af6b5d2e95faf92f9a40"
+    },
+    "secondary-GPT": {
+      "lba": 244318175,
+      "size": 16896,
+      "sha256": "0289ce6fc405e4b78e755aa5d3df017bf620f65a00c48b86ea7b6227acae8967"
+    },
+    "fallback": {
+      "lba": 65536,
+      "size": 15008768,
+      "sha256": "091ebfe06aa47ca3a4ac7e347838dd6175c575771032e1703e6b7b1480e460e3"
+    }
+  },
+  "parent_raw_all_read_back": true,
+  "installed_artifact_sha256": {
+    "/usr/local/lib/tzx-screen/tzx_display.ko": "e3477d169523bc6e773f5343a3056d68b02533b16f89f9abb3d47e54350193b1",
+    "/usr/local/lib/tzx-screen/runtime.py": "8fe2faad040c9f5ebbc77427822de435bdb7e461d8eeec0b871dfec8e6e43c09",
+    "/usr/local/lib/tzx-peripherals-accel1/tzx-touch-runtime-test.sh": "63290cd3ce2aa7a1221af134d2999ee0c62b0e71d9ddc778479706de581afdc9",
+    "/usr/local/lib/tzx-screen-fast/touch_ready.py": "a99f328df3cae146b517d2d526ed283863df901418cfd96ba2a4401a3c5d5cf2",
+    "/usr/local/lib/tzx-boot-console/handoff.py": "c646a9b49926013fd9185de7af63fb7673a98e9fa13fedbb68e2560f4405b3c1",
+    "/usr/local/lib/tzx-boot-console/log.py": "8cbff5e5b07749c9138f09919af65506f167f292e952bfe73bd46c3bef46ded0",
+    "/usr/local/lib/tzx-boot-console/font8x16.bin": "ff3640ffffdd774ec56ee7ecacf7bce8324a67071155ade07f4c6380fa879025",
+    "/usr/local/lib/tzx-boot-console/render-log": "f49638715615e31906b88ecfc34b31139a6c9230f37991579a410ec25889fbfe",
+    "/usr/local/lib/tzx-boot-console/sun55i-pck600.ko": "f545cf9e9b4d7708877c7c23f5aa1ddab9d537d9851eeff9f4fa85d8e3566537"
+  },
+  "reproduced_build": {
+    "result": "PASS",
+    "target_kernel": "7.3.3-tzx-a523-accel1 #5",
+    "command": "sh research/tools/build_boot_console.sh KERNEL_SOURCE KERNEL_BUILD OUTPUT_DIRECTORY",
+    "display_module_sha256": "e3477d169523bc6e773f5343a3056d68b02533b16f89f9abb3d47e54350193b1",
+    "power_module_sha256": "f545cf9e9b4d7708877c7c23f5aa1ddab9d537d9851eeff9f4fa85d8e3566537",
+    "renderer_sha256": "f49638715615e31906b88ecfc34b31139a6c9230f37991579a410ec25889fbfe",
+    "font_sha256": "ff3640ffffdd774ec56ee7ecacf7bce8324a67071155ade07f4c6380fa879025"
+  },
+  "withdrawn_trials": [
+    "An initial live unload used the wrong GPU QoS teardown order; guards withdrew performance qualification. Normal reboot cleared the warning, original qualified profiles were restored and both final mixed-load runs passed.",
+    "Early native-adoption candidates failed register validation because provider registration powered off unowned display domains. They were replaced by the explicit retained-domain provider and passed native adoption.",
+    "The first DPMS test stopped at its disabled-policy precondition. The final wrapper enabled DPMS only for five verified cycles and restored the previous always-on desktop policy."
+  ],
+  "limitations": [
+    "Finite tests, not long-term reliability qualification",
+    "No new physical power-button or complete battery/USB-disconnected cold-start test for this child",
+    "Only kernel messages available after userspace can read /dev/kmsg are displayed live; early SRAM artwork remains",
+    "The three active display domains are kept powered. Full system suspend is not qualified",
+    "No generic installer: historical validation expects the exact original-unit parent and guarded installer",
+    "Desktop process creation and Linux-relative counters are not visual-readiness or power-key stopwatch times"
+  ],
+  "image_assets_updated": false,
+  "flasher_assets_updated": false,
+  "image_release": "v0.1.0-20261114",
+  "flasher_release": "flasher-v0.2.0",
+  "private_credentials_included": false,
+  "private_identity_snapshots_included": false
+}

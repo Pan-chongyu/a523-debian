@@ -1,0 +1,28 @@
+{
+  "profile": "screen-boot-console-1",
+  "base_files": {
+    "tzx_de_scanout.c": "d8ce70476b2120661d9f1298330715e63a299ca38fe5ba1da77df5ab09a41f64",
+    "tzx_drm.c": "89fff4166a0c77685276ee7e3f9d250f82071e1b1a7cbeec10fefbdd0e11b9c4",
+    "tzx_dsi_phy.h": "f5bb1e1394c52dff644fd45e1b18938d73981dc4487bb8e0d50f7471f1b2dad2",
+    "tzx_dsi_probe.c": "84a7e7bcecef6bc73c0e57da0766c1457c58ec8b49a8f6aa5958826201687f5f",
+    "tzx_dsi_video.h": "b384c9b0aec7712831fd18568c1b410db61f1dfc2bd314e1c9fcd7f995efa4b1",
+    "tzx_screen_doublebuffer.inc": "f365adf0b58ca56832b4fc0d9af2c9b6cdd88a5d51ad4aaf355b9327c44246c6",
+    "tzx_screen_standby.inc": "c50480c413bbad3449227902197715f8dd69af98318bdd1927878beba0edc483",
+    "tzx_screen_vblank.inc": "7a2c8518d8c477edb43985487fccbb7eb8c8be84020ab37aed8091465c12e677"
+  },
+  "files": {
+    "tzx_de_scanout.c": "bafc4b650a2728d6ae17435b115f8fa13d25e72fca81613d25830e5c90600ed3",
+    "tzx_drm.c": "89fff4166a0c77685276ee7e3f9d250f82071e1b1a7cbeec10fefbdd0e11b9c4",
+    "tzx_dsi_phy.h": "f5bb1e1394c52dff644fd45e1b18938d73981dc4487bb8e0d50f7471f1b2dad2",
+    "tzx_dsi_probe.c": "64ca6076598e995a4cc548eb86fb8a57238b548857c69d74c7213eede9a1db0e",
+    "tzx_dsi_video.h": "b384c9b0aec7712831fd18568c1b410db61f1dfc2bd314e1c9fcd7f995efa4b1",
+    "tzx_screen_doublebuffer.inc": "f365adf0b58ca56832b4fc0d9af2c9b6cdd88a5d51ad4aaf355b9327c44246c6",
+    "tzx_screen_standby.inc": "c50480c413bbad3449227902197715f8dd69af98318bdd1927878beba0edc483",
+    "tzx_screen_vblank.inc": "7a2c8518d8c477edb43985487fccbb7eb8c8be84020ab37aed8091465c12e677",
+    "tzx_panel_boot_console.inc": "0a0f99cfe1d2d46ab9c55eba70e3c0c874e8a36b53b229b9dfc69957da723f03"
+  },
+  "hardware_qualified": true,
+  "qualification_scope": "Original tablet, two normal boots; not a distributable image update",
+  "qualification_report": "../../../reports/boot-console-20261114.json",
+  "qualified_module_sha256": "e3477d169523bc6e773f5343a3056d68b02533b16f89f9abb3d47e54350193b1"
+}

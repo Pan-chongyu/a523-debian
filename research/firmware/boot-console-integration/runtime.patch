@@ -1,0 +1,97 @@
+--- a/usr/local/lib/tzx-screen/runtime.py
++++ b/usr/local/lib/tzx-screen/runtime.py
+@@ -13,7 +13,7 @@
+ PENDING = Path('/var/lib/tzx/screen-boot-pending.json')
+ BOOT = Path('/proc/sys/kernel/random/boot_id').read_text().strip()
+ GPU = '/usr/local/lib/tzx-dram-gpu/runtime.py'
+-MODULE_SHA = '6f16bad51fe6c9b5ca56f0b9f075d01899b994d8ec8c4eb9ca7ab54b4d69d427'
++MODULE_SHA = 'e3477d169523bc6e773f5343a3056d68b02533b16f89f9abb3d47e54350193b1'
+ p = argparse.ArgumentParser()
+ p.add_argument('operation', choices=('start', 'stop', 'health'))
+ p.add_argument('--trial', action='store_true')
+@@ -70,6 +70,14 @@
+         old = b'insmod /usr/local/lib/tzx-dram-gpu/tzx_display.ko'
+         assert original.count(old) == 1
+         script = original.replace(old, b'insmod /usr/local/lib/tzx-screen/tzx_display.ko')
++        adoption = Path('/run/tzx-boot-console-adopt.json')
++        adopt = adoption.exists() and json.loads(adoption.read_text())['boot_id'] == BOOT
++        if adopt:
++            script = script.replace(b'insmod /usr/local/lib/tzx-screen/tzx_display.ko',
++                                    b'insmod /usr/local/lib/tzx-screen/tzx_display.ko boot_console_adopt=1')
++            script = script.replace(b"    test \"$original\" = '0xd7'\n", b"    test \"$original\" = '0xdf'\n    original=0xd7\n")
++            script = script.replace(b'    sleep 1\n', b'')
++
+         atomic(PENDING, {'boot_id': BOOT, 'module_sha256': MODULE_SHA, 'trial': a.trial})
+         run('/bin/sh', '-c', script.decode(), 'screen-display-runtime', 'start')
+         assert Path('/sys/module/tzx_display/parameters/screen_revision').read_text().strip() == 'screen-functions-5-poweron'
+@@ -102,12 +110,17 @@
+         setup = json.loads(Path('/var/lib/tzx/screen-display-setup.json').read_text())
+         assert setup['boot_id'] == BOOT and setup['result'] == 'PASS'
+         assert 'current 1280 x 800' in result.stdout
++        startup = {name: Path('/sys/module/tzx_display/parameters', name).read_text().strip()
++                   for name in ('panel_startup_revision', 'panel_startup_black', 'panel_black_errors',
++                                'panel_black_releases', 'panel_boot_adopted')}
++        assert startup['panel_startup_black'] == 'N' and startup['panel_black_errors'] == '0'
++        assert int(startup['panel_black_releases']) > 0
+         gpu_health = json.loads(Path('/var/lib/tzx/dram-gpu-boot-health.json').read_text())
+         assert gpu_health['boot_id'] == BOOT and gpu_health['status'] == 'PASS'
+         assert int(Path('/proc/sys/kernel/tainted').read_text()) == 4096
+         atomic(Path('/var/lib/tzx/screen-boot-health.json'),
+                {'boot_id': BOOT, 'result': 'PASS', 'revision': 'screen-functions-5-poweron',
+-                'module_sha256': MODULE_SHA, 'GPU': 'Mali-G57', 'xrandr': result.stdout, 'panel': panel, 'display_setup': setup})
++                'module_sha256': MODULE_SHA, 'GPU': 'Mali-G57', 'xrandr': result.stdout, 'panel': panel, 'display_setup': setup, 'startup': startup})
+         PENDING.unlink()
+         if STATE.exists():
+             state = json.loads(STATE.read_text())
+--- a/usr/local/lib/tzx-peripherals-accel1/tzx-touch-runtime-test.sh
++++ b/usr/local/lib/tzx-peripherals-accel1/tzx-touch-runtime-test.sh
+@@ -14,7 +14,8 @@
+     test ! -d /sys/bus/i2c/devices/i2c-1
+     test "$(i2cget -y 0 0x34 0x9c)" = '0x1c'
+     original=$(i2cget -y 0 0x34 0x91)
+-    case "$original" in 0xd5|0xd7) ;; *) exit 11;; esac
++    case "$original" in 0xd5|0xd7|0xdd|0xdf) ;; *) exit 11;; esac
++    original=$(printf '0x%x' $((original & ~8)))
+     test "$(sha256sum /usr/local/lib/tzx-peripherals-accel1/silead-seeedd1001-candidate.fw | cut -d ' ' -f1)" = '125728ad83424e533198f804cb6d8b393c59d3818903760cbda282138e782636'
+     test "$(sha256sum /usr/local/lib/tzx-peripherals-accel1/tzx_gsl3670.ko | cut -d ' ' -f1)" = 'dd25a872e7459896063d50c9b0baa486a8c36c997eec749715c8014827bd1778'
+     test "$(sha256sum /usr/local/lib/tzx-peripherals-accel1/tzx_touch_runtime.ko | cut -d ' ' -f1)" = 'fca5b74118002d48671455b1847ba784e4a744b2d0864a20744ef5264ac735dd'
+@@ -22,13 +23,14 @@
+     cleanup() {
+         rmmod tzx_touch_runtime 2>/dev/null || true
+         rmmod tzx_gsl3670 2>/dev/null || true
+-        i2cset -y 0 0x34 0x91 "$original"
++        i2cset -y 0 0x34 0x91 "$(printf '0x%x' $(( ($(i2cget -y 0 0x34 0x91) & 8) | original )))"
+         rm -f "$state" /run/tzx-touch-rail-ready.json /run/tzx-touch-input-ready.json
+     }
+     trap cleanup EXIT HUP INT TERM
+     install -D -m644 /usr/local/lib/tzx-peripherals-accel1/silead-seeedd1001-candidate.fw /lib/firmware/silead/tzx-p30-candidate.fw
+-    i2cset -y 0 0x34 0x91 0xd7
+-    test "$(i2cget -y 0 0x34 0x91)" = '0xd7'
++    powered=$(printf '0x%x' $(( $(i2cget -y 0 0x34 0x91) | 2 )))
++    i2cset -y 0 0x34 0x91 "$powered"
++    test "$(i2cget -y 0 0x34 0x91)" = "$powered"
+     if test -n "${NOTIFY_SOCKET:-}"; then
+         /usr/bin/python3 /usr/local/lib/tzx-screen-fast/touch_ready.py rails
+     fi
+@@ -52,8 +54,8 @@
+     case "$original" in 0xd5|0xd7) ;; *) exit 12;; esac
+     rmmod tzx_touch_runtime
+     rmmod tzx_gsl3670
+-    i2cset -y 0 0x34 0x91 "$original"
+-    test "$(i2cget -y 0 0x34 0x91)" = "$original"
++    i2cset -y 0 0x34 0x91 "$(printf '0x%x' $(( ($(i2cget -y 0 0x34 0x91) & 8) | original )))"
++    test "$(( $(i2cget -y 0 0x34 0x91) & ~8 ))" = "$(( original ))"
+     rm -f "$state" /run/tzx-touch-rail-ready.json /run/tzx-touch-input-ready.json
+     test ! -d /sys/bus/i2c/devices/i2c-1
+     echo RUNTIME_TOUCH_DEVICES_REMOVED_CLDO2_RESTORED
+--- a/usr/local/lib/tzx-screen-fast/touch_ready.py
++++ b/usr/local/lib/tzx-screen-fast/touch_ready.py
+@@ -31,7 +31,7 @@
+ if operation == 'rails':
+     assert 'NOTIFY_SOCKET' in os.environ
+     assert Path('/run/tzx-touch-runtime-cldo2').read_text().strip() in ('0xd5', '0xd7')
+-    assert subprocess.check_output(['i2cget', '-y', '0', '0x34', '0x91'], text=True, timeout=3).strip() == '0xd7'
++    assert subprocess.check_output(['i2cget', '-y', '0', '0x34', '0x91'], text=True, timeout=3).strip() in ('0xd7', '0xdf')
+     assert not Path('/sys/module/tzx_touch_runtime').exists()
+     value = record(rail, 'CLDO2-enabled-before-original-touch-settle')
+     subprocess.run(['systemd-notify', '--ready', '--status=Touch supply ready; loading firmware'], check=True, timeout=3)
