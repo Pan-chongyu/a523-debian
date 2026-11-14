@@ -1,0 +1,293 @@
+{
+  "status": "PASS",
+  "date": "2026-11-14",
+  "profile": "TZX-A523-additive-boot-streamline-v6",
+  "scope": "Original adapted tablet; research source only, not a public-image upgrade",
+  "desktop_measurement": "Last of Xorg/xfce4-session/xfwm4/xfce4-panel/xfdesktop process creation times, seconds after Linux start; not visual readiness",
+  "baseline": {
+    "boot_id": "34875b1b-61f6-4cb3-bc2a-19638c721e27",
+    "last_desktop_process_kernel_s": 25.48,
+    "lightdm_start_kernel_s": 18.93473,
+    "systemd_time": "Startup finished in 1.933s (kernel) + 30.277s (userspace) = 32.211s \ngraphical.target reached after 30.277s in userspace.\n"
+  },
+  "bootloader_changed_in_this_update": false,
+  "bootloader_sha256": "3031c2e408edb41dab4ab0f35171bf9ea3398842bfd2c653c8017149b13791ba",
+  "first_image_measurement": "Retained 24 MHz counter after image submission and scan verification; not physical button timing",
+  "public_image_updated": false,
+  "public_flasher_updated": false,
+  "physical_power_button_test": false,
+  "final_visual_confirmation": "pending",
+  "changes": [
+    "Start the unchanged 256 MiB trained-RAM validation after root remount and CPU clock preparation, without waiting for basic.target",
+    "Register the guarded power-off handler before CPU DVFS changes the supply",
+    "Enable qualified HS200/100 MHz before GPU and LightDM, using same-boot RAM and CPU prerequisites",
+    "Remove the redundant outer GPU guard; preserve the live guard immediately before GPU probing",
+    "Remove the global filesystem sync from diagnostic panel handoff",
+    "Start Bluetooth from a timer after LightDM; preserve every UART initialization command and wait"
+  ],
+  "retained": [
+    "Fresh DRAM geometry discovery and training",
+    "All payload CRC and module/source hash checks",
+    "256 MiB early RAM validation and voltage proof",
+    "HS200 tuning, root freeze protocol and lease rollback",
+    "Thermal and fault guards",
+    "Right landscape and touch setup",
+    "Bluetooth firmware sequence"
+  ],
+  "rejected_trials": [
+    "Unit ordering edits initially left component hash manifests inconsistent; restored before final qualification",
+    "Immediate HCI completion parsing passed mocked UART tests and a warm service restart, but cold boot timed out at 0x0c52; the original Bluetooth implementation was restored",
+    "Earlier CPU activation raced the power-off handler supply guard; final dependency requires handler registration before DVFS"
+  ],
+  "recovery_checkpoint_sha256": "44fcfe576b4d95a72959c02a8f70c7ad849c8e5669c429fec3084a420fb572ad",
+  "limitations": [
+    "Finite mixed-load tests do not establish long-term reliability",
+    "Bluetooth remains a roughly 15-second background initialization; systemd total startup completion can be later despite earlier desktop processes",
+    "Final physical button timing and visual/touch confirmation have not been collected"
+  ],
+  "repeated_boots": [
+    {
+      "boot_id": "db315088-6cf8-4ed5-9b1e-416a6e927259",
+      "units": {
+        "tzx-cpub": {
+          "start_kernel_s": 5.948587,
+          "active_kernel_s": 6.045277
+        },
+        "tzx-early-performance-check": {
+          "start_kernel_s": 6.084971,
+          "active_kernel_s": 9.99916
+        },
+        "tzx-thermal": {
+          "start_kernel_s": 8.999879,
+          "active_kernel_s": 10.536613
+        },
+        "tzx-pmic-poweroff": {
+          "start_kernel_s": 9.278215,
+          "active_kernel_s": 11.096418
+        },
+        "tzx-cpu-dvfs": {
+          "start_kernel_s": 11.172825,
+          "active_kernel_s": 13.021583
+        },
+        "tzx-emmc-hs": {
+          "start_kernel_s": 13.043408,
+          "active_kernel_s": 14.355521
+        },
+        "tzx-gpu": {
+          "start_kernel_s": 14.423032,
+          "active_kernel_s": 17.001067
+        },
+        "tzx-display": {
+          "start_kernel_s": 9.542524,
+          "active_kernel_s": 13.644157
+        },
+        "tzx-touch-input-ready": {
+          "start_kernel_s": 9.048116,
+          "active_kernel_s": 15.346323
+        },
+        "tzx-cpu-performance-mode": {
+          "start_kernel_s": 19.657096,
+          "active_kernel_s": 20.509016
+        },
+        "tzx-gpu-performance": {
+          "start_kernel_s": 19.616347,
+          "active_kernel_s": 19.653932
+        },
+        "tzx-bluetooth": {
+          "start_kernel_s": 20.675881,
+          "active_kernel_s": 36.940899
+        },
+        "lightdm": {
+          "start_kernel_s": 17.010775,
+          "active_kernel_s": 17.419101
+        }
+      },
+      "last_desktop_process_kernel_s": 21.73,
+      "desktop_processes": {
+        "Xorg": {
+          "pid": 647,
+          "process_start_kernel_s": 17.41
+        },
+        "xfce4-session": {
+          "pid": 682,
+          "process_start_kernel_s": 18.89
+        },
+        "xfwm4": {
+          "pid": 800,
+          "process_start_kernel_s": 20.26
+        },
+        "xfce4-panel": {
+          "pid": 820,
+          "process_start_kernel_s": 21.4
+        },
+        "xfdesktop": {
+          "pid": 832,
+          "process_start_kernel_s": 21.73
+        }
+      },
+      "first_image_counter_s": 5.919541416666667,
+      "basic_target_kernel_s": 8.19063,
+      "early_memory_check_mib": 256,
+      "mixed_load_memory_mib": 2560,
+      "mixed_load_seconds": 43.1,
+      "CPU_peak_khz": [
+        1416000,
+        1800000
+      ],
+      "GPU_rates_hz": [
+        200000000,
+        400000000,
+        600000000
+      ],
+      "GPU_score": 642,
+      "GPU_compute_integer_operations_checked": 2097152,
+      "video_hardware_frames": 600,
+      "storage": [
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 51.7,
+          "read_MiB_s": 83.98
+        },
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 82.31,
+          "read_MiB_s": 87.61
+        }
+      ],
+      "temperature_peak_mc": 74880,
+      "emmc_hz": 100000000,
+      "emmc_timing": "HS200",
+      "memory_errors": 0,
+      "MMC_errors": 0,
+      "IOMMU_faults": 0,
+      "display_errors": 0,
+      "failed_services": [],
+      "Bluetooth_automatic": "PASS",
+      "right_landscape_and_touch_configuration": "PASS",
+      "systemd_time": "Startup finished in 1.928s (kernel) + 35.022s (userspace) = 36.951s \ngraphical.target reached after 20.012s in userspace.\n"
+    },
+    {
+      "boot_id": "aa7dd8e1-52da-4593-9262-e14bc9f50337",
+      "units": {
+        "tzx-cpub": {
+          "start_kernel_s": 5.944931,
+          "active_kernel_s": 6.077294
+        },
+        "tzx-early-performance-check": {
+          "start_kernel_s": 6.120829,
+          "active_kernel_s": 10.126656
+        },
+        "tzx-thermal": {
+          "start_kernel_s": 8.837539,
+          "active_kernel_s": 10.449722
+        },
+        "tzx-pmic-poweroff": {
+          "start_kernel_s": 9.420766,
+          "active_kernel_s": 11.143511
+        },
+        "tzx-cpu-dvfs": {
+          "start_kernel_s": 11.176344,
+          "active_kernel_s": 13.049643
+        },
+        "tzx-emmc-hs": {
+          "start_kernel_s": 13.07095,
+          "active_kernel_s": 14.210571
+        },
+        "tzx-gpu": {
+          "start_kernel_s": 14.235184,
+          "active_kernel_s": 16.851034
+        },
+        "tzx-display": {
+          "start_kernel_s": 9.669281,
+          "active_kernel_s": 13.604882
+        },
+        "tzx-touch-input-ready": {
+          "start_kernel_s": 8.859535,
+          "active_kernel_s": 15.167277
+        },
+        "tzx-cpu-performance-mode": {
+          "start_kernel_s": 19.582102,
+          "active_kernel_s": 20.419793
+        },
+        "tzx-gpu-performance": {
+          "start_kernel_s": 19.531859,
+          "active_kernel_s": 19.578368
+        },
+        "tzx-bluetooth": {
+          "start_kernel_s": 20.557116,
+          "active_kernel_s": 36.07815
+        },
+        "lightdm": {
+          "start_kernel_s": 16.904706,
+          "active_kernel_s": 17.257503
+        }
+      },
+      "last_desktop_process_kernel_s": 21.64,
+      "desktop_processes": {
+        "Xorg": {
+          "pid": 639,
+          "process_start_kernel_s": 17.25
+        },
+        "xfce4-session": {
+          "pid": 682,
+          "process_start_kernel_s": 18.82
+        },
+        "xfwm4": {
+          "pid": 799,
+          "process_start_kernel_s": 20.15
+        },
+        "xfce4-panel": {
+          "pid": 820,
+          "process_start_kernel_s": 21.29
+        },
+        "xfdesktop": {
+          "pid": 831,
+          "process_start_kernel_s": 21.64
+        }
+      },
+      "first_image_counter_s": 5.938700625,
+      "basic_target_kernel_s": 8.281793,
+      "early_memory_check_mib": 256,
+      "mixed_load_memory_mib": 2560,
+      "mixed_load_seconds": 43.88,
+      "CPU_peak_khz": [
+        1416000,
+        1800000
+      ],
+      "GPU_rates_hz": [
+        200000000,
+        400000000
+      ],
+      "GPU_score": 658,
+      "GPU_compute_integer_operations_checked": 2097152,
+      "video_hardware_frames": 600,
+      "storage": [
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 66.97,
+          "read_MiB_s": 82.7
+        },
+        {
+          "bytes": 134217728,
+          "sha256": "025035f654846083dfca62e0366c77ecac8cb3225527c379a8ca54c4fafe8e3c",
+          "write_MiB_s": 79.98,
+          "read_MiB_s": 87.73
+        }
+      ],
+      "temperature_peak_mc": 75335,
+      "emmc_hz": 100000000,
+      "emmc_timing": "HS200",
+      "memory_errors": 0,
+      "MMC_errors": 0,
+      "IOMMU_faults": 0,
+      "display_errors": 0,
+      "failed_services": [],
+      "Bluetooth_automatic": "PASS",
+      "right_landscape_and_touch_configuration": "PASS",
+      "systemd_time": "Startup finished in 1.927s (kernel) + 34.151s (userspace) = 36.079s \ngraphical.target reached after 19.843s in userspace.\n"
+    }
+  ]
+}

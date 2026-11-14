@@ -1,0 +1,44 @@
+{
+  "profile": "TZX-A523-additive-boot-streamline-v6",
+  "baseline_boot_id": "34875b1b-61f6-4cb3-bc2a-19638c721e27",
+  "expected_toc0_sha256": "3031c2e408edb41dab4ab0f35171bf9ea3398842bfd2c653c8017149b13791ba",
+  "original_sources": {
+    "/usr/local/lib/tzx-boot-panel/handoff.py": "dc9deea2ba83afd09df5df8f15c66dc477fca3a4bbb4c832d89c9c3a3f4d2f53",
+    "/usr/local/lib/tzx-gpu-devfreq/startup.py": "e11f8a3831123270682f01e46862139bc93ce12c910403e14670c2ace47b855b",
+    "/usr/local/lib/tzx-emmc-hs/runtime.py": "24c11cd59bad1e3e971b3f24065af8203226928765466c7faa8c3fa61ddee3b9",
+    "/etc/systemd/system/tzx-bluetooth.service": "493a1fdbe3d79e8618884395e7cb2e2a1e8541a69524d22e091cb13a4ef84584",
+    "/usr/local/lib/tzx-accel-bluetooth/runtime.py": "047b43b6f5165f1955bd1e9b9b96defee3195012fa3d9dda0f3ccc7966adac4b"
+  },
+  "replaced_files": {
+    "/etc/systemd/system/tzx-early-performance-check.service": {
+      "sha256": "124837403ec4a58dd898b7eb2c5f4b10a9c6a3257119dff7c60a57a84210f226",
+      "mode": 420
+    },
+    "/etc/systemd/system/tzx-emmc-hs.service": {
+      "sha256": "fff603d6e94447d211952bd53600d3714fa19f45cbae03cd151c95b28055d1f0",
+      "mode": 420
+    },
+    "/usr/local/lib/tzx-emmc-hs/manifest.json": {
+      "sha256": "0a95d0fb3b22ba9c5f062f52450991b56dffede4d9d380d5e902f549aeaadbcf",
+      "mode": 420
+    },
+    "/usr/local/lib/tzx-performance-mode/manifest.json": {
+      "sha256": "997df6344c26f525c7a92f92a643b836337118a50ad81cde029fea14e6559602",
+      "mode": 420
+    }
+  },
+  "files": {
+    "/usr/local/lib/tzx-boot-streamline-v6/runtime.py": "4b09d4472a5159fcf1539d22e05c88eb5559046079bb076d7a49ae7d5ea199d4",
+    "/usr/local/lib/tzx-boot-streamline-v6/observer.py": "2352d71efe61bd1d60d05a7c54dadcaf8957b0f6b1fbac687d62ea2659007248",
+    "/etc/systemd/system/tzx-early-performance-check.service": "29b666811fc016613e9295315f010ad42db6480eb950d87916983906eec7381c",
+    "/etc/systemd/system/tzx-cpu-dvfs.service.d/99-boot-streamline.conf": "1c686c613b8be795caf2ce251deb07ef51b78cf479594a3e01e30cc25ab43434",
+    "/etc/systemd/system/tzx-boot-panel-handoff.service.d/99-boot-streamline.conf": "d95eb421cdfd9c0816872d32a050213e3ee4244fd50c70805fa760c7bf1b30b6",
+    "/etc/systemd/system/tzx-gpu.service.d/99-boot-streamline.conf": "de37774f3bdaff01b1a11c78fdf48cd1f0d1849dc47382f80c3b42fe4cd64b0f",
+    "/etc/systemd/system/tzx-emmc-hs.service": "33b9f8cc47a4329504487c899efc52f667422846600ab93d66d75c710206014f",
+    "/etc/systemd/system/tzx-bluetooth-late.timer": "7370ced21a83e3ee0b0342dca39ff433c37535458963fe93a3f7f8efe43e130d",
+    "/etc/systemd/system/tzx-boot-streamline-observer.service": "7f1fbe7adea3366d3886289b134c3f49d089aafb01eaa149e1abfd6363e2b684",
+    "/usr/local/lib/tzx-emmc-hs/manifest.json": "100da5c40af05e5186e59ad8cb4a7e5751815c18a904aa465237109420f47c8d",
+    "/usr/local/lib/tzx-performance-mode/manifest.json": "e7b28f1e93a772413cfc9946cdfaedd595dc19a74262a500a602b7d0afe247ae"
+  },
+  "bluetooth_boot_link": "/etc/systemd/system/tzx-bluetooth.service"
+}

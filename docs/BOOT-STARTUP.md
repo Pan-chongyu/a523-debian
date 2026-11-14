@@ -1,0 +1,15 @@
+# Startup scheduling update
+
+[简体中文](zh-CN/BOOT-STARTUP.md) · [日本語](ja/BOOT-STARTUP.md) · [Español](es/BOOT-STARTUP.md)
+
+On the original tablet, two normal reboots created all five measured desktop processes at **21.73 / 21.64 seconds after Linux start**, compared with **25.48 seconds** for the original scheduling baseline, a reduction of **3.75 / 3.84 seconds**. These are process creation timestamps, not visual desktop readiness or a power-button stopwatch. The unchanged early star-cat loader measured **5.920 / 5.939 seconds** on its retained hardware counter. This update speeds the later Linux startup; it does not demonstrate a further reduction in the first-image delay.
+
+The unchanged 256 MiB RAM/voltage check now runs after root remount and CPU clock preparation, without waiting for unrelated basic services. The power-off handler registers before CPU DVFS changes its guarded supply. Qualified HS200/100 MHz is enabled before GPU and LightDM, after same-boot RAM validation, thermal setup and CPU qualification. The redundant outer GPU guard and diagnostic handoff's global filesystem sync are removed; the live GPU guard and pixel test remain. Bluetooth attaches after LightDM and retains its original complete initialization sequence and waits.
+
+Bluetooth still takes about 15 seconds in the background. Moving it off the graphical dependency path makes `graphical.target` earlier, while systemd's completion time for all boot jobs can be later. Neither number alone proves that the desktop is visually ready; see the separate process timestamps in the [report](../reports/boot-startup-20261114.json).
+
+Both final reboots passed CPU, 2.5 GiB eight-thread RAM, GPU graphics and compute, 600-frame hardware video decode and two direct-file storage checks. CPU limits remain 1416/1800 MHz; HS200 remains 100 MHz. No failed units or observed memory/MMC/IOMMU/display errors were found. Fresh DRAM training, payload CRCs, hash checks, thermal protection and lease rollback remain. The right-landscape 1280×800 configuration and touch matrix passed automated checks; final physical button timing and visual/touch confirmation remain pending. Finite checks do not establish long-term reliability.
+
+Two rejected optimizations are recorded: shortening HCI waits failed on cold boot despite a warm-service pass, so the original Bluetooth code was restored; earlier CPU activation exposed a power-off handler registration race, fixed with an explicit dependency. An earlier draft also required correcting dependent hash manifests. The final boots use none of the rejected HCI edits.
+
+This commit publishes research source and measurements. **Image `v0.1.0-20261114` and flasher `v0.2.0` Release assets are unchanged.** The original-unit overlay depends on exact captured source hashes and qualification ledgers; it is not a generic flashable update. Research scripts expect historical original-unit captures. A distributable update needs a separate build and hardware qualification. No device credentials or signing keys are published.

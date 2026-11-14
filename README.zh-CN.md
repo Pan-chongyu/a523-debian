@@ -16,6 +16,8 @@ Linux 使用 [镜像 Release](https://github.com/Pan-chongyu/a523-debian/release
 
 [开屏提速研究更新](docs/zh-CN/BOOT-SPLASH-SPEED.md)已在原机测得约 5.9 秒，两次重启与联合负载通过。本次公开源码和实测记录，尚未替换上述镜像或刷机 EXE 的 Release 文件；计数器时间与实体按键秒表时间不同。
 
+[启动流程精简](docs/zh-CN/BOOT-STARTUP.md)进一步将原机桌面进程全部创建时间从内核启动后 25.48 秒缩短到 21.73/21.64 秒，提前启用 HS200、并行内存检查并去除重复等待，两次重启与联合负载通过。首次图片计数仍约 5.9 秒，蓝牙在后台初始化；公开镜像和 EXE 文件未替换。
+
 [GPU API 补充更新](docs/zh-CN/GPU-API.md)增加 Rusticl OpenCL 3.0、选定 OpenCL C 3.0 功能、SPIR-V 输入测试和持久健康记录，已验证 WebGL 1/2 使用真实 GPU。原镜像与刷机工具内容未变，新刷机后需另装本补充包；实际持续测试结果见更新 Release。
 
 **尚未完整适配或验证：** HS400、摄像头、整机休眠、耳机与蓝牙音频端到端，以及其他内存、屏幕或 eMMC 的变体。当前开源驱动栈不提供这块 Mali-G57 的合格 Vulkan 硬件实现。
